@@ -8,7 +8,7 @@ title: 关于我
 平时喜欢整理个人博客，逛逛技术论坛:<a target="_blank" href="http://iosre.com"> iosre </a>
 <p>
 推荐一个我维护的小专栏
-<a target="_blank" href="https://xiaozhuanlan.com/iosre"> voyagelab </a>
+<a target="_blank" href="https://xiaozhuanlan.com/iosre"> iosre </a>
 里面有一些关于 iOSre的文章。
 <p>
 <h3> 友情博客 </h3>
