@@ -14,16 +14,13 @@ title: 关于我
 <h3> 友情博客 </h3>
 <p>
 <a href="https://azeria-labs.com/writing-arm-assembly-part-1/"> ARM Assembly Basics教程</a>
+<p> 
+<a target="_blank" href='http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html'>ruanyifeng</a>
+<p> 
+<p> 
 <p>
 有关于iosre的新技术和工具欢迎交流，让我们一起来进步~ 
 <p> 
-<a target="_blank" href='https://twitter.com/zhangkunnan'>twitter</a>
-<p> 
-
-<p> 
-
-<p> 
-
 
 {% include comments.html %}
 
