@@ -34,6 +34,11 @@ Jekyll 需要依赖：Ruby、bundler
 
 # 访问量统计分析
 - [analytics](https://analytics.google.com/)
+- [TrackingCode](https://analytics.google.com/analytics/web/#management/Settings/a111030597w165618623p166148021/%3Fm.page%3DTrackingCode/)
+- [Google AdSense申请](https://www.google.com/adsense/?sourceid=aso&subid=WW-ET-ADSBY2)
+AdSense 通过让 Google 在您的网站上投放广告，帮助您从中获利。将两个帐户关联之后，您就可以查看投资的回报情况了。
+复制粘贴代码进行关联AdSense；放置在 <head> 和 </head> 标记之间；//head.html
+
 - [baidu](https://tongji.baidu.com)
 
 # comment
