@@ -48,7 +48,8 @@ Jekyll 需要依赖：Ruby、bundler
 - 修改底部的样式
 
 # feed
-[feed](feed:https://zhangkn.github.io/feed.xml)
+
+-[feed]:feed:https://zhangkn.github.io/feed.xml
 
 # stylesheet
 
