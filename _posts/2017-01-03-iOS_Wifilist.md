@@ -152,5 +152,5 @@ NEHotspotNetwork 里有如下信息：
 参考资源：[NEHotspotHelper NetworkExtension API iOS9.0](http://stackoverflow.com/questions/31704292/nehotspothelper-networkextension-api-ios9-0)
 
 <br>
-转载请注明：[张坤楠的博客](https://zhangkn.github.io) »
+转载请注明：[张坤楠的博客]({{site.url}}) »
 
