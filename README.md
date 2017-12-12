@@ -15,3 +15,5 @@ Jekyll 需要依赖：Ruby、bundler
 [disqus](https://disqus.com)
 # xiaozhuanlan
 [iosre](https://xiaozhuanlan.com/iosre)
+# footer.html
+修改底部的样式
