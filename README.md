@@ -40,6 +40,9 @@ AdSense 通过让 Google 在您的网站上投放广告，帮助您从中获利�
 复制粘贴代码进行关联AdSense；放置在 <head> 和 </head> 标记之间；//head.html
 
 - [baidu](https://tongji.baidu.com)
+选择的是www.github.io的子域名
+- [ 两行代码  搞定计数](http://busuanzi.ibruce.info/)
+
 
 # comment
 - [disqus](https://disqus.com)
@@ -48,7 +51,7 @@ AdSense 通过让 Google 在您的网站上投放广告，帮助您从中获利�
 - [How to display comment count] 
  Place the following code before your site's closing </body> tag:
  <script id="dsq-count-scr" src="//iosre.disqus.com/count.js" async></script>
- 
+
 # xiaozhuanlan
 
 - [iosre](https://xiaozhuanlan.com/iosre)
