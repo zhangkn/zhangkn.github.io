@@ -17,3 +17,10 @@ Jekyll 需要依赖：Ruby、bundler
 [iosre](https://xiaozhuanlan.com/iosre)
 # footer.html
 修改底部的样式
+# feed
+[feed](feed:https://zhangkn.github.io/feed.xml)
+
+# stylesheet
+[fontawesome](http://fontawesome.io/icon/github/)
+# GitHub buttons
+[GitHub buttons](https://ghbtns.com/#watch)
