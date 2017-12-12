@@ -17,6 +17,7 @@ title: 关于我
 <p> 
 <a target="_blank" href='http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html'>ruanyifeng</a>
 <p> 
+<a target="_blank" href='https://cse.google.com/cse/publicurl?cx=013483152311799686538:__rsnolmpao#gsc.tab=0'>cse</a>
 <p> 
 <p>
 有关于iosre的新技术和工具欢迎交流，让我们一起来进步~ 
