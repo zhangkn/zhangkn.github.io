@@ -29,31 +29,41 @@ Jekyll 需要依赖：Ruby、bundler
 
 
 # 添加动态功能必须使用外部服务
+- 访问量统计分析
+- comment
 
 # 访问量统计分析
-[analytics](https://analytics.google.com/)
-[baidu](https://tongji.baidu.com)
+- [analytics](https://analytics.google.com/)
+- [baidu](https://tongji.baidu.com)
+
 # comment
-[disqus](https://disqus.com)
+- [disqus](https://disqus.com)
+
 # xiaozhuanlan
-[iosre](https://xiaozhuanlan.com/iosre)
+
+- [iosre](https://xiaozhuanlan.com/iosre)
+
 # footer.html
-修改底部的样式
+
+- 修改底部的样式
+
 # feed
 [feed](feed:https://zhangkn.github.io/feed.xml)
 
 # stylesheet
-[fontawesome](http://fontawesome.io/icon/github/)
+
+- [fontawesome](http://fontawesome.io/icon/github/)
 # GitHub buttons
-[GitHub buttons](https://ghbtns.com/#watch)
+
+- [GitHub buttons](https://ghbtns.com/#watch)
 
 # 目录结构
 - _config.yml   // 全局配置文件所在，位置与名字不可改动
 - _posts/       // 文章编写存放之处       注意，文件名必须为"年-月-日-文章标题.后缀名"的格式 如果采用markdown格式，后缀名为md
-|        |--　2012-08-25-hello-world.html
+-|        |--　2012-08-25-hello-world.html
 - index.html    // 首页入口文件
--_layouts
-|　　　|--　default.html
+- _layouts
+-|　　　|--　default.html
 
 
 # 其他参考文章
