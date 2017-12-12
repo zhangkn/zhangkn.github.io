@@ -43,7 +43,12 @@ AdSense 通过让 Google 在您的网站上投放广告，帮助您从中获利�
 
 # comment
 - [disqus](https://disqus.com)
+- [universalcode](https://iosre.disqus.com/admin/install/platforms/universalcode/)
 
+- [How to display comment count] 
+ Place the following code before your site's closing </body> tag:
+ <script id="dsq-count-scr" src="//iosre.disqus.com/count.js" async></script>
+ 
 # xiaozhuanlan
 
 - [iosre](https://xiaozhuanlan.com/iosre)
