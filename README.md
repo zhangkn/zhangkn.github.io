@@ -52,7 +52,9 @@ AdSense 通过让 Google 在您的网站上投放广告，帮助您从中获利�
 -[allcse](https://cse.google.com/cse/all) 管理cse
 - [AdSense 搜索广告 (AFS)](https://support.google.com/adsense/answer/160530?hl=zh-Hans)
 
+- [baiducse](http://zn.baidu.com/cse/site/siteadd)
 
+html标签验证  网站首页html代码的<head>标签与</head>标签之间
 
 # comment
 - [disqus](https://disqus.com)
