@@ -44,6 +44,7 @@ Running dot for graph 1175/42806
 >* 7、OpenSSH  2 (mac 同系列工具: [usbmuxd-1.0.8](https://cgit.sukimashita.com/usbmuxd.git/) ) ssh scp 都是建立在这基础之上
 >* 8、 AFlexLoader（mac 同系列工具： Reveal）
 >* 9、Cydia Substrate (call/hook any method)
+>* 10、[frida-server](https://build.frida.re/frida/)
 
    Desktop tools
 
@@ -363,6 +364,7 @@ devzkndeMacBook-Pro:~ devzkn$ lldb
 [Frida :Inject JavaScript to explore native apps](https://github.com/frida) [frida.re](https://www.frida.re/)
 [Radare2](http://rada.re/r/)
 [frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump)
-
+[iOS instrumentation without jailbreak](https://www.nccgroup.trust/au/about-us/newsroom-and-events/blogs/2016/october/ios-instrumentation-without-jailbreak/)
+[node-applesign](https://github.com/nowsecure/node-applesign)
 <br>
 
