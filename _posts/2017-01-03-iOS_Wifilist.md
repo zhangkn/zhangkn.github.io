@@ -19,17 +19,38 @@ tag: iOSre
    UUID Generator
    otool.sh
    ```
+### The goal of apps’ RE
 
-### 前期准备-基础的工具清单
+>*  Inspect
+>*  Modify
+>*  Verify usage of our (licensed) products
+>*  Know your enemy
 
-　　的。apt 0.6 transitional
->* 1、向 Apple 申请开发 Network Extension 权限
->* 2、申请包含 Network Extension 的描述文件
->* 3、配置 Info.plist 
->* 4、配置 entitlements
->* 5、iOS 获取 Wifi 列表代码实现
->* 6、获取Wifi列表回调
 
+### Requirements（前期准备-基础的工具清单）
+
+　　 Device Tools 
+>* 1、apt 0.6 transitional（用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件,例如安装scout、git: apt-get install socat git ）
+>* 2、dumpdecrypted.dylib or clutch
+>* 3、cycript 
+>* 4、class-dump-z （同系列工具：class-dump、classdump-dyld、keychain_dumper）
+>* 5、otool (同系列工具：jtool ) -h -hv -vl
+>* 6、lipo、debugserver、lldb、toggle-pie
+>* 7、usbmuxd-1.0.8 2 (同系列工具: OpenSSH) ssh scp 都是建立在这基础之上
+>* 8、 AFlexLoader（mac 同系列工具： Reveal）
+
+   Desktop tools
+
+>* 1、Reveal
+>* 2、MachOView
+>* 3、Hopper
+>* 4、Tweak 工具：Theos、iOSOpenDev、MonkeyDev（支持CocoaPods) 可以用来开发iPhone tool 、iPhone tweak 
+
+
+
+Jailbroken iOS device 
+
+ 
 
 
 ### iOS 申请获取 Wifi 列表权限
