@@ -199,100 +199,6 @@ Binary info
 
 
 
-###  [去掉PIE](https://github.com/zhangkn/KNtoggle-pie)
-
-如果你觉得 MH_PIE flag 对你的后续LLDB调试带来麻烦的话，可以先 disable ASLR 。
-
-
-```
-iPhone:~ root#  toggle-pie
-Usage: toggle-pie <path_to_binary>
-iPhone:~ root# ps -e |grep /var*
- 1057 ttys004    0:00.01 grep /var
-iPhone:~ root# otool -hv /var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/
-/var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/.app/:
-Mach header
-      magic cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
-   MH_MAGIC     ARM          9  0x00     EXECUTE    75       7500   NOUNDEFS DYLDLINK TWOLEVEL WEAK_DEFINES BINDS_TO_WEAK PIE
-iPhone:~ root# toggle-pie /var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/.app/
-[STEP 1] Backing up the binary file...
-[STEP 1] Binary file successfully backed up to /var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/.app/.bak
-
-[STEP 2] Flip the 32-bit PIE...
-Original Mach-O header: cefaedfe0c00000009000000020000004b0000004c1d000085802100
-Original Mach-O header flags: 85802100
-Flipping the PIE...
-New Mach-O header flags: 85800100
-[STEP 2] Successfully flipped the 32-bit PIE.
-
-[STEP 3] Flip the 64-bit PIE...
-Original Mach-O header: cffaedfe0c00000100000000020000004b000000982000008580210000000000
-Original Mach-O header flags: 85802100
-Flipping the PIE...
-New Mach-O header flags: 85800100
-[STEP 3] Successfully flipped the 64-bit PIE.
-iPhone:~ root# otool -hv /var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/.app/
-/var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/.app/:
-Mach header
-      magic cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
-   MH_MAGIC     ARM          9  0x00     EXECUTE    75       7500   NOUNDEFS DYLDLINK TWOLEVEL WEAK_DEFINES BINDS_TO_WEAK
-
-```
- 使用otool 可以快速查看flags，你还可以选择hopper进行查看
-
-```
-             __mh_execute_header:
-00004000         struct __macho_header {                                        ; DATA XREF=sub_756b0+62, sub_78252+8, sub_81f9c+128, sub_85f82+66, sub_86bd0+42, sub_87976+724, sub_89532+80, sub_8da68+64, switch_table_8ff1a+12252, switch_table_8ff1a+12270, sub_b1794+216, …
-                     0xfeedface,                          // mach magic number identifier
-
-```
-
-otool 是Xcode编译器LLVM的Toolchains，class-dump 都是基于‘otool -ov‘ 实现的。
-[class_dump_z](https://code.google.com/archive/p/networkpx/wikis/class_dump_z.wiki)、[classdump-dyld](https://github.com/limneos/classdump-dyld) 这些工具以后再介绍。
-
-
-这里先简单说下otool、lipo
-
-#### 如何查看LC_ENCRYPTION_INFO
-
-```
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
-lrwxr-xr-x  1 root  wheel        10 Nov 27 17:04 otool -> llvm-otool
-iPhone:~ root# otool -l /var/mobile/Containers/Bundle/Application/239A0B7E-AA8C-4E43-873D-16254934321A/T4iPhone.app/T4iPhone | grep -A 4 LC_ENCRYPTION_INFO
-
-```
-####  thin binary
-```
-iOS8-jailbreak:~ root# lipo -thin armv7 DamnVulnerableIOSApp -output DVIA32
-
-```
-
-####  scp 结合usbmuxd-1.0.8  的例子
-```
-./tcprelay.py -t 22:2222
-$ scp -P2222 debugserver root@localhost:/tmp/
-
-```
-usbmuxd-1.0.8 还可以用于lldb debugserver,以及SSH
-
->* 1、应用场景1:通过USB连接 来使用SSH到iOS设备
-把本地2222端口转发到iOS的22端口
-```
-alias relay22='python ~/Downloads/kevin－software/ios-Reverse_Engineering/usbmuxd-1.0.8\ 2/python-client/tcprelay.py  -t 22:2222'
-alias sshusb='ssh root@localhost -p 2222'
-```
-
-
->* 2、应用场景2:debugserver的开启与LLDB的连接
-```
-iPhone:/usr/bin root# debugserver *:12345 -a "KNWeChat"
-```
-把本地12345端口转发到iOS的12345端口
-```
-alias relay12345='python ~/Downloads/kevin－software/ios-Reverse_Engineering/usbmuxd-1.0.8\ 2/python-client/tcprelay.py  -t  12345:12345'
-devzkndeMacBook-Pro:~ devzkn$ lldb
-(lldb) process connect connect://localhost:12345
-```
 
 
 
@@ -328,7 +234,110 @@ Future work
 – Objective-C/Swift decompilation
 ```
 
-### 注意事项
+### otool、 toggle-pie、lipo、usbmuxd-1.0.8使用例子
+
+
+#### [去掉PIE](https://github.com/zhangkn/KNtoggle-pie)
+
+如果你觉得 MH_PIE flag 对你的后续LLDB调试带来麻烦的话，可以先 disable ASLR 。
+
+```
+iPhone:~ root#  toggle-pie
+Usage: toggle-pie <path_to_binary>
+iPhone:~ root# ps -e |grep /var*
+ 1057 ttys004    0:00.01 grep /var
+iPhone:~ root# otool -hv /var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/
+/var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/.app/:
+Mach header
+      magic cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+   MH_MAGIC     ARM          9  0x00     EXECUTE    75       7500   NOUNDEFS DYLDLINK TWOLEVEL WEAK_DEFINES BINDS_TO_WEAK PIE
+iPhone:~ root# toggle-pie /var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/.app/
+[STEP 1] Backing up the binary file...
+[STEP 1] Binary file successfully backed up to /var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/.app/.bak
+
+[STEP 2] Flip the 32-bit PIE...
+Original Mach-O header: cefaedfe0c00000009000000020000004b0000004c1d000085802100
+Original Mach-O header flags: 85802100
+Flipping the PIE...
+New Mach-O header flags: 85800100
+[STEP 2] Successfully flipped the 32-bit PIE.
+
+[STEP 3] Flip the 64-bit PIE...
+Original Mach-O header: cffaedfe0c00000100000000020000004b000000982000008580210000000000
+Original Mach-O header flags: 85802100
+Flipping the PIE...
+New Mach-O header flags: 85800100
+[STEP 3] Successfully flipped the 64-bit PIE.
+iPhone:~ root# otool -hv /var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/.app/
+/var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/.app/:
+Mach header
+      magic cputype cpusubtype  caps    filetype ncmds sizeofcmds      flags
+   MH_MAGIC     ARM          9  0x00     EXECUTE    75       7500   NOUNDEFS DYLDLINK TWOLEVEL WEAK_DEFINES BINDS_TO_WEAK
+
+```
+
+
+
+#### otool
+
+otool 是Xcode编译器LLVM的Toolchains，class-dump 都是基于‘otool -ov‘ 实现的。
+[class_dump_z](https://code.google.com/archive/p/networkpx/wikis/class_dump_z.wiki)、[classdump-dyld](https://github.com/limneos/classdump-dyld) 这些工具以后再介绍。
+
+>* 1、这里先简单说下：如何查看LC_ENCRYPTION_INFO
+
+```
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+lrwxr-xr-x  1 root  wheel        10 Nov 27 17:04 otool -> llvm-otool
+iPhone:~ root# otool -l /var/mobile/Containers/Bundle/Application/239A0B7E-AA8C-4E43-873D-16254934321A/T4iPhone.app/T4iPhone | grep -A 4 LC_ENCRYPTION_INFO
+
+```
+
+ >* 2、使用otool 可以快速查看flags，你还可以选择hopper进行查看
+
+```
+             __mh_execute_header:
+00004000         struct __macho_header {                                        ; DATA XREF=sub_756b0+62, sub_78252+8, sub_81f9c+128, sub_85f82+66, sub_86bd0+42, sub_87976+724, sub_89532+80, sub_8da68+64, switch_table_8ff1a+12252, switch_table_8ff1a+12270, sub_b1794+216, …
+                     0xfeedface,                          // mach magic number identifier
+
+```
+
+
+####  lipo
+
+thin binary
+```
+iOS8-jailbreak:~ root# lipo -thin armv7 DamnVulnerableIOSApp -output DVIA32
+
+```
+
+####  scp 结合usbmuxd-1.0.8  的例子
+```
+./tcprelay.py -t 22:2222
+$ scp -P2222 debugserver root@localhost:/tmp/
+
+```
+usbmuxd-1.0.8 还可以用于lldb debugserver,以及SSH
+
+>* 1、应用场景1:通过USB连接 来使用SSH到iOS设备
+把本地2222端口转发到iOS的22端口
+```
+alias relay22='python ~/Downloads/kevin－software/ios-Reverse_Engineering/usbmuxd-1.0.8\ 2/python-client/tcprelay.py  -t 22:2222'
+alias sshusb='ssh root@localhost -p 2222'
+```
+
+
+>* 2、应用场景2:debugserver的开启与LLDB的连接
+```
+iPhone:/usr/bin root# debugserver *:12345 -a "KNWeChat"
+```
+把本地12345端口转发到iOS的12345端口
+```
+alias relay12345='python ~/Downloads/kevin－software/ios-Reverse_Engineering/usbmuxd-1.0.8\ 2/python-client/tcprelay.py  -t  12345:12345'
+devzkndeMacBook-Pro:~ devzkn$ lldb
+(lldb) process connect connect://localhost:12345
+```
+
+
 
  
 
