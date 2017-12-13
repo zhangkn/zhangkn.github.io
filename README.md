@@ -99,7 +99,20 @@ html标签验证  网站首页html代码的<head>标签与</head>标签之间
 - [source of others’ blogs](https://github.com/jekyll/jekyll/wiki/Sites)
 
 
-
+# 辅助 post.sh  
+```
+#!/bin/sh
+# 根据标题创建post   规则：文件名必须为"年-月-日-文章标题.后缀名"的格式 如果采用markdown格式，后缀名为md
+#  post frida
+# 获取当前系统的时间
+cd /Users/devzkn/githubPages/zhangkn.github.io/_posts
+data="`date +%F`"
+postName="$data"-"$1".md
+content="---\nlayout: post\ntitle: "$1"\ndate: "$data"\ntag: iOSre\n---\n"
+echo ${content} > ${postName}
+open -b com.sublimetext.3 ${postName}
+exit 0
+```
 
 
 
