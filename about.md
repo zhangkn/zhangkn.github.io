@@ -13,12 +13,24 @@ title: 关于我
 <p>
 <h3> 友情博客 </h3>
 <p>
+<a href="http://kjcracks.github.io/">kjcracks</a>
+<p>
+<a href="http://www.securitylearn.net/">SecurityLearn：学习新的黑客技术的地方</a>
+<p>
 <a href="https://azeria-labs.com/writing-arm-assembly-part-1/"> ARM Assembly Basics教程</a>
 <p> 
 <a target="_blank" href='http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html'>ruanyifeng</a>
 <p> 
 <a target="_blank" href='https://cse.google.com/cse/publicurl?cx=013483152311799686538:__rsnolmpao#gsc.tab=0'>cse</a>
 <p> 
+<a target="_blank" href='https://testpurposes.net/'>A computer security blog, from a technological point of view</a>
+
+<p> 
+<a target="_blank" href='http://omergil.blogspot.sg/'>Security Research & Insights</a>
+
+<p> 
+<a target="_blank" href='http://blog.orange.tw/'>Orange</a>
+
 <p>
 有关于iosre的新技术和工具欢迎交流，让我们一起来进步~ 
 <p> 

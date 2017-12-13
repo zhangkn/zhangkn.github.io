@@ -36,9 +36,9 @@ Running dot for graph 1175/42806
 
 　　 Device Tools 
 >* 1、apt 0.6 transitional（用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件,例如安装scout、git: apt-get install socat git ）
->* 2、dumpdecrypted.dylib or clutch
+>* 2、dumpdecrypted.dylib or [clutch](https://github.com/KJCracks/Clutch)
 >* 3、cycript 
->* 4、class-dump-z （同系列工具：[class-dump](http://stevenygard.com/projects/class-dump/)、classdump-dyld、keychain_dumper）
+>* 4、class-dump-z （同系列工具：[class-dump](http://stevenygard.com/projects/class-dump/)、classdump-dyld、keychain_dumper、[swift-dump](https://github.com/zhangkn/swift-dump)）
 >* 5、otool (同系列工具：jtool ) -h -hv -vl
 >* 6、lipo、[debugserver](http://iphonedevwiki.net/index.php/Debugserver)、lldb、[toggle-pie](https://github.com/zhangkn/KNtoggle-pie)
 >* 7、OpenSSH  2 (mac 同系列工具: [usbmuxd-1.0.8](https://cgit.sukimashita.com/usbmuxd.git/) ) ssh scp 都是建立在这基础之上
@@ -364,5 +364,7 @@ devzkndeMacBook-Pro:~ devzkn$ lldb
 [frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump)
 [iOS instrumentation without jailbreak](https://www.nccgroup.trust/au/about-us/newsroom-and-events/blogs/2016/october/ios-instrumentation-without-jailbreak/)
 [node-applesign](https://github.com/nowsecure/node-applesign)
+[Kim Jong Cracks](https://github.com/KJCracks)
+
 <br>
 
