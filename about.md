@@ -11,6 +11,8 @@ title: 关于我
 <a target="_blank" href="https://xiaozhuanlan.com/iosre"> iosre </a>
 里面有一些关于 iOSre的文章。
 <p>
+本站的feed地址:
+<a href="feed:https://zhangkn.github.io/feed.xml">feed:https://zhangkn.github.io/feed.xml</a>
 <h3> 友情博客 </h3>
 <p>
 <a href="http://kjcracks.github.io/">kjcracks</a>
@@ -30,6 +32,9 @@ title: 关于我
 
 <p> 
 <a target="_blank" href='http://blog.orange.tw/'>Orange</a>
+
+<p> 
+<a target="_blank" href='https://github.com/AloneMonkey/MonkeyDevSpecs'>MonkeyDevSpecs</a>
 
 <p>
 有关于iosre的新技术和工具欢迎交流，让我们一起来进步~ 
