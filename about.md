@@ -37,6 +37,20 @@ title: 关于我
 <a target="_blank" href='https://github.com/AloneMonkey/MonkeyDevSpecs'>MonkeyDevSpecs</a>
 
 <p>
+<a target="_blank" href='http://pandarawen.github.io/'>PandaraWen.github.io</a>
+
+<p>
+<a target="_blank" href="https://bbs.pediy.com/user-625107-1.htm">bbs.pediy.com</a>
+
+<p>
+<a target="_blank" href="http://www.desgard.com/">iOS-Source-Probe</a>
+<p>
+<a target="_blank" href="https://speakerdeck.com/">speakerdeck</a>
+
+<p>
+<a target="_blank" href="https://answers.unrealengine.com/index.html">unrealengine</a>
+
+<p>
 有关于iosre的新技术和工具欢迎交流，让我们一起来进步~ 
 <p> 
 
