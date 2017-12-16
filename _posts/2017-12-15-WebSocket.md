@@ -8,7 +8,8 @@ site: https://zhangkn.github.io
 
 ### 前言
 
-[websocket](http://websocket.org/) 是一种网络通信协议,提供全双工通信信道.
+[websocket](http://websocket.org/) 是一种网络通信协议,提供全双工通信信道,以基于事件的方式，赋予浏览器实时通信能力。
+
 协议标识符是ws（如果加密，则为wss），服务器网址就是 URL;
 
 ![](/images/posts/{{page.title}}/ws.jpg)

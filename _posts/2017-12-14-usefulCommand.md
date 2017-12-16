@@ -16,7 +16,7 @@ devzkndeMacBook-Pro:.ssh devzkn$ ssh-copy-id -i ~/.ssh/id_rsa_Theos125 root@192.
 devzkndeMacBook-Pro:SQTaoke devzkn$ ssh-copy-id -i -p 2222  ~/.ssh/id_rsa_Theos125 root@localhost:2222
 ```
 
-### 利用 ssh 的用户配置文件 config 管理 ssh 会话
+### 利用 ssh 的用户配置文件 config 管理 ssh 会话（How do I connect to ssh with a different public key）
 
 ```
 # Private usb2222
@@ -99,4 +99,8 @@ iphone  安装pstree 即可
 ```
 A01-27:~ root# reboot
 ```
+
+### 参考资源
+
+
 

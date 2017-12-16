@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 关于我 
+stackoverflow user: 8633507
 ---
 
 一个 iOSre 开发者，喜欢研究一些新技术。
@@ -10,10 +11,22 @@ title: 关于我
 推荐一个我维护的小专栏
 <a target="_blank" href="https://xiaozhuanlan.com/iosre"> iosre </a>
 里面有一些关于 iOSre的文章。
+<br>
+<h3> aboutMe External Links </h3>
+<p>
+<a href="https://about.me/kunnan">about.me</a>
+<br>
+<a href="https://stackoverflow.com/users/story/8633507">stackoverflow story</a>
+<br>
+<a href="https://stackoverflow.com/story/kn">Story view</a>
+<br>
+<a href="https://stackoverflow.com/cv/kn">Traditional view</a>
 <p>
 本站的feed地址:
 <a href="feed:https://zhangkn.github.io/feed.xml">feed:https://zhangkn.github.io/feed.xml</a>
-<h3> 友情博客 </h3>
+
+
+<h3> friendship blog </h3>
 <p>
 <a href="http://kjcracks.github.io/">kjcracks</a>
 <p>
@@ -53,6 +66,10 @@ title: 关于我
 <p>
 <a target="_blank" href="http://jsbin.com/muqamiqimu/edit?js,console">jsbin 网页脚本的例子</a>
 
+<h3>  friendship twitter </h3>
+
+<p>
+<a target="_blank" href="https://twitter.com/ruanyf">ruanyf</a>
 
 <p>
 有关于iosre的新技术和工具欢迎交流，让我们一起来进步~ 
