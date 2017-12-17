@@ -99,7 +99,8 @@ html标签验证  网站首页html代码的<head>标签与</head>标签之间
 - [source of others’ blogs](https://github.com/jekyll/jekyll/wiki/Sites)
 - [Ghost's default theme (Casper) on Jekyll](https://github.com/rosario/kasper)
 - [手把手教你在 Github 上建立 Ghost 博客](http://www.jianshu.com/p/5ce120eb888c)
-
+- [hello-world-vno](http://vno.onevcat.com/2016/02/hello-world-vno/)
+- [OneV-s-Den](https://github.com/onevcat/OneV-s-Den)
 # 辅助 post.sh  
 ```
 #!/bin/sh

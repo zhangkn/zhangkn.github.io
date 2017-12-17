@@ -189,10 +189,25 @@ extern NSMutableURLRequest * CanonicalRequestForRequest(NSURLRequest *request)
 static void CanonicaliseHeaders(NSMutableURLRequest * request)
 ```
 
+
+### 动手实践
+
+[写一个tweak ，修改请求的HTTPHeaderField](https://github.com/zhangkn/KNCustomHTTPProtocol)。
+
+
 ### 注意
 
-NSURLProtocol 只能拦截 UIURLConnection、NSURLSession 和 UIWebView 中的请求;
+>* 1、NSURLProtocol 只能拦截 UIURLConnection、NSURLSession 和 UIWebView 中的请求;
 对于 WKWebView 中发出的网络请求也无能为力，如果真的要拦截来自 WKWebView 中的请求，还是需要实现 WKWebView 对应的 WKNavigationDelegate，并在代理方法中获取请求。
+
+>* 2、[OHHTTPStubs](https://github.com/zhangkn/OHHTTPStubs) 就是基于NSURLProtocol基础上实现的
+
+```
+提供不需要后端 API 的情况下，在本地对 HTTP 请求进行拦截，返回想要的 json 数据 ，常常运用于HTTP Mock 中。
+- OHHTTPStubsProtocol 拦截 HTTP 请求
+- OHHTTPStubs 单例管理 OHHTTPStubsDescriptor 实例
+- OHHTTPStubsResponse 伪造 HTTP 响应
+```
 
 ###  参考资源
 
