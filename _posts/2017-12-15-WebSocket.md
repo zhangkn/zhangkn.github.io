@@ -24,5 +24,7 @@ site: https://zhangkn.github.io
 >* [Push technology wiki](https://en.wikipedia.org/wiki/Push_technology)
 >* [Socket 与 WebSocket](https://blog.zengrong.net/post/2199.html)
 >* [WebSocket 在线测试](http://www.blue-zero.com/WebSocket/)
-
-
+>* [LuaSocket 初探](http://www.photoneray.com/luasocket/)
+>* [一个LuaSocket封装](https://blog.zengrong.net/post/1980.html)
+>* [cocos](http://forum.cocos.com/)
+>* [lua-websockets](https://luarocks.org/modules/lipp/lua-websockets)
