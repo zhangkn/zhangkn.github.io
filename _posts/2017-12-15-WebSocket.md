@@ -22,6 +22,7 @@ site: https://zhangkn.github.io
 >* [WebSocket 教程](http://www.ruanyifeng.com/blog/2017/05/websocket.html?utm_source=tuicool&utm_medium=referral)
 >* [WebSocket wiki](https://en.wikipedia.org/wiki/WebSocket)
 >* [Push technology wiki](https://en.wikipedia.org/wiki/Push_technology)
-
+>* [Socket 与 WebSocket](https://blog.zengrong.net/post/2199.html)
+>* [WebSocket 在线测试](http://www.blue-zero.com/WebSocket/)
 
 
