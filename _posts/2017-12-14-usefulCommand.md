@@ -97,6 +97,25 @@ devzkndeMacBook-Pro:zhangkn.github.io devzkn$ rvictl -s udid1
 http && ip.src_host== 192.168.2.174
 ```
 
+
+###  利用 PrivateFrameworks 打开app
+Image Source: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
+
+```
+//Operating System: Version 8.4 (Build 12H143)
+
+%new
+//打开
+- (void)openApplicationWithBundleID
+{
+    Class CLSApplicationWorkspace = objc_getClass("LSApplicationWorkspace");
+    NSObject * workspace = [CLSApplicationWorkspace performSelector:@selector(defaultWorkspace)];
+    [workspace performSelector:@selector(openApplicationWithBundleID:) withObject:@"com.knalima.mn"];
+}
+```
+
+
+
 ### Q&A
 
 >* -sh: ps: command not found
