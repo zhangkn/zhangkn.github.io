@@ -33,6 +33,8 @@ stackoverflow user: 8633507
 <a href="http://www.securitylearn.net/">SecurityLearn：学习新的黑客技术的地方</a>
 <p>
 <a href="https://azeria-labs.com/writing-arm-assembly-part-1/"> ARM Assembly Basics教程</a>
+<p>
+<a href="http://mayuyu.io">Naville Zhang</a>
 <p> 
 <a target="_blank" href='http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html'>ruanyifeng</a>
 <p> 
