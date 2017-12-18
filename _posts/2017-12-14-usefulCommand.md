@@ -115,6 +115,32 @@ Image Source: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaun
 ```
 
 
+### ios 中利用NSTask 执行shell脚本
+```
+//执行shell脚本
+NSString *doShellCmd(NSString *cmd)
+{
+    NSTask *task;
+	task = [[NSTask alloc ]init];//通过NSTask，您的程序可以分出 一个子进程来执行其它工作或进行进度监控。
+	[task setLaunchPath:@"/bin/bash"];
+	NSArray *arguments = [NSArray arrayWithObjects:@"-c",cmd, nil];
+	[task setArguments:arguments];
+
+	NSPipe *pipe = [NSPipe pipe];//NSPipe代表一个BSD管道，即一种进程间的单向通讯通道。 线程和子任务
+	[task setStandardOutput:pipe];
+
+	NSFileHandle *file = [pipe fileHandleForReading];
+
+	[task launch];
+
+	NSData *data = [file readDataToEndOfFile];
+
+	NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    return string;
+}
+```
+
+
 
 ### Q&A
 
