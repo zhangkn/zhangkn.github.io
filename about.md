@@ -67,6 +67,11 @@ stackoverflow user: 8633507
 
 <p>
 <a target="_blank" href="http://jsbin.com/muqamiqimu/edit?js,console">jsbin 网页脚本的例子</a>
+<p>
+
+<a target="_blank" href="https://objccn.io/issue-14-4/">XPC</a>
+
+
 
 <h3>  friendship twitter </h3>
 
