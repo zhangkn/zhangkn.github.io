@@ -24,6 +24,7 @@ CustomHTTPProtocol shows how to use an NSURLProtocol subclass to intercept the H
 <tt>+canInitWithRequest:</tt>
 ```
 - 对当前的请求对象需要进行哪些处理？
+
 ```
 + (NSURLRequest *)canonicalRequestForRequest:(NSURLRequest *)request;
 ```
