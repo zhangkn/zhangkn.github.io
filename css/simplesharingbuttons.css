@@ -1,0 +1,27 @@
+
+/**   http://kuchaguangjie.iteye.com/blog/759805 */
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  float:right;
+  text-align:center;
+}
+
+ul.share-buttons li{
+  display: inline;/* block inline padding */
+  text-align:center;
+}
+
+
+ul.share-buttons .sr-only{
+  position: absolute;/*relative absolute */
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+

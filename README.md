@@ -134,6 +134,11 @@ $(document).ready(function(){
 - [使用hugo搭建个人博客站点](https://blog.coderzh.com/2015/08/29/hugo/)
 - [hugo-pacman-theme](http://coderzh.github.io/hugo-pacman-theme/)
 - [StaticGen](https://www.staticgen.com/)
+- [dbyll](https://github.com/dbtek/dbyll)
+- [tmallfe.github.io](https://github.com/tmallfe/tmallfe.github.io)
+- [Huxpro/huxpro.github.io](https://github.com/Huxpro/huxpro.github.io)
+- [share-buttons-jekyll](https://superdevresources.com/share-buttons-jekyll/)
+- [Simple Sharing Buttons Generator](https://simplesharingbuttons.com/)
 # 辅助 post.sh  
 ```
 #!/bin/sh

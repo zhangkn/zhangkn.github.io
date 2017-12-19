@@ -43,6 +43,12 @@ site: https://zhangkn.github.io
 - [A theos example of running App as root](https://github.com/zhangkn/RootApp) setuid(0); 是重点
 - [INJECTING MISSING METHODS AT RUNTIME](https://www.hopperapp.com/blog/?author=1)
 - [setting-up-ios-hacking-env](https://togetherwehack.com/2017/09/19/setting-up-ios-hacking-env/)
+- [unknowncheats](https://www.unknowncheats.me/forum/index.php)
+- [http://rehints.com/](http://rehints.com/)
+- [damnvulnerableiosapp](http://damnvulnerableiosapp.com/)
+- [introducing-the-ios-reverse-engineering-toolkit](https://www.veracode.com/blog/2014/03/introducing-the-ios-reverse-engineering-toolkit)
+
+
 
 ###  参考博客
 

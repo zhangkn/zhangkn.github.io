@@ -50,7 +50,7 @@ Running dot for graph 1175/42806
 
 >* 1、Reveal
 >* 2、[MachOView](https://sourceforge.net/projects/machoview/)  is a visual Mach-O file browser
->* 3、[Hopper](https://www.hopperapp.com/) 
+>* 3、[Hopper](https://www.hopperapp.com/) ;同系列产品： [radare2](https://github.com/radare/radare2)
 支持伪代码
 ```
 int __ZL24_logosLocalCtor_c81e728diPPcS0_(int arg0, int * * arg1, int * * arg2) {
@@ -365,6 +365,7 @@ devzkndeMacBook-Pro:~ devzkn$ lldb
 [iOS instrumentation without jailbreak](https://www.nccgroup.trust/au/about-us/newsroom-and-events/blogs/2016/october/ios-instrumentation-without-jailbreak/)
 [node-applesign](https://github.com/nowsecure/node-applesign)
 [Kim Jong Cracks](https://github.com/KJCracks)
-
+[ios-application-security-part-15-static-analysis-of-ios-applications-using-inalyzer](http://highaltitudehacks.com/2013/09/17/ios-application-security-part-15-static-analysis-of-ios-applications-using-inalyzer/)
+- [introducing-the-ios-reverse-engineering-toolkit](https://www.veracode.com/blog/2014/03/introducing-the-ios-reverse-engineering-toolkit)
 <br>
 
