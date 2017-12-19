@@ -37,6 +37,12 @@ site: https://zhangkn.github.io
 - [反调试及绕过](http://jmpews.github.io/2017/08/09/darwin/%E5%8F%8D%E8%B0%83%E8%AF%95%E5%8F%8A%E7%BB%95%E8%BF%87/)
 - [AppleTrace](https://gitter.im/appletrace/AppleTrace)
 - [octrace](https://github.com/wadahana/octrace)
+- [checker_dev_manual](https://clang-analyzer.llvm.org.cn/checker_dev_manual.html)
+- [The LLVM Compiler Infrastructure](http://llvm.org/)
+- [MakePackageInstall](https://github.com/zhangkn/Lai/blob/master/MakePackageInstall)   指定  debug=0
+- [A theos example of running App as root](https://github.com/zhangkn/RootApp) setuid(0); 是重点
+- [INJECTING MISSING METHODS AT RUNTIME](https://www.hopperapp.com/blog/?author=1)
+- [setting-up-ios-hacking-env](https://togetherwehack.com/2017/09/19/setting-up-ios-hacking-env/)
 
 ###  参考博客
 

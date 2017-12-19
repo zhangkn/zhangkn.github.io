@@ -37,7 +37,7 @@ Running dot for graph 1175/42806
 　　 Device Tools 
 >* 1、apt 0.6 transitional（用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件,例如安装socat、git: apt-get install socat git ）
 >* 2、dumpdecrypted.dylib or [clutch](https://github.com/KJCracks/Clutch)
->* 3、cycript 
+>* 3、[cycript](http://www.cycript.org/) [frida](https://build.frida.re/frida/)
 >* 4、class-dump-z （同系列工具：[class-dump](http://stevenygard.com/projects/class-dump/)、classdump-dyld、keychain_dumper、[swift-dump](https://github.com/zhangkn/swift-dump)）
 >* 5、otool (同系列工具：jtool ) -h -hv -vl
 >* 6、lipo、[debugserver](http://iphonedevwiki.net/index.php/Debugserver)、lldb、[toggle-pie](https://github.com/zhangkn/KNtoggle-pie)

@@ -79,6 +79,11 @@ stackoverflow user: 8633507
 
 <p>
 <a target="_blank" href="https://twitter.com/ruanyf">ruanyf</a>
+<p>
+
+<a target="_blank" href="https://twitter.com/iOSAppRE">iOSAppRE</a>
+<p>
+<a target="_blank" href="https://twitter.com/bSr43">Hopper Disassembler</a>
 
 <p>
 有关于iosre的新技术和工具欢迎交流，让我们一起来进步~ 

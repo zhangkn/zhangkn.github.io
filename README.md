@@ -92,6 +92,10 @@ html标签验证  网站首页html代码的<head>标签与</head>标签之间
 -|　　　|--　default.html
 
 
+# cse
+
+- [site:https://zhangkn.github.io/   iosre](https://www.google.com.sg/search?dcr=0&ei=QdE4Wov3EYeFvQTNzY24Cg&q=site%3Ahttps%3A%2F%2Fzhangkn.github.io%2F+++iosre&oq=site%3Ahttps%3A%2F%2Fzhangkn.github.io%2F+++iosre&gs_l=psy-ab.3...44442.46722.0.47230.9.9.0.0.0.0.588.1838.3-2j0j2.4.0....0...1.1j4.64.psy-ab..6.0.0....0.1uwBt5n_ubs)
+
 # 其他参考文章
 - [Jekyll创始人的示例库](https://github.com/mojombo/tpw)
 - [使用BitBucket和FTPloy私有Jekyll源码](http://chenjun.com/)
@@ -102,6 +106,13 @@ html标签验证  网站首页html代码的<head>标签与</head>标签之间
 - [hello-world-vno](http://vno.onevcat.com/2016/02/hello-world-vno/)
 - [OneV-s-Den](https://github.com/onevcat/OneV-s-Den)
 - [markdown的基本使用](https://blog.zz173.com/detail/1)
+- [How to Jailbreak iOS 10-10.2 with Yalu](https://www.cybrary.it/0p3n/jailbreak-ios-10-10-2-yalu/)
+- [extra_recipe](https://github.com/xerub/extra_recipe)
+- [setting-up-ios-hacking-env](https://togetherwehack.com/2017/09/19/setting-up-ios-hacking-env/)
+- [https://gohugo.io/](https://gohugo.io/) https://github.com/gohugoio/hugo/blob/master/CONTRIBUTING.md
+- [使用hugo搭建个人博客站点](https://blog.coderzh.com/2015/08/29/hugo/)
+- [hugo-pacman-theme](http://coderzh.github.io/hugo-pacman-theme/)
+
 # 辅助 post.sh  
 ```
 #!/bin/sh
