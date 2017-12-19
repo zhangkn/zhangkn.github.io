@@ -72,6 +72,8 @@ stackoverflow user: 8633507
 <a target="_blank" href="https://objccn.io/issue-14-4/">XPC</a>
 
 
+<p>
+<a target="_blank" href="https://github.com/shadowsocks/ShadowsocksX-NG">ShadowsocksX</a>
 
 <h3>  friendship twitter </h3>
 

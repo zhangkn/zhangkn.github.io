@@ -36,6 +36,7 @@ site: https://zhangkn.github.io
 - [使用HookZz快速逆向(Hack objc_msgSend) 理清逻辑](http://iosre.com/t/hookzz-hack-objc-msgsend/9422)
 - [反调试及绕过](http://jmpews.github.io/2017/08/09/darwin/%E5%8F%8D%E8%B0%83%E8%AF%95%E5%8F%8A%E7%BB%95%E8%BF%87/)
 - [AppleTrace](https://gitter.im/appletrace/AppleTrace)
+- [octrace](https://github.com/wadahana/octrace)
 
 ###  参考博客
 
