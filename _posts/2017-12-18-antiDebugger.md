@@ -30,6 +30,16 @@ site: https://zhangkn.github.io
 - [HookZz](https://github.com/jmpews/HookZz)
 - [HookZzModules](https://github.com/jmpews/HookZzModules/tree/master/AntiDebugBypass)
 - [反调试与绕过的奇淫技巧](http://iosre.com/t/topic/9351)
+- [动手写一个简单的Mac内核反反调试扩展](http://www.alonemonkey.com/2017/11/20/get-start-antidebug-kext/)
+- [AppleTrace dance with MonkeyDev](http://everettjf.com/2017/10/12/appletrace-dancewith-monkeydev/)
+- [HookFramework 架构设计](http://iosre.com/t/hookframework/9350)
+- [使用HookZz快速逆向(Hack objc_msgSend) 理清逻辑](http://iosre.com/t/hookzz-hack-objc-msgsend/9422)
+- [反调试及绕过](http://jmpews.github.io/2017/08/09/darwin/%E5%8F%8D%E8%B0%83%E8%AF%95%E5%8F%8A%E7%BB%95%E8%BF%87/)
+- [AppleTrace](https://gitter.im/appletrace/AppleTrace)
+
+###  参考博客
+
+- [jmpews](http://jmpews.github.io/2017/08/09/darwin/%E5%8F%8D%E8%B0%83%E8%AF%95%E5%8F%8A%E7%BB%95%E8%BF%87/)
 
 ### 附录
 

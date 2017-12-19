@@ -35,7 +35,7 @@ Running dot for graph 1175/42806
 ### Requirements（前期准备-基础的工具清单）
 
 　　 Device Tools 
->* 1、apt 0.6 transitional（用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件,例如安装scout、git: apt-get install socat git ）
+>* 1、apt 0.6 transitional（用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件,例如安装socat、git: apt-get install socat git ）
 >* 2、dumpdecrypted.dylib or [clutch](https://github.com/KJCracks/Clutch)
 >* 3、cycript 
 >* 4、class-dump-z （同系列工具：[class-dump](http://stevenygard.com/projects/class-dump/)、classdump-dyld、keychain_dumper、[swift-dump](https://github.com/zhangkn/swift-dump)）
@@ -142,7 +142,7 @@ OUTPUTFILE:/var/root/Documents/iNalyzer/2B559443-6CEE-4731-AA3B-7E587BE67219/sta
 iPhone:/Applications/iNalyzer.app root# scp /var/root/Documents/iNalyzer/2B559443-6CEE-4731-AA3B-7E587BE67219/static_2017_12_09-14_24_57.zip devzkn@192.168.2.186://Users/devzkn/decrypted/MoonV5.4.0
 
 ```
-ps :iPhone SSH Mac 的前提是mac 提前setremotelogin on
+ps :iPhone SSH Mac 的前提是mac setremotelogin on
 
 ```
 devzkndeMacBook-Pro:.ssh devzkn$ sudo systemsetup -setremotelogin off
