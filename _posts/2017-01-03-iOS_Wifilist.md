@@ -38,18 +38,19 @@ Running dot for graph 1175/42806
 >* 1、apt 0.6 transitional（用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件,例如安装socat、git: apt-get install socat git ）
 >* 2、dumpdecrypted.dylib or [clutch](https://github.com/KJCracks/Clutch)
 >* 3、[cycript](http://www.cycript.org/) [frida](https://build.frida.re/frida/)
->* 4、class-dump-z （同系列工具：[class-dump](http://stevenygard.com/projects/class-dump/)、classdump-dyld、keychain_dumper、[swift-dump](https://github.com/zhangkn/swift-dump)）
->* 5、otool (同系列工具：jtool ) -h -hv -vl
+>* 4、class-dump-z （同系列工具：[class-dump](http://stevenygard.com/projects/class-dump/)、classdump-dyld、keychain_dumper、[swift-dump](https://github.com/zhangkn/swift-dump)）用来 dump 目标对象的 class 信息的工具
+>* 5、otool (同系列工具：jtool ) -h -hv -vl  
 >* 6、lipo、[debugserver](http://iphonedevwiki.net/index.php/Debugserver)、lldb、[toggle-pie](https://github.com/zhangkn/KNtoggle-pie)
 >* 7、OpenSSH  2 (mac 同系列工具: [usbmuxd-1.0.8](https://cgit.sukimashita.com/usbmuxd.git/) ) ssh scp 都是建立在这基础之上
 >* 8、 AFlexLoader（mac 同系列工具： Reveal）
 >* 9、Cydia Substrate (call/hook any method)
 >* 10、[frida-server](https://build.frida.re/frida/)
+>* 11、nm 旨在浏览mach-o可执行文件中的名称和符号  nm --help
 
    Desktop tools
 
 >* 1、Reveal
->* 2、[MachOView](https://sourceforge.net/projects/machoview/)  is a visual Mach-O file browser
+>* 2、[MachOView](https://sourceforge.net/projects/machoview/)  is a visual Mach-O file browser ;MachOView就像otool和nm，但是有GUI，因此可以用户友好的方式浏览mach-o文件的结构
 >* 3、[Hopper](https://www.hopperapp.com/) ;同系列产品： [radare2](https://github.com/radare/radare2)
 支持伪代码
 ```
@@ -61,6 +62,17 @@ int __ZL24_logosLocalCtor_c81e728diPPcS0_(int arg0, int * * arg1, int * * arg2) 
 }
 ```
 >* 4、Tweak 工具：Theos、iOSOpenDev、MonkeyDev（支持CocoaPods) 可以用来开发iPhone tool 、iPhone tweak 
+>* 5、codesign --help 关于Code Signature的全面信息
+
+
+标准命令行工具
+>* lldb是一个调试器，功能非常强大。
+>* otool是一个用于浏览mach-o可执行文件的控制台工具;
+>* nm旨在浏览mach-o可执行文件中的名称和符号;
+>* codesign可以提供关于Code Signature的全面信息
+```
+devzkndeMacBook-Pro:Payload devzkn$ codesign -d -v MKNoon
+```
 
 
 
@@ -367,5 +379,6 @@ devzkndeMacBook-Pro:~ devzkn$ lldb
 [Kim Jong Cracks](https://github.com/KJCracks)
 [ios-application-security-part-15-static-analysis-of-ios-applications-using-inalyzer](http://highaltitudehacks.com/2013/09/17/ios-application-security-part-15-static-analysis-of-ios-applications-using-inalyzer/)
 - [introducing-the-ios-reverse-engineering-toolkit](https://www.veracode.com/blog/2014/03/introducing-the-ios-reverse-engineering-toolkit)
+- [opensource](http://www.opensource.apple.com/)
 <br>
 
