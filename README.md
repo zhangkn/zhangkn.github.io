@@ -139,6 +139,7 @@ $(document).ready(function(){
 - [Huxpro/huxpro.github.io](https://github.com/Huxpro/huxpro.github.io)
 - [share-buttons-jekyll](https://superdevresources.com/share-buttons-jekyll/)
 - [Simple Sharing Buttons Generator](https://simplesharingbuttons.com/)
+- [weibo connect](http://open.weibo.com/connect)
 # 辅助 post.sh  
 ```
 #!/bin/sh

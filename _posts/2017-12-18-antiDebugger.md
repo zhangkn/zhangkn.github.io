@@ -47,14 +47,14 @@ site: https://zhangkn.github.io
 - [http://rehints.com/](http://rehints.com/)
 - [damnvulnerableiosapp](http://damnvulnerableiosapp.com/)
 - [introducing-the-ios-reverse-engineering-toolkit](https://www.veracode.com/blog/2014/03/introducing-the-ios-reverse-engineering-toolkit)
-- [how-to-reverse-engineer-os-x-and-ios-software](https://www.apriorit.com/dev-blog/363-how-to-reverse-engineer-os-x-and-ios-software)
+- [how-to-reverse-engineer-os-x-and-ios-software](https://www.apriorit.com/dev-blog/363-how-to-reverse-engineer-os-x-and-ios-software) aozhimin
  
 
 
 ###  参考博客
 
 - [jmpews](http://jmpews.github.io/2017/08/09/darwin/%E5%8F%8D%E8%B0%83%E8%AF%95%E5%8F%8A%E7%BB%95%E8%BF%87/)
-
+- [/iOS-Reverse-Engineering-presentation](https://aozhimin.github.io/iOS-Reverse-Engineering-presentation/#/title) 
 ### 附录
 
 syscall hook
