@@ -47,7 +47,8 @@ site: https://zhangkn.github.io
 - [http://rehints.com/](http://rehints.com/)
 - [damnvulnerableiosapp](http://damnvulnerableiosapp.com/)
 - [introducing-the-ios-reverse-engineering-toolkit](https://www.veracode.com/blog/2014/03/introducing-the-ios-reverse-engineering-toolkit)
-
+- [how-to-reverse-engineer-os-x-and-ios-software](https://www.apriorit.com/dev-blog/363-how-to-reverse-engineer-os-x-and-ios-software)
+ 
 
 
 ###  参考博客
