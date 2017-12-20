@@ -47,6 +47,24 @@ killall -9 SpringBoard
 socat - UNIX-CONNECT:/var/run/lockdown/syslog.sock
 ```
 
+### 排查网络问题的常用命令
+
+>* 修改 手机hosts
+```
+	install.exec "echo '127.0.0.1 localhost 
+	 192.168.2.254 wssesschknknknknkdsat.fkdjdasssllllqusssasssnwwwwgwwwe.cn' > /etc/hosts"
+```
+
+>* ping 网络
+```
+iPhone:~ root# ping wecKNhat.fsshhhhasqKNuanKNgllkjdde.cn
+```
+
+>* curl 请求接口
+```
+iPhone:~ root# curl "http://wKNeKNcKNhKNat.faKNqKNuaKNnKNge.cn/inKNdeKNx.php?m=TKKNL&c=trKNKNansKNKNKNKNNfoKNKKNrm"
+```
+
 ### apt-get
 
 >* update
