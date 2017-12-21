@@ -141,6 +141,8 @@ $(document).ready(function(){
 - [Simple Sharing Buttons Generator](https://simplesharingbuttons.com/)
 - [weibo connect](http://open.weibo.com/connect)
 - [http://share.baidu.com/code](http://share.baidu.com/code)
+- [baiduShare](https://github.com/hrwhisper/baiduShare)
+- [push](http://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title18)
 # 辅助 post.sh  
 ```
 #!/bin/sh
