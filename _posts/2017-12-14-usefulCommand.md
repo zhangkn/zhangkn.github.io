@@ -159,6 +159,21 @@ NSString *doShellCmd(NSString *cmd)
 ```
 
 
+###  deploy tweak shell
+
+
+>* 比如 make package 过程，可以通过 make package message=yes 输出详细错误信息
+```
+#!/bin/sh
+cd `dirname $0` 
+make clean
+make package install debug=0
+rm ./packages/*.deb
+exit 0
+```
+
+
+
 
 ### Q&A
 

@@ -19,17 +19,31 @@ site: https://zhangkn.github.io
 ### iOS 逆向分析方法
 
 
->* 网络分析
+
+
+>* 1、网络分析
 
 抓包工具有 tcpdump, WireShark, Charles
 
->* [静态分析](https://zhangkn.github.io/2017/01/iOS_Wifilist/#gsc.tab=0)
+>* 2、[静态分析](https://zhangkn.github.io/2017/01/iOS_Wifilist/#gsc.tab=0)
 
 在app没运行的情况下，借助反汇编工具（hopper等）查看代码内部结构、借助otool工具查看二进制文件信息、class-dump  目标对象的 class 信息等分析过程。分析的信息包括网络协议、数据格式。
 
->* 动态分析(动态调试、代码跟踪)
+>* 3、 动态分析(动态调试、代码跟踪)
 通过借助lldb、Cycript、frida、AFLEXLoader、运行时常用的API等工具进行调试、分析代码，获取内存状态甚至修改内存的过程。改过程包括反反调试等。
 
+
+
+### 整体套路
+
+ 以下步骤没有绝对的顺序
+ - 先dumpdecrypted（砸壳）、class-dump（导出OC头文件）寻找分析切入点；砸壳步骤可以使用[frida-ios-dump-master](https://zhangkn.github.io/2017/12/dumpdecrypted/#gsc.tab=0) 一次性完成。
+ - 用cycript、Frida、AFLEXLoader、[hookClass](https://github.com/zhangkn/hookClass/tree/master/hookClass/KNHookClass) 定位目标视图，获取目标的VC、delegate
+ - 使用IDA、hopper、lldb 配合使用分析代码调用逻辑
+ - 编写tweak（借助theos、MonkeyDev进行编写）
+
+
+ 
 
 
 ### Mac 端的工具
@@ -39,7 +53,9 @@ Theos 是一个基于 Unix 平台(OS X，iOS…)和大多数的 Linux 平台下�
 
 当然我还挺喜欢用MonkeyDev（支持CocoaPods) 开发iPhone tool 、iPhone tweak。
 
+>* [IDA](https://down.52pojie.cn/Tools/Disassemblers/)
 
+恶意代码分析、漏洞研究、COTS验证、隐私保护
 
 
 
