@@ -143,6 +143,7 @@ $(document).ready(function(){
 - [http://share.baidu.com/code](http://share.baidu.com/code)
 - [baiduShare](https://github.com/hrwhisper/baiduShare)
 - [push](http://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title18)
+- [confluence 文档保存](http://cwiki.apachecn.org/display/Index/Index)
 # 辅助 post.sh  
 ```
 #!/bin/sh
