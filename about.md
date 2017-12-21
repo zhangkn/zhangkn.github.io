@@ -27,6 +27,20 @@ stackoverflow user: 8633507
 
 
 <h3> friendship blog </h3>
+
+常去访问的安全网站推荐
+<p>
+
+<a href="https://reverse.put.as/">reverse.put.as</a>
+<p>
+<a href="http://www.phrack.org/papers/attacking_ruby_on_rails.html">attacking_ruby_on_rails</a>
+<p>
+<a href="https://www.virusbulletin.com/blog/">https://www.virusbulletin.com/blog/</a>
+<p>
+<a href="http://ho.ax/">http://ho.ax/</a>
+
+<p>
+<a href="http://osxbook.com/">osxbook</a>
 <p>
 <a href="http://kjcracks.github.io/">kjcracks</a>
 <p>

@@ -117,6 +117,11 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 
 - [jmpews](http://jmpews.github.io/2017/08/09/darwin/%E5%8F%8D%E8%B0%83%E8%AF%95%E5%8F%8A%E7%BB%95%E8%BF%87/)
 - [/iOS-Reverse-Engineering-presentation](https://aozhimin.github.io/iOS-Reverse-Engineering-presentation/#/title) aozhimin
+- [Pegasus间谍套件内部原理及流程剖析](https://bbs.pediy.com/thread-212483.htm)
+- [IOSurfaceRootUserClient Port UAF](http://blog.pangu.io/author/windknown/)
+- [v0rtex](https://siguza.github.io/v0rtex/)
+- [Through the mach portal](https://bugs.chromium.org/p/project-zero/issues/attachment?aid=280146)
+- [ios-resources](https://github.com/Siguza/ios-resources)
 ### 附录
 
 syscall hook
