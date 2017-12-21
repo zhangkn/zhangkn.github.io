@@ -76,6 +76,13 @@ stackoverflow user: 8633507
 <a target="_blank" href="https://github.com/shadowsocks/ShadowsocksX-NG">ShadowsocksX</a>
 <p>
 <a target="_blank" href="http://turingh.github.io/">http://turingh.github.io/</a>
+<p>
+
+<a target="_blank" href="https://samhuri.net/archive">samhuri</a>
+
+<p>
+<a target="_blank" href="https://zhiwei.li/text/category/reverse_engineering/">reverse_engineering</a>
+
 
 <h3>  friendship twitter </h3>
 

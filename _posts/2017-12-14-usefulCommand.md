@@ -172,7 +172,64 @@ rm ./packages/*.deb
 exit 0
 ```
 
+### lldb远程调试命令
 
+>* 查看可用的平台
+```
+(lldb) platform list
+Available platforms:
+host: Local Mac OS X user platform plug-in.
+remote-freebsd: Remote FreeBSD user platform plug-in.
+remote-linux: Remote Linux user platform plug-in.
+remote-netbsd: Remote NetBSD user platform plug-in.
+remote-windows: Remote Windows user platform plug-in.
+remote-ios: Remote iOS platform plug-in.
+```
+>* 选择远程ios为 当前平台
+```
+(lldb) platform select remote-ios
+  Platform: remote-ios
+ Connected: no
+  SDK Path: "/Users/devzkn/Library/Developer/Xcode/iOS DeviceSupport/11.1.2 (15B202)"
+ SDK Roots: [ 0] "/Users/devzkn/Library/Developer/Xcode/iOS DeviceSupport/10.0.2 (14A456)"
+ SDK Roots: [ 1] "/Users/devzkn/Library/Developer/Xcode/iOS DeviceSupport/9.0 (13A344)"
+```
+选项解释
+```
+--sysroot  指定SDK根目录(含有所有的远程系统文件)
+--version
+--build
+```
+
+
+```
+(lldb) platform select remote-ios --sysroot  /Volumes/Xcode/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS5.1.sdk
+```
+
+>* 连接到远程debugserver (Connect a platform by name to be the currently selected platform.
+
+```
+(lldb) platform connect connect://127.0.0.1:12345
+```
+
+>*  Mac端LLDB的接入 即LLDB连接 iPhone debugserver :连接到调试服务(Connect to a remote debug service)
+```
+process connect connect://127.0.0.1:12345
+```
+前提是debugserver 已经在监听对应的端口
+```
+iPhone:/usr/bin root# debugserver *:12345 -a "KNWeKNChat"
+```
+>* breakpoint set
+
+```
+断在ObjC的消息selector
+-S <selector>
+断在指定的内存地址
+-a <address> 
+```
+
+>*  memory read   开始地址  结束地址
 
 
 ### Q&A
@@ -188,5 +245,8 @@ A01-27:~ root# reboot
 
 ### 参考资源
 
+- [unix shell scripts](https://github.com/samsonjs/bin)
+- [lldb远程调试命令](https://zhiwei.li/text/category/reverse_engineering/)
+- [Objetive-C内存布局](https://zhiwei.li/text/2012/03/10/objetive-c%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/)
 
 

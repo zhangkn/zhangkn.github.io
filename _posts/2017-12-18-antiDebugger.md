@@ -56,6 +56,10 @@ Theos 是一个基于 Unix 平台(OS X，iOS…)和大多数的 Linux 平台下�
 >* [IDA](https://down.52pojie.cn/Tools/Disassemblers/)
 恶意代码分析、漏洞研究、COTS验证、隐私保护
 
+>* otool 
+Otool可以提取并显示目标文件的相关信息:包括头部，加载命令，各个段，共享库，动态库。
+
+
 
 
 ### 安全
