@@ -54,10 +54,15 @@ Theos 是一个基于 Unix 平台(OS X，iOS…)和大多数的 Linux 平台下�
 当然我还挺喜欢用MonkeyDev（支持CocoaPods) 开发iPhone tool 、iPhone tweak。
 
 >* [IDA](https://down.52pojie.cn/Tools/Disassemblers/)
-
 恶意代码分析、漏洞研究、COTS验证、隐私保护
 
 
+
+### 安全
+
+- 使用二进制协议传输数据
+- 类名方法名混淆、越狱检测、核心代码使用swift、c\c++ 实现
+- 反调试
 
 
 
