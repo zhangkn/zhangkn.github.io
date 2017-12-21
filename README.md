@@ -140,6 +140,7 @@ $(document).ready(function(){
 - [share-buttons-jekyll](https://superdevresources.com/share-buttons-jekyll/)
 - [Simple Sharing Buttons Generator](https://simplesharingbuttons.com/)
 - [weibo connect](http://open.weibo.com/connect)
+- [http://share.baidu.com/code](http://share.baidu.com/code)
 # 辅助 post.sh  
 ```
 #!/bin/sh
