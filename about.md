@@ -4,9 +4,9 @@ title: 关于我
 stackoverflow user: 8633507
 ---
 
-一个 iOSre 开发者，喜欢研究一些新技术。
+ [I](https://about.me/kunnan) am a iOS Reverse Engineer, My interests range from technology to Information security. 
+ <br>I enjoy sharing my security knowledge and learning from [iosre](http://iosre.com). Always happy to help people learn and teach about security.
 <p>
-平时喜欢整理个人博客，逛逛技术论坛:<a target="_blank" href="http://iosre.com"> iosre </a>
 <p>
 推荐一个我维护的小专栏
 <a target="_blank" href="https://xiaozhuanlan.com/iosre"> iosre </a>

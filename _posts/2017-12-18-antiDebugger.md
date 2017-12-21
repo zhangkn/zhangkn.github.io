@@ -104,6 +104,8 @@ Theos 是一个基于 Unix 平台(OS X，iOS…)和大多数的 Linux 平台下�
 - [damnvulnerableiosapp](http://damnvulnerableiosapp.com/)
 - [introducing-the-ios-reverse-engineering-toolkit](https://www.veracode.com/blog/2014/03/introducing-the-ios-reverse-engineering-toolkit)
 - [how-to-reverse-engineer-os-x-and-ios-software](https://www.apriorit.com/dev-blog/363-how-to-reverse-engineer-os-x-and-ios-software) 
+- [基于OLLVM定制的开源混淆工具Hikari](http://iosre.com/t/ollvm-hikari/10475)
+
  
 
 
