@@ -128,7 +128,8 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 - [黑盒iOS安全分析](https://github.com/iSECPartners/Introspy-iOS)
 - [ntrospy-Analyzer](https://github.com/iSECPartners/Introspy-Analyzer)
 - [82flex](https://82flex.com/)
-
+- [objective-c-internals](http://algorithm.com.au/downloads/talks/objective-c-internals/objective-c-internals.pdf)
+- [algorithm](http://algorithm.com.au/blog/)
 
 ### 附录
 
