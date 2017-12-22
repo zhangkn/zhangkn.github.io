@@ -122,6 +122,10 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 - [v0rtex](https://siguza.github.io/v0rtex/)
 - [Through the mach portal](https://bugs.chromium.org/p/project-zero/issues/attachment?aid=280146)
 - [ios-resources](https://github.com/Siguza/ios-resources)
+- [给 frida 做了个图形界面，动态分析 iOS 应用](http://iosre.com/t/frida-ios/9815)
+- [idb](https://github.com/dmayer/idb)
+
+
 ### 附录
 
 syscall hook

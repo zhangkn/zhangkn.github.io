@@ -2,13 +2,14 @@
 layout: default
 ---
 
-<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
+<article class="post-container post-container--single" itemscope itemtype="https://schema.org/BlogPosting">
+  <link itemprop="mainEntityOfPage" href="{{site.mainEntityOfPage}}">
+  <header class="post-header" itemscope itemtype="https://schema.org/WPHeader">
     <div class="post-meta">
       <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time>
       <span class="post-meta__tags tags"></span>
     </div>
-    <h1 class="post-title">{{ page.title }}</h1>
+    <h1 itemprop="headline" class="post-title">{{ page.title }}</h1>
   </header>
 
   <section class="post">

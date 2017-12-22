@@ -1,20 +1,20 @@
-<header class="panel-cover {% if page.layout == 'post' or page.layout == 'page' %}panel-cover--collapsed{% endif %}" style="background-image: url('/images/background-cover.jpg')">
+<header class="panel-cover {% if page.layout == 'post' or page.layout == 'page' %}panel-cover--collapsed{% endif %}" style="background-image: url('/images/background-cover.jpg')" itemscope itemtype="https://schema.org/WPHeader">
   <div class="panel-main">
 
     <div class="panel-main__inner panel-inverted">
     <div class="panel-main__content">
         <!-- 头像效果-start -->
-        <div class="ih-item circle effect right_to_left">            
+        <div class="ih-item circle effect right_to_left" itemprop="author" itemscope itemtype="https://schema.org/Person">            
             <a href="/#blog" title="前往 {{ site.title }} 的主页" class="blog-button">
-                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="img" itemprop="image"><img src="/images/avatar.jpg" alt="img"></div>
                 <div class="info">
-                    <div class="info-back">
-                        <h2> 
+                    <div class="info-back" >
+                        <h2  itemprop="name" > 
                             {% if site.avatarTitle %}
                                 {{site.avatarTitle}}
                             {% endif %}
                         </h2>
-                        <p>
+                        <p  itemprop="description">
                            {% if site.avatarDesc %}
                                 {{site.avatarDesc}}
                             {% endif %}
@@ -24,12 +24,12 @@
             </a>
         </div>
         <!-- 头像效果-end -->
-        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for {{ site.title }}" class="blog-button">{{ site.title }}</a></h1>
+        <h1 class="panel-cover__title panel-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><a  itemprop="name" href="/#blog" title="link to homepage for {{ site.title }}" class="blog-button">{{ site.title }}</a></h1>
         {% if site.subtitle %}
         <span class="panel-cover__subtitle panel-subtitle">{{site.subtitle}}</span>
         {% endif %}
         <hr class="panel-cover__divider" />
-        <p class="panel-cover__description">{{ site.description }}</p>
+        <p itemprop="description" itemscope itemtype="https://schema.org/Organization" class="panel-cover__description">{{ site.description }}</p>
         <hr class="panel-cover__divider panel-cover__divider--secondary" />
         
         {% if site.welcome_message %}

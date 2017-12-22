@@ -144,6 +144,12 @@ $(document).ready(function(){
 - [baiduShare](https://github.com/hrwhisper/baiduShare)
 - [push](http://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title18)
 - [confluence 文档保存](http://cwiki.apachecn.org/display/Index/Index)
+- [microdata-markup-with-mainentityofpage-for-google-article-rich-snippet/](https://stackoverflow.com/questions/36117596/microdata-markup-with-mainentityofpage-for-google-article-rich-snippet/36117597#36117597)
+- [adding-schema-org-metadata-to-Jekyll/](http://hungchicheng.me/2017/06/02/adding-schema-org-metadata-to-Jekyll/)
+- [http://schema.org/ 结构化数据的模式](http://schema.org/)
+- [Schema.org 中文站](https://schema.org.cn/docs/getstarted.html)
+- [microdata例子](https://github.com/lidong1665/lidong1665.github.com/blob/master/page/2/index.html)
+- [WPHeader](http://schema.org/WPHeader)
 # 辅助 post.sh  
 ```
 #!/bin/sh

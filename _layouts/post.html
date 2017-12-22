@@ -2,9 +2,10 @@
 layout: default
 ---
 
-<article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }} {% include simplesharingbuttons.html %}</h1> 
+<article class="post-container post-container--single" itemscope itemtype="https://schema.org/BlogPosting">
+  <link itemprop="mainEntityOfPage" href="{{site.mainEntityOfPage}}">
+  <header class="post-header" itemscope itemtype="https://schema.org/WPHeader">
+    <h1  itemprop="Headline" class="post-title">{{ page.title }} {% include simplesharingbuttons.html %}</h1> 
     <div class="post-meta">
       <img src="/images/calendar.png" width="20px"/> 
       <time datetime="{{page.date | date: date_to_xmlschema}}" itemprop="datePublished" class="post-meta__date date">{{page.date | date: "%F"}}</time>  
@@ -19,11 +20,11 @@ layout: default
     
   </header>
 
-  <section class="post">
+  <section class="post"  itemscope itemtype="https://schema.org/BlogPosting" >
     {{ content }}
     <!-- 转载声明的封装-->
-    <p>
-      转载请注明：<a target="_blank" href='{{site.url}}'>张坤楠的博客</a> > <a target="_blank" href='{{page.url}}'>{{page.title}}</a> 
+    <p itemprop="publisher">
+      转载请注明：<a  itemprop="author" target="_blank" href='{{site.url}}'>张坤楠的博客</a> > <a target="_blank" href='{{page.url}}'>{{page.title}}</a> 
     </p>
 
     <p>
