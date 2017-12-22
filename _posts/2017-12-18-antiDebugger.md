@@ -124,6 +124,10 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 - [ios-resources](https://github.com/Siguza/ios-resources)
 - [给 frida 做了个图形界面，动态分析 iOS 应用](http://iosre.com/t/frida-ios/9815)
 - [idb](https://github.com/dmayer/idb)
+- [iSECPartners](https://github.com/iSECPartners)
+- [黑盒iOS安全分析](https://github.com/iSECPartners/Introspy-iOS)
+- [ntrospy-Analyzer](https://github.com/iSECPartners/Introspy-Analyzer)
+- [82flex](https://82flex.com/)
 
 
 ### 附录
