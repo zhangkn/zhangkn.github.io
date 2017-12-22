@@ -106,6 +106,8 @@ git remote remove origin
 git checkout master
 # merge
 git merge --no-ff  develop
+#push
+git push
 ```
 
 
