@@ -100,7 +100,13 @@ git remote remove origin
 ```
 取消本地目录下关联的远程库;常常用于copyxx项目的基础上，创建新项目的场景
 
-
+>* git 常用合并命令
+```
+#切换回master分支
+git checkout master
+# merge
+git merge --no-ff  develop
+```
 
 
 
