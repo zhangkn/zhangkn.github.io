@@ -109,8 +109,19 @@ git merge --no-ff  develop
 #push
 git push
 ```
-
-
+>* [kngit](https://github.com/zhangkn/KNBin/blob/master/kngit) ：提交代码到本地仓库和远程仓库
+```
+devzkndeMacBook-Pro:bin devzkn$ cat kngit
+#!/bin/sh
+# dirname $0，取得当前执行的脚本文件的父目录
+# cd `dirname $0`，进入这个目录(切换当前工作目录)
+# cd `dirname $0` 
+#alias gitadd='cd `dirname $0` && git add . && git commit -m /!* && git push'
+git add .
+git commit -m $1
+git push
+```
+[更多辅助脚本参考这里](https://github.com/zhangkn/KNBin)
 
 
 ### Remote Virtual Interface Tool
