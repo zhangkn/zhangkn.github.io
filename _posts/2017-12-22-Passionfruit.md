@@ -8,7 +8,20 @@ site: https://zhangkn.github.io
 
 ### 前言
 
-我在使用Passionfruit 的时候，安装步骤碰到的问题是[fatal error: 'frida-core.h' file not found](https://github.com/frida/frida-node/issues/17),具体的请看Q&A。
+- 我在使用Passionfruit 的时候，安装步骤碰到的问题是[fatal error: 'frida-core.h' file not found](https://github.com/frida/frida-node/issues/17),具体的请看Q&A。
+- 安全审计的工具 我觉得iNalyzer 已经过时了，推荐这款[Passionfruit](https://github.com/chaitin/passionfruit);
+- Passionfruit 通过frida注入代码到目标应用实现了个“动态分析iOS应用”的图形界面。
+
+
+
+### Passionfruit 的实现原理
+
+
+![](/images/posts/{{page.title}}/{{page.title}}open.png)
+
+Passionfruit 通过 frida 注入代码到目标应用实现功能，再通过 node.js 服务端消息代理与浏览器通信，用户通过访问网页即可对 App 实现常规的检测任务。
+
+
 
 ###  安装
 
@@ -88,6 +101,11 @@ prebuild-install info install Successfully installed prebuilt binary!
 added 32 packages in 18.574s
 ```
 
+- Unable to launch iOS app: timeout
+
+启动应用程序失败之后，装置就重启了。这个问题 有点类似[Failed to spawn: unable to launch iOS app: timeout](http://iosre.com/t/failed-to-spawn-unable-to-launch-ios-app-timeout/10422)
+
+临时解决方式： 手动启动app ，还是可以正常分析的
 
 ### 参考资料
 
