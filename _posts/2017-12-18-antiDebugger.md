@@ -155,3 +155,7 @@ ios kext load
 - [trident-kloader](https://github.com/Jailbreaks/trident-kloader)
 - [ios-kern-utils](https://github.com/saelo/ios-kern-utils)
 - [kexty](https://github.com/xerub/kexty)
+
+### 参考图
+
+![](/images/posts/{{page.title}}/ios_skills.png)
