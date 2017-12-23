@@ -17,7 +17,7 @@ site: https://zhangkn.github.io
 ### Passionfruit 的实现原理
 
 
-![](/images/posts/{{page.title}}/{{page.title}}.png)
+![](/images/posts/passionFruit/passionFruit.png)
 
 Passionfruit 通过 frida 注入代码到目标应用实现功能，再通过 node.js 服务端消息代理与浏览器通信，用户通过访问网页即可对 App 实现常规的检测任务。
 
