@@ -49,7 +49,7 @@ Running dot for graph 1175/42806
 
    Desktop tools
 
->* 1、Reveal
+>* 1、Reveal、[interface-inspector](http://www.interface-inspector.com/)
 >* 2、[MachOView](https://sourceforge.net/projects/machoview/)  is a visual Mach-O file browser ;MachOView就像otool和nm，但是有GUI，因此可以用户友好的方式浏览mach-o文件的结构,和编辑 Intel 和 ARM 二进制.
 >* 3、[Hopper](https://www.hopperapp.com/) ;(同系列产品： [radare2](https://github.com/radare/radare2)、 [IDA_Pro_v7.0(MacOS)_and_Hex-Rays_Decompiler_(ARMx64,ARM,x64,x86).zip](https://down.52pojie.cn/Tools/Disassemblers/))
 <br>hopper 支持伪代码

@@ -130,6 +130,14 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 - [82flex](https://82flex.com/)
 - [objective-c-internals](http://algorithm.com.au/downloads/talks/objective-c-internals/objective-c-internals.pdf)
 - [algorithm](http://algorithm.com.au/blog/)
+- [FRIEND](https://github.com/alexhude/FRIEND)
+- [Hopper Disassembler批量导出反编译的伪代码](http://www.poboke.com/study/bulk-export-pseudo-code-in-hopper-disassembler.html)
+- [LLDB Python Reference](http://lldb.llvm.org/python-reference.html)
+
+### 安全论坛
+
+- [OSG-TranslationTeam](https://bbs.pediy.com/thread-212685.htm)
+
 
 ### 附录
 
