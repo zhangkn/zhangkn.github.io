@@ -39,10 +39,10 @@ Running dot for graph 1175/42806
 >* 2、dumpdecrypted.dylib or [clutch](https://github.com/KJCracks/Clutch)
 >* 3、[cycript](http://www.cycript.org/) [frida](https://build.frida.re/frida/)
 >* 4、class-dump-z （同系列工具：[class-dump](http://stevenygard.com/projects/class-dump/)、classdump-dyld、keychain_dumper、[swift-dump](https://github.com/zhangkn/swift-dump)）用来 dump 目标对象的 class 信息的工具
->* 5、otool (同系列工具：jtool ) -h -hv -vl  
+>* 5、otool 、objdump(同系列工具：jtool ) -h -hv -vl  
 >* 6、lipo、[debugserver](http://iphonedevwiki.net/index.php/Debugserver)、lldb、[toggle-pie](https://github.com/zhangkn/KNtoggle-pie)
 >* 7、OpenSSH  2 (mac 同系列工具: [usbmuxd-1.0.8](https://cgit.sukimashita.com/usbmuxd.git/) ) ssh scp 都是建立在这基础之上
->* 8、 AFlexLoader（mac 同系列工具： Reveal）
+>* 8、 [AFlexLoader](https://github.com/swiftc-org/AFlexLoader)、[FLEX](https://github.com/Flipboard/FLEX)（mac 同系列工具： Reveal）
 >* 9、Cydia Substrate (call/hook any method)
 >* 10、[frida-server](https://build.frida.re/frida/)
 >* 11、nm 旨在浏览mach-o可执行文件中的名称和符号  nm --help

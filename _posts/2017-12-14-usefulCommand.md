@@ -251,6 +251,15 @@ iPhone:/usr/bin root# debugserver *:12345 -a "KNWeKNChat"
 >*  memory read   开始地址  结束地址
 
 
+### file 
+
+```
+devzkndeMacBook-Pro:MoonV5.4.0 devzkn$ file knMoknon.decrypted
+knMoknon.decrypted: Mach-O universal binary with 2 architectures: [arm_v7:Mach-O executable arm_v7] [arm64]
+knMoknon.decrypted (for architecture armv7):	Mach-O executable arm_v7
+knMoknon.decrypted (for architecture arm64):	Mach-O 64-bit executable arm64
+```
+
 ### Q&A
 
 >* -sh: ps: command not found

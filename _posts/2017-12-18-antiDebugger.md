@@ -133,6 +133,12 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 - [FRIEND](https://github.com/alexhude/FRIEND)
 - [Hopper Disassembler批量导出反编译的伪代码](http://www.poboke.com/study/bulk-export-pseudo-code-in-hopper-disassembler.html)
 - [LLDB Python Reference](http://lldb.llvm.org/python-reference.html)
+- [http://www.tkkk.fun/](http://www.tkkk.fun/)
+- [iOS非主流逆向初探](http://whenbar.com/2017/04/01/iOS%E9%9D%9E%E4%B8%BB%E6%B5%81%E9%80%86%E5%90%91%E5%88%9D%E6%8E%A2/)
+- [iOS程序破解——ARM汇编基础](http://www.cnblogs.com/mddblog/p/4951650.html)
+- [iOS APP的加固保护原理](https://mp.weixin.qq.com/s/gthDSLw45GW3oVlsAOm-dQ)
+- [swiftyper](http://www.swiftyper.com/tags/%E9%80%86%E5%90%91/)
+- [使用 Xcode 调试第三方应用](http://www.swiftyper.com/2017/07/02/attach-third-app-using-xcode/)
 
 ### 安全论坛
 
@@ -157,5 +163,5 @@ ios kext load
 - [kexty](https://github.com/xerub/kexty)
 
 ### 参考图
-
+>* [sec_skills](https://github.com/feicong/sec_skills)
 ![](/images/posts/{{page.title}}/ios_skills.png)

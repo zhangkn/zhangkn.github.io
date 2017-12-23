@@ -42,4 +42,5 @@ install.exec "killall -9 SpringBoard"
 ```
 在管理——软件源——Bigboss里找到preferenceloader，这是Cydia的依赖包，安装就可以。
 ```
+>* [FLEX使用教程](https://github.com/Flipboard/FLEX)
 
