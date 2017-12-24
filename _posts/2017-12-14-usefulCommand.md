@@ -253,12 +253,24 @@ iPhone:/usr/bin root# debugserver *:12345 -a "KNWeKNChat"
 
 ### file 
 
+“file能够识别大量的文件格式，包括数种ASCII 文本文件、各种可执行文件和数据文件。file执行的幻数检查由幻数文件（magic file ）所包含的规则控制。”
+
+>* /usr/share/file/magic
+```
+devzkndeMacBook-Pro:magic devzkn$ ls -lrt /usr/share/file/magic
+total 456
+-rw-r--r--  1 root  wheel    613 Jul 16 05:03 zyxel
+-rw-r--r--  1 root  wheel    451 Jul 16 05:03 zilog
+```
+
+>* “file通过检查文件中的某些特定字段来确认文件的类型”
 ```
 devzkndeMacBook-Pro:MoonV5.4.0 devzkn$ file knMoknon.decrypted
 knMoknon.decrypted: Mach-O universal binary with 2 architectures: [arm_v7:Mach-O executable arm_v7] [arm64]
 knMoknon.decrypted (for architecture armv7):	Mach-O executable arm_v7
 knMoknon.decrypted (for architecture arm64):	Mach-O 64-bit executable arm64
 ```
+
 
 ### Q&A
 
