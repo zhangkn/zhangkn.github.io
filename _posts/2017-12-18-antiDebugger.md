@@ -139,11 +139,12 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 - [iOS APP的加固保护原理](https://mp.weixin.qq.com/s/gthDSLw45GW3oVlsAOm-dQ)
 - [swiftyper](http://www.swiftyper.com/tags/%E9%80%86%E5%90%91/)
 - [使用 Xcode 调试第三方应用](http://www.swiftyper.com/2017/07/02/attach-third-app-using-xcode/)
+- [AntiClassDumpImplementationNotes](https://hikariproject.github.io/2017/12/21/AntiClassDumpImplementationNotes/)
 
 ### 安全论坛
 
 - [OSG-TranslationTeam](https://bbs.pediy.com/thread-212685.htm)
-
+- [基于OLLVM定制的开源混淆工具Hikari](http://iosre.com/t/work-in-progress-ollvm-hikari/10475)
 
 ### 附录
 
