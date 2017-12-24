@@ -4,6 +4,9 @@ title: usefulCommand
 date: 2017-12-14
 tag: iOSre
 ---
+### 前言
+
+常用的命令和工具
 
 ### ssh 远程控制
 
@@ -312,6 +315,39 @@ knMoknon.decrypted (for architecture arm64):	Mach-O 64-bit executable arm64
 ```
 
 
+### ps 
+>* 显示现行终端机下的所有程序，包括其他用户的程序
+```
+devzkndeMacBook-Pro:Payload devzkn$ ps a
+  PID   TT  STAT      TIME COMMAND
+  424 s000  Ss     0:00.05 login -pf devzkn
+  428 s000  S      0:00.03 -bash
+51659 s000  S+     0:00.67 python /Users/devzkn/Downloads/kevinsoftware/ios-Reverse_Engineering/usbmuxd-1.0.8 2/python-client/tcprelay.py -t 22:2222
+```
+>* Display information about other users' processes, including those without controlling terminals.
+```
+devzkndeMacBook-Pro:Payload devzkn$ ps -A
+  PID TTY           TIME CMD
+    1 ??        19:50.79 /sbin/launchd
+   61 ??         0:36.83 /usr/sbin/syslogd
+```
+>* 列出程序时，显示每个程序真正的指令名称，而不包含路径，参数或常驻服务的标示
+```
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ ps c
+  PID   TT  STAT      TIME COMMAND
+  428 s000  S      0:00.03 -bash
+51659 s000  S+     0:00.67 python
+```
+>* ps e   列出程序时，显示每个程序所使用的环境变量。
+
+>* ps u 　 以用户为主的格式来显示程序状况
+
+>* 结合grep 使用，来查找对应的进程信息
+```
+devzkndeMacBook-Pro:passionfruit devzkn$ ps  aux |grep zhangkn.github.io
+devzkn           65404   0.0  0.0  4305256   1808 s004  S+   Sat04PM   0:02.79 /Library/Ruby/Gems/2.3.0/gems/rb-fsevent-0.10.2/bin/fsevent_watch --format=otnetstring --latency 0.1 /Users/devzkn/githubPages/zhangkn.github.io
+```
+
 ### Q&A
 
 >* -sh: ps: command not found
@@ -323,10 +359,14 @@ iphone  安装pstree 即可
 A01-27:~ root# reboot
 ```
 
+
+
 ### 参考资源
 
 - [unix shell scripts](https://github.com/samsonjs/bin)
 - [lldb远程调试命令](https://zhiwei.li/text/category/reverse_engineering/)
 - [Objetive-C内存布局](https://zhiwei.li/text/2012/03/10/objetive-c%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/)
+- [十年•杭研技术秀 | iOS App的加固保护原理](http://blog.163yun.com/archives/1065)
+- [常用工具总结](https://tomatobin.gitbooks.io/iosreproject/content/chang_yong_gong_ju_zong_jie.html)
 
 

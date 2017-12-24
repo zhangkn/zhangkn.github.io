@@ -154,6 +154,11 @@ $(document).ready(function(){
 
 - [getting-started-with-writing-and-formatting-on-github](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
 - [GitHub 上的书写方式](https://mp.weixin.qq.com/s?__biz=MzIyMjE0ODQ0OQ==&mid=2651552756&idx=1&sn=e79d9bf525d4e9c0d2a755088e711993&scene=21#wechat_redirect)
+- [https://libraries.io/](https://libraries.io/)
+- [gitbook](http://www.chengweiyang.cn/gitbook/basic-usage/README.html)
+- [gitbook 发布到 GitHub Pages](http://www.chengweiyang.cn/gitbook/github-pages/README.html)
+- [chengweiv5.github.io](https://github.com/chengweiv5/chengweiv5.github.io)
+- [使用多种方法进行验证可让您的拥有权得到更全面的保护](https://www.google.com/webmasters/verification/verification?hl=en&siteUrl=https://zhangkn.github.io/)
 
 # 辅助 post.sh  
 ```
