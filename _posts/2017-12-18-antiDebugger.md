@@ -151,7 +151,9 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 ### github
 
 - [snakeninny](https://github.com/snakeninny)
+### github
 
+- [gitbook](https://www.gitbook.com/@tomatobin)
 
 ### 安全论坛
 
