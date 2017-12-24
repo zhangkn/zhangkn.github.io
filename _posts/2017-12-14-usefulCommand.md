@@ -267,6 +267,9 @@ General Purpose Registers:
 (lldb) po/x $rip
 0x0000000107905c44
 ```
+![](/images/posts/{{page.title}}/register.png)
+
+
 
 
 ### file 
