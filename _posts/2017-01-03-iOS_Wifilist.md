@@ -63,6 +63,10 @@ int __ZL24_logosLocalCtor_c81e728diPPcS0_(int arg0, int * * arg1, int * * arg2) 
 ```
 ![](/images/posts/iOS_Wifilist/assemblylanguage.png)
 
+```
+“程序员使用编译器、汇编器和链接器中的一个或几个创建可执行程序。为了回溯编程过程（或对程序进行逆向工程），我们使用各种工具来撤销汇编和编译过程。毫不奇怪，这些工具就叫做反汇编器和反编译器，名副其实。反汇编器撤销汇编过程，因此，我们可以得到汇编语言形式的输出结果（以机器语言作为输入）。反编译器则以汇编语言甚至是机器语言为输入，其输出结果为高级语言。”
+```
+
 >* 4、Tweak 工具：Theos、iOSOpenDev、MonkeyDev（支持CocoaPods) 可以用来开发iPhone tool 、iPhone tweak 
 >* 5、codesign --help 关于Code Signature的全面信息
 
