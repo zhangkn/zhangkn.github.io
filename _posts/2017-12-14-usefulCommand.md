@@ -240,7 +240,6 @@ process connect connect://127.0.0.1:12345
 iPhone:/usr/bin root# debugserver *:12345 -a "KNWeKNChat"
 ```
 >* breakpoint set
-
 ```
 断在ObjC的消息selector
 -S <selector>
@@ -249,6 +248,25 @@ iPhone:/usr/bin root# debugserver *:12345 -a "KNWeKNChat"
 ```
 
 >*  memory read   开始地址  结束地址
+```
+(lldb) memory read 0x0000000107905c44
+0x107905c44: 4d 01 26 89 d8 ff c3 4d 01 fe 4c 39 e8 72 ad 48  M.&....M..L9.r.H
+0x107905c54: 8d 05 2e 1c 02 00 44 01 28 8b 45 c4 4c 8b 6d b0  ......D.(.E.L.m.
+```
+
+
+>* register read
+```
+(lldb) register read
+General Purpose Registers:
+       rax = 0x00000001079276d8  dyld::gLinkContext
+```
+![](/images/posts/{{page.title}}/cpu.png)
+>* po/x 
+```
+(lldb) po/x $rip
+0x0000000107905c44
+```
 
 
 ### file 
