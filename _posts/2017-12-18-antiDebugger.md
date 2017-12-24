@@ -140,11 +140,24 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 - [swiftyper](http://www.swiftyper.com/tags/%E9%80%86%E5%90%91/)
 - [使用 Xcode 调试第三方应用](http://www.swiftyper.com/2017/07/02/attach-third-app-using-xcode/)
 - [AntiClassDumpImplementationNotes](https://hikariproject.github.io/2017/12/21/AntiClassDumpImplementationNotes/)
+- [专访沙梓社：做个“Think Different”的技术牛人](http://www.csdn.net/article/2015-05-18/2824691-developer)
+```
+根据图纸制作实物的这个过程是正向工程，而根据实物倒推图纸的这个过程则是逆向工程
+```
+
+- [TiGa-vid1](http://www.woodmann.com/TiGa/videos/TiGa-vid1.htm)
+- [TiGa的IDA系列教程](http://www.woodmann.com/TiGa/idaseries.html)
+- [Lena151的逆向工程教程](https://tuts4you.com/e107_plugins/download/download.php?list.17)
+### github
+
+- [snakeninny](https://github.com/snakeninny)
+
 
 ### 安全论坛
 
 - [OSG-TranslationTeam](https://bbs.pediy.com/thread-212685.htm)
 - [基于OLLVM定制的开源混淆工具Hikari](http://iosre.com/t/work-in-progress-ollvm-hikari/10475)
+- [woodmann](http://www.woodmann.com/)
 
 ### 附录
 

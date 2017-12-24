@@ -5,7 +5,7 @@ date: 2017-12-14
 tag: iOSre
 ---
 
-### ssh
+### ssh 远程控制
 
 >* 1、ssh-copy-id
 ```
@@ -270,7 +270,26 @@ General Purpose Registers:
 ![](/images/posts/{{page.title}}/register.png)
 
 
+### netstat
 
+ 显示网络连接、路由表、接口状态
+
+ ```
+ devzkndeMacBook-Pro:zhangkn.github.io devzkn$ netstat
+Active Internet connections
+Proto Recv-Q Send-Q  Local Address          Foreign Address        (state)    
+tcp4       0      0  192.168.2.143.49417    47.88.153.28.19527     ESTABLISHED
+ ```
+
+### lsof 
+>* 列出当前系统打开的文件（网络连接、硬件）
+```
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ lsof
+COMMAND     PID   USER   FD      TYPE             DEVICE   SIZE/OFF       NODE NAME
+loginwind   113 devzkn  cwd       DIR                1,4        992          2 /
+loginwind   113 devzkn  txt       REG                1,4    1241072 8590278373 /System/Library/CoreServices/loginwindow.app/Contents/MacOS/loginwindow
+loginwind   113 devzkn  txt       REG                1,4   26752912 8590676059 /usr/share/icu/icudt59l.dat
+```
 
 ### file 
 

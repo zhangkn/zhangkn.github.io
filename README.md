@@ -150,6 +150,11 @@ $(document).ready(function(){
 - [Schema.org 中文站](https://schema.org.cn/docs/getstarted.html)
 - [microdata例子](https://github.com/lidong1665/lidong1665.github.com/blob/master/page/2/index.html)
 - [WPHeader](http://schema.org/WPHeader)
+- [GitHub 风格的 Markdown 语法](https://mp.weixin.qq.com/s?__biz=MzIyMjE0ODQ0OQ==&mid=2651552757&idx=1&sn=79f77622e411e3d099208bee55f6358a)
+
+- [getting-started-with-writing-and-formatting-on-github](https://help.github.com/articles/getting-started-with-writing-and-formatting-on-github/)
+- [GitHub 上的书写方式](https://mp.weixin.qq.com/s?__biz=MzIyMjE0ODQ0OQ==&mid=2651552756&idx=1&sn=e79d9bf525d4e9c0d2a755088e711993&scene=21#wechat_redirect)
+
 # 辅助 post.sh  
 ```
 #!/bin/sh

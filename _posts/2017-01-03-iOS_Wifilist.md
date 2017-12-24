@@ -34,7 +34,7 @@ Running dot for graph 1175/42806
 
 ### Requirements（前期准备-基础的工具清单）
 
-　　 Device Tools 
+#### Device Tools 
 >* 1、apt 0.6 transitional（用于自动从互联网的软件仓库中搜索、安装、升级、卸载软件,例如安装socat、git: apt-get install socat git ）
 >* 2、dumpdecrypted.dylib or [clutch](https://github.com/KJCracks/Clutch)
 >* 3、[cycript](http://www.cycript.org/) [frida](https://build.frida.re/frida/)
@@ -46,8 +46,10 @@ Running dot for graph 1175/42806
 >* 9、Cydia Substrate (call/hook any method)
 >* 10、[frida-server](https://build.frida.re/frida/)
 >* 11、nm 旨在浏览mach-o可执行文件中的名称和符号  nm --help
+>* 12、debugserver Xcode附带的远程调试工具,它运行在iOS上,可以执行你在lldb输入的指令同时返回执行结果到lldb上.
 
-   Desktop tools
+
+#### Desktop tools
 
 >* 1、Reveal、[interface-inspector](http://www.interface-inspector.com/)
 >* 2、[MachOView](https://sourceforge.net/projects/machoview/)  is a visual Mach-O file browser ;MachOView就像otool和nm，但是有GUI，因此可以用户友好的方式浏览mach-o文件的结构,和编辑 Intel 和 ARM 二进制.
@@ -79,6 +81,7 @@ int __ZL24_logosLocalCtor_c81e728diPPcS0_(int arg0, int * * arg1, int * * arg2) 
 ```
 devzkndeMacBook-Pro:Payload devzkn$ codesign -d -v MKNoon
 ```
+>* ldid 用来给deb包签名的工具,
 
 
 

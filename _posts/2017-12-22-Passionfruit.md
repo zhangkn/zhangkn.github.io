@@ -54,7 +54,7 @@ yarn install v1.3.2
 ✨  Done in 231.08s.
 up to date in 235.627s
 ```
-
+-- 运行 npm install 根据 package.json 文件安装依赖。
 - npm run build
 
 ```
@@ -110,5 +110,6 @@ added 32 packages in 18.574s
 ### 参考资料
 
 - [给 frida 做了个图形界面，动态分析 iOS 应用](http://iosre.com/t/frida-ios/9815)
+- [Yarn 官方介绍: 一款新的 JavaScript 包管理器](https://mp.weixin.qq.com/s/qGsYze6QT1KHrbt4YeiaWA)
 
 
