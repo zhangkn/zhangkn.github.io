@@ -17,7 +17,8 @@ site: https://zhangkn.github.io
 ![](/images/posts/{{page.title}}/x8086.png)
 ![](/images/posts/{{page.title}}/x8086Addressing.png)
 
-
+>* 基于寻址方式，产生了段寄存器
+![](/images/posts/usefulCommand/register.png)
 
 
 ### 参考

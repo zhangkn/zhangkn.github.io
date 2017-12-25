@@ -366,7 +366,7 @@ A01-27:~ root# reboot
 - [unix shell scripts](https://github.com/samsonjs/bin)
 - [lldb远程调试命令](https://zhiwei.li/text/category/reverse_engineering/)
 - [Objetive-C内存布局](https://zhiwei.li/text/2012/03/10/objetive-c%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/)
-- [十年•杭研技术秀 | iOS App的加固保护原理](http://blog.163yun.com/archives/1065)
+- [十年•杭研技术秀iOS App的加固保护原理](http://blog.163yun.com/archives/1065)
 - [常用工具总结](https://tomatobin.gitbooks.io/iosreproject/content/chang_yong_gong_ju_zong_jie.html)
 
 
