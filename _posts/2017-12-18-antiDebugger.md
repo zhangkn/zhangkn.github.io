@@ -27,11 +27,11 @@ site: https://zhangkn.github.io
 
 >* 2、[静态分析](https://zhangkn.github.io/2017/01/iOS_Wifilist/#gsc.tab=0)
 
-在app没运行的情况下，借助反汇编工具（hopper等）查看代码内部结构、借助otool工具查看二进制文件信息、class-dump  目标对象的 class 信息等分析过程。分析的信息包括网络协议、数据格式。
+“目标软件的二进制代码到汇编代码的翻译过程，我们称之为“反汇编”。”
+在app没运行的情况下，借助反汇编工具（hopper等）查看代码内部结构、借助otool工具查看二进制文件信息、class-dump目标对象的class 信息等分析过程。分析的信息包括网络协议、数据格式、代码逻辑。
 
 >* 3、 动态分析(动态调试、代码跟踪)
-通过借助lldb、Cycript、frida、AFLEXLoader、运行时常用的API等工具进行调试、分析代码，获取内存状态甚至修改内存的过程。改过程包括反反调试等。
-
+“分析者可以在程序的执行过程中观察程序的执行流程和计算结果。”通常我通过借助lldb、Cycript、frida、AFLEXLoader、运行时常用的API等工具进行调试、分析代码，获取内存状态甚至修改内存，该过程包括反反调试等。
 
 
 ### 整体套路
