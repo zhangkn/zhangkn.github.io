@@ -9,6 +9,7 @@ site: https://zhangkn.github.io
 
 ### 前言
 
+汇编就是在（寄存器和寄存器）或 （寄存器和内存）之间来回move 数据.
 
 
 ### 8086的寻址方式
@@ -23,6 +24,7 @@ site: https://zhangkn.github.io
 
 ### 参考
 
+- [从汇编角度分析C语言的过程调用](http://blog.tingyun.com/web/article/detail/1132)
 
 ### 附
 
@@ -59,5 +61,8 @@ site: https://zhangkn.github.io
 >* APP/程序的执行过程
 
 ![](/images/posts/{{page.title}}/app.png)
+mach-o_execution:
+![](/images/posts/{{page.title}}/mach-o_execution.png)
+
 
 
