@@ -82,7 +82,7 @@ int __ZL24_logosLocalCtor_c81e728diPPcS0_(int arg0, int * * arg1, int * * arg2) 
 devzkndeMacBook-Pro:Payload devzkn$ codesign -d -v MKNoon
 ```
 >* ldid 用来给deb包签名的工具,
-
+>* [optool](https://github.com/zhangkn/KNBin/blob/master/optool) 依赖注入工具,可将dylib注入到二进制文件中
 
 
 Jailbroken iOS device 
@@ -389,5 +389,7 @@ devzkndeMacBook-Pro:~ devzkn$ lldb
 [ios-application-security-part-15-static-analysis-of-ios-applications-using-inalyzer](http://highaltitudehacks.com/2013/09/17/ios-application-security-part-15-static-analysis-of-ios-applications-using-inalyzer/)
 - [introducing-the-ios-reverse-engineering-toolkit](https://www.veracode.com/blog/2014/03/introducing-the-ios-reverse-engineering-toolkit)
 - [opensource](http://www.opensource.apple.com/)
+- [optool](https://www.jianshu.com/p/8236249edd35)
+
 <br>
 
