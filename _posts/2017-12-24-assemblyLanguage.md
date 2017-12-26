@@ -9,7 +9,14 @@ site: https://zhangkn.github.io
 
 ### 前言
 
->* 汇编就是在（寄存器和寄存器）或 （寄存器和内存）之间来回move 数据.
+汇编语言是用助记符，符号和数字等来表示指令的程序设计语言，它与机器语言指令是一一对应的
+
+>* 不同内核的CPU，必须有对应的汇编语言编译器将汇编语言编写的程序编译成对应CPU的机器语言代码，CPU才能正确识别和执行这些代码;不同架构的CPU的汇编指令集并不相同
+
+>* 汇编的本质就是在（寄存器和寄存器）或 （寄存器和内存）之间来回move 数据.
+```
+汇编程序员可以使用指令来读写CPU中的寄存器，从而实现对于CPU的控制
+```
 ![](/images/posts/{{page.title}}/control.png)
 
 
@@ -50,9 +57,25 @@ site: https://zhangkn.github.io
  AX 分为 AH ，AL（AH  表示高8位 ，AL  表示低8位）
 ```
 
+### 常用指令
+
+>* 常用指令
+```
+(1）  数据传送指令：MOV/XCHG，PUSH/POP，LEA
+(2）  算数运算类指令：ADD/ADC/INC，SUB/SBB/DEC/CMP/NEG，MUL/IMUL，DIV/IDIV
+(3）  位操作类指令：AND/OR/XOR/NOT/TEST
+(4）  控制转移类指令：JMP/JCC/LOOP，CALL/RET，INT n
+(5）  处理机控制类指令：NOP
+```
+
 ### 参考
 
 - [从汇编角度分析C语言的过程调用](http://blog.tingyun.com/web/article/detail/1132)
+- [逆向分析](http://zhuanlan.freebuf.com/column/index/?name=%E9%80%86%E5%90%91%E5%88%86%E6%9E%90)
+- [4hou.win](https://4hou.win/wordpress/?m=201712)
+- [Hacking](https://4hou.win/wordpress/?p=6027)
+- [iOS-Runtime-Headers](https://github.com/nst/iOS-Runtime-Headers)
+
 
 ### 附
 
@@ -92,5 +115,5 @@ site: https://zhangkn.github.io
 mach-o_execution:
 ![](/images/posts/{{page.title}}/mach-o_execution.png)
 
-
+>* 汇编码和机器码是1：1的关系
 

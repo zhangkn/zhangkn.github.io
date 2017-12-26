@@ -13,8 +13,9 @@ site: https://zhangkn.github.io
 
 ### [iphone/tool 的编写](https://github.com/zhangkn/knDaemonDemo)
 
->* iphone/tool 创建
+>* iphone/tool 创建   
 ```
+#$/opt/theos/bin/nic.pl 
 NIC 2.0 - New Instance Creator
   [10.] iphone/tool
 ```
@@ -123,6 +124,65 @@ iPhone:~ root# ps -e |grep knDaemonDemo
   510 ttys000    0:00.00 grep knDaemonDemo
 ```
 
+### dylib、bundle或daemon，的位置
+
+>* 基于CydiaSubstrate的dylib
+```
+iPhone:~ root# ls -l /Library/MobileSubstrate/DynamicLibraries/
+total 3568
+-rwxr-xr-x 1 mobile staff 1292720 Oct 31 15:01 AFlexLoader.dylib*
+-rw-r--r-- 1 mobile staff      60 Oct 31 15:01 AFlexLoader.plist
+```
+
+>* Bundle
+```
+# AppStore App
+/var/mobile/Containers/Bundle/Application/
+# 系统自带的app
+iPhone:~ root# ls -l /Applications
+lrwxr-xr-x 1 root admin 32 Apr 23  2017 /Applications -> /var/stash/_.TvfJPY/Applications/
+#Frameworks
+iPhone:~ root# ls -l /System/Library/Frameworks
+total 0
+drwxr-xr-x 42 root wheel 1462 Oct 14  2014 AVFoundation.framework/
+drwxr-xr-x 42 root wheel 1496 Oct 14  2014 AVKit.framework/
+#PrivateFrameworks
+iPhone:~ root# ls -l /System/Library/PrivateFrameworks
+total 4
+drwxr-xr-x  4 root wheel   306 Oct  7  2014 ABLE.framework/
+drwxr-xr-x  4 root wheel   408 Oct  7  2014 ABLEModel.framework/
+drwxr-xr-x  4 root wheel   170 Sep 13  2014 ACTFramework.framework/
+```
+
+>* daemon的配置文件
+```
+iPhone:~ root# ls -lrt /System/Library/LaunchDaemons/
+total 32
+-rwxr-xr-x 1 root wheel   328 Mar  6  2014 com.jensen.iRE.Startup.plist*
+-rw-r--r-- 1 root wheel   281 Sep 13  2014 com.apple.absd.plist
+# 通常用户自己的demo，就放在此目录，就比如本文的knDaemonDemo
+iPhone:/Library root# ls -lrt /Library/LaunchDaemons
+total 24
+-rw-r--r-- 1 root wheel 847 Feb 15  2011 com.openssh.sshd.plist
+-rw-r--r-- 1 root wheel 267 Feb  6  2017 com.rpetrich.rocketbootstrapd.plist
+-rw-r--r-- 1 root wheel 446 Feb 16  2017 com.saurik.Cydia.Startup.plist
+lrwxr-xr-x 1 root admin  61 Apr 23  2017 com.apple.mobile.installd.plist -> /System/Library/LaunchDaemons/com.apple.mobile.installd.plist
+-rw-r--r-- 1 root wheel 779 Dec 14 00:54 re.frida.server.plist
+-rw-r--r-- 1 root wheel 366 Dec 24 14:24 com.kn.knDaemonDemo.plist
+# /Library/LaunchAgents
+iPhone:/Library root# ls -lrt /Library/LaunchAgents
+```
+
+
 ### 参考
 - [run-a-daemon-as-root-on-ios](http://iosre.com/t/run-a-daemon-as-root-on-ios/212)
+- [Preferences_specifier_plist](http://iphonedevwiki.net/index.php/Preferences_specifier_plist)
+- [Makefiles](http://www.gnu.org/software/make/manual/html_node/Makefiles.html)
+
+### 
+>* osx
+![](/images/posts/{{page.title}}/osx.png)
+
+>* iphone 
+![](/images/posts/{{page.title}}/iphone.png)
 

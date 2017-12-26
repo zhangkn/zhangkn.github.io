@@ -39,6 +39,9 @@ Running dot for graph 1175/42806
 >* 2、dumpdecrypted.dylib or [clutch](https://github.com/KJCracks/Clutch)
 >* 3、[cycript](http://www.cycript.org/) [frida](https://build.frida.re/frida/)
 >* 4、class-dump-z （同系列工具：[class-dump](http://stevenygard.com/projects/class-dump/)、classdump-dyld、keychain_dumper、[swift-dump](https://github.com/zhangkn/swift-dump)）用来 dump 目标对象的 class 信息的工具
+```
+利用OC的runtime特性,将信息存储在Mach-O文件中的头文件信息取出来,并生成.h文件
+```
 >* 5、otool 、objdump(同系列工具：jtool ) -h -hv -vl  
 >* 6、lipo、[debugserver](http://iphonedevwiki.net/index.php/Debugserver)、lldb、[toggle-pie](https://github.com/zhangkn/KNtoggle-pie)
 >* 7、OpenSSH  2 (mac 同系列工具: [usbmuxd-1.0.8](https://cgit.sukimashita.com/usbmuxd.git/) ) ssh scp 都是建立在这基础之上
@@ -46,7 +49,10 @@ Running dot for graph 1175/42806
 >* 9、Cydia Substrate (call/hook any method)
 >* 10、[frida-server](https://build.frida.re/frida/)
 >* 11、nm 旨在浏览mach-o可执行文件中的名称和符号  nm --help
->* 12、debugserver Xcode附带的远程调试工具,它运行在iOS上,可以执行你在lldb输入的指令同时返回执行结果到lldb上.
+>* 12、debugserver :Xcode附带的远程调试工具,它运行在iOS上,可以执行你在lldb(作为客户端)输入的指令同时返回执行结果到lldb上--即所谓的“远程调试”
+```
+在设备使用Xcode调试过app之后，debugserver才会被Xcode安装到iOS的“/Developer/usr/bin/”目录下。
+```
 
 
 #### Desktop tools
@@ -69,12 +75,13 @@ int __ZL24_logosLocalCtor_c81e728diPPcS0_(int arg0, int * * arg1, int * * arg2) 
 “程序员使用编译器、汇编器和链接器中的一个或几个创建可执行程序。为了回溯编程过程（或对程序进行逆向工程），我们使用各种工具来撤销汇编和编译过程。毫不奇怪，这些工具就叫做反汇编器和反编译器，名副其实。反汇编器撤销汇编过程，因此，我们可以得到汇编语言形式的输出结果（以机器语言作为输入）。反编译器则以汇编语言甚至是机器语言为输入，其输出结果为高级语言。”
 ```
 
->* 4、Tweak 工具：Theos、iOSOpenDev、MonkeyDev（支持CocoaPods) 可以用来开发iPhone tool 、iPhone tweak 
+>* 4、Tweak 工具：Theos（是一个越狱开发工具包，安装简单,Logos语法简单）、iOSOpenDev、MonkeyDev（支持CocoaPods) 可以用来开发iPhone tool 、iPhone tweak 
 >* 5、codesign --help 关于Code Signature的全面信息
+>* ollydbg 动态追踪工具,通过修改改汇编代码来生成机器码。
 
 
 标准命令行工具
->* lldb是一个调试器，功能非常强大。
+>* lldb(Low Level Debugger)是内置于Xcode中的动态调试工具.
 >* otool是一个用于浏览mach-o可执行文件的控制台工具;
 >* nm旨在浏览mach-o可执行文件中的名称和符号;
 >* codesign可以提供关于Code Signature的全面信息
@@ -82,7 +89,34 @@ int __ZL24_logosLocalCtor_c81e728diPPcS0_(int arg0, int * * arg1, int * * arg2) 
 devzkndeMacBook-Pro:Payload devzkn$ codesign -d -v MKNoon
 ```
 >* ldid 用来给deb包签名的工具,
+```
+usage: ldid -S[entitlements.xml] <binary>
+   ldid -e MobileSafari
+   ldid -S cat
+   ldid -Stfp.xml gdb
+```
 >* [optool](https://github.com/zhangkn/KNBin/blob/master/optool) 依赖注入工具,可将dylib注入到二进制文件中
+>* strings “实用工具专门用于提取文件中的字符串内容”
+```
+# -a     This option causes strings to look for strings in all sections of the object file (including the (__TEXT,__text) section.
+devzkndeMacBook-Pro:knMokssnossV5.4.0 devzkn$ strings MJoKoKn.decrypted |grep password
+configureUserNameEntry:passwordEntry:
+passwordTextFieldFrame
+passwordPlaceholder
+passwordBackgroundView
+#-t formatWrite each string preceded by its byte offset from the start of the file.  The format shall be dependent on the single character used as the format option-argument: 查看“所发现的每一个字符串的文件偏移量信息”
+```
+>*  ndisasm “流式反汇编器”
+```
+devzkndeMacBook-Pro:knMokssnossV5.4.0 devzkn$ ndisasm -u Mokkon.dec*
+00000000  CAFEBA            retf 0xbafe
+00000003  BE00000002        mov esi,0x2000000
+00000008  0000              add [eax],al
+0000000A  000C00            add [eax+eax],cl
+0000000D  0000              add [eax],al
+```
+
+>* plutil
 
 
 Jailbroken iOS device 
@@ -115,18 +149,18 @@ Usage: /Applications/iNalyzer.app/iNalyzer.sh [static] [auto | class-dump-z | cl
 ```
 iPhone:/Applications/iNalyzer.app root# /Applications/iNalyzer.app/iNalyzer.sh ipa 2B559443-6CEE-4731-AA3B-7E587BE67219    
 appGuid=2B559443-6CEE-4731-AA3B-7E587BE67219
-appDir=/var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/KNMoon.app
-appName=KNMoon
-appBundleId=com.KNMoon.KNMoon
+appDir=/var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/KNknMokssnoss.app
+appName=KNknMokssnoss
+appBundleId=com.KNknMokssnoss.KNknMokssnoss
 clutchAppId=3
-mainExecutable=KNMoon
-appExecutables=KNMoon
-appExecutablesFullPath=/var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/KNMoon.app/KNMoon
+mainExecutable=KNknMokssnoss
+appExecutables=KNknMokssnoss
+appExecutablesFullPath=/var/mobile/Containers/Bundle/Application/2B559443-6CEE-4731-AA3B-7E587BE67219/KNknMokssnoss.app/KNknMokssnoss
 isEncrypted=1
 appSandbox=/private/var/mobile/Containers/Data/Application/CC955B7F-E976-425F-ADB3-7F52D18B4EEF
 Preparing folders for IPA...
 Creating IPA file...
-OUTPUTFILE:/var/root/Documents/iNalyzer/2B559443-6CEE-4731-AA3B-7E587BE67219/ipa/KNMoon.ipa
+OUTPUTFILE:/var/root/Documents/iNalyzer/2B559443-6CEE-4731-AA3B-7E587BE67219/ipa/KNknMokssnoss.ipa
 
 ```
 开始静态分析
@@ -160,7 +194,7 @@ OUTPUTFILE:/var/root/Documents/iNalyzer/2B559443-6CEE-4731-AA3B-7E587BE67219/sta
 >* 3、scp 到Mac
 
 ```
-iPhone:/Applications/iNalyzer.app root# scp /var/root/Documents/iNalyzer/2B559443-6CEE-4731-AA3B-7E587BE67219/static_2017_12_09-14_24_57.zip devzkn@192.168.2.186://Users/devzkn/decrypted/MoonV5.4.0
+iPhone:/Applications/iNalyzer.app root# scp /var/root/Documents/iNalyzer/2B559443-6CEE-4731-AA3B-7E587BE67219/static_2017_12_09-14_24_57.zip devzkn@192.168.2.186://Users/devzkn/decrypted/knMokssnossV5.4.0
 
 ```
 ps :iPhone SSH Mac 的前提是mac setremotelogin on
@@ -213,7 +247,7 @@ Binary info
  *.nib files
  View Controllers
 ►Plist files
-►Strings - KNMoon
+►Strings - KNknMokssnoss
 ►Symbols analysis - Memory functions
 ```
 
@@ -390,6 +424,8 @@ devzkndeMacBook-Pro:~ devzkn$ lldb
 - [introducing-the-ios-reverse-engineering-toolkit](https://www.veracode.com/blog/2014/03/introducing-the-ios-reverse-engineering-toolkit)
 - [opensource](http://www.opensource.apple.com/)
 - [optool](https://www.jianshu.com/p/8236249edd35)
+- [Objective-C相关的iOS逆向理论基础](https://www.jianshu.com/p/5041795b7d23)
+- [iOS_逆向_Theos](https://www.jianshu.com/p/d27cebabc282)
 
 <br>
 

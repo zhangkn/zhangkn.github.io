@@ -278,6 +278,12 @@ General Purpose Registers:
 ```
 ![](/images/posts/{{page.title}}/register.png)
 
+>* disassemble
+```
+(lldb) help memory
+(lldb) help disassemble
+(lldb) help memory write
+```
 
 ### netstat
 
@@ -365,6 +371,30 @@ iphone  安装pstree 即可
 A01-27:~ root# reboot
 ```
 
+### grep命令
+
+```
+格式 grep [options]
+主要参数
+[options]主要参数：
+－c：只输出匹配行的计数。
+－I：不区分大 小写(只适用于单字符)。
+－h：查询多文件时不显示文件名。
+－l：查询多文件时只输出包含匹配字符的文件名。
+－n：显示匹配行及 行号。
+－s：不显示不存在或无匹配文本的错误信息。
+－v：显示不包含匹配文本的所有行。
+pattern正则表达式主要参数：
+\： 忽略正则表达式中特殊字符的原有含义。
+^：匹配正则表达式的开始行。
+$: 匹配正则表达式的结束行。
+\<：从匹配正则表达 式的行开始。
+\>：到匹配正则表达式的行结束。
+[ ]：单个字符，如[A]即A符合要求 。
+[ - ]：范围，如[A-Z]，即A、B、C一直到Z都符合要求 。
+。：所有的单个字符。
+* ：有字符，长度可以为0。
+```
 
 
 ### 参考资源

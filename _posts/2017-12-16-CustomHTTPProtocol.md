@@ -216,4 +216,4 @@ static void CanonicaliseHeaders(NSMutableURLRequest * request)
 - [Document](https://developer.apple.com/library/content/samplecode/CustomHTTPProtocol/Introduction/Intro.html#//apple_ref/doc/uid/DTS40013653-Intro-DontLinkElementID_2)
 - [URL Loading System](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/URLLoadingSystem/URLLoadingSystem.html)
 - [iOS 开发中使用 NSURLProtocol 拦截 HTTP 请求](https://draveness.me/intercept)
-
+- [iOS检测系统弹窗并自动关闭](https://www.jianshu.com/p/c79e795c3f5b)
