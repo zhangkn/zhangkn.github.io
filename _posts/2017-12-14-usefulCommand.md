@@ -12,6 +12,7 @@ tag: iOSre
 
 >* 1、ssh-copy-id
 ```
+# 这里拷贝的是公钥，，如果是指定私钥ssh-copy-id 会自己寻找公钥。
 devzkndeMacBook-Pro:.ssh devzkn$ ssh-copy-id -i ~/.ssh/id_rsa_Theos125 root@192.168.2.144
 ```
 ```
@@ -52,12 +53,17 @@ socat - UNIX-CONNECT:/var/run/lockdown/syslog.sock
 
 ### 排查网络问题的常用命令
 
->* 修改 手机hosts
+>* 修改 手机hosts-- 错误的用法
 ```
+#echo -e "换\n行"
 	install.exec "echo '127.0.0.1 localhost 
 	 192.168.2.254 wssesschknknknknkdsat.fkdjdasssllllqusssasssnwwwwgwwwe.cn' > /etc/hosts"
 ```
-
+>* 修改 手机hosts 正确的用法
+```
+#echo -e "换\n行"
+install.exec "echo -e '127.0.0.1 localhost \n 192.168.2.107 kn.kn.cn' > /etc/hosts"
+```
 >* ping 网络
 ```
 iPhone:~ root# ping wecKNhat.fsshhhhasqKNuanKNgllkjdde.cn
