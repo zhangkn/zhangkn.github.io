@@ -9,7 +9,8 @@ site: https://zhangkn.github.io
 
 ### 前言
 
-汇编就是在（寄存器和寄存器）或 （寄存器和内存）之间来回move 数据.
+>* 汇编就是在（寄存器和寄存器）或 （寄存器和内存）之间来回move 数据.
+![](/images/posts/{{page.title}}/control.png)
 
 
 ### 8086的寻址方式
@@ -20,7 +21,6 @@ site: https://zhangkn.github.io
 
 >* 基于寻址方式，产生了段寄存器
 ![](/images/posts/usefulCommand/register.png)
-
 
 ### 参考
 
