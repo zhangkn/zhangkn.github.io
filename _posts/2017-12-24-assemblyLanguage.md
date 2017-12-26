@@ -21,6 +21,20 @@ site: https://zhangkn.github.io
 
 >* 基于寻址方式，产生了段寄存器
 ```
+ CS ―― 代码寄存器 
+ DS ―― 数据寄存器  
+ SS ―― 堆栈寄存器  
+ ES ――  附加段器 
+```
+![](/images/posts/usefulCommand/register.png)
+
+>* IP，FLAG 属于控制器
+```
+ IP――指令指针寄存器（Instruction Pointer），指示要执行指令所在存储单元的地址；IP寄存器是一个专用寄存器。
+ FLAG――状态标志，只要控制内存是否溢出
+```
+>* 通用指令
+```
   AX――累加器（Accumulator），使用频度最高，效率最高 
   BX――基址寄存器（Base Register），常存放存储器地址
   CX――计数器（Count Register），常作为计数器
@@ -30,7 +44,11 @@ site: https://zhangkn.github.io
   BP――基址指针寄存器（Base Pointer），表示堆栈区域中的基地址
   SP――堆栈指针寄存器（Stack Pointer），指示堆栈区域的栈顶地址
 ```
-![](/images/posts/usefulCommand/register.png)
+
+>* 为了向下兼容 数据寄存器分为高8位和低8位
+```
+ AX 分为 AH ，AL（AH  表示高8位 ，AL  表示低8位）
+```
 
 ### 参考
 
