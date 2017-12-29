@@ -151,6 +151,12 @@ git add .
 git commit -m $1
 git push
 ```
+
+>* 查看最后一次提交
+```
+git log -p -2|head -n 6
+```
+
 [更多辅助脚本参考这里](https://github.com/zhangkn/KNBin)
 
 
