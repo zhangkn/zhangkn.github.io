@@ -51,6 +51,21 @@ killall -9 SpringBoard
 socat - UNIX-CONNECT:/var/run/lockdown/syslog.sock
 ```
 
+### echo 
+>* 清空文件内容
+```
+echo "https://zhangkn.github.io/archive/" > /var/log/syslog
+```
+>* 清理垃圾命令
+```
+apt-get autoclean 清理旧版本的软件缓存
+apt-get clean 清理所有软件缓存
+apt-get autoremove 删除系统不再使用的孤立软件
+nautilus /boot 删除除了最新内核以外的其它文件
+gedit /boot/grub/menu.lst 删除除最新内核以外的其它启动项（
+```
+
+
 ### 排查网络问题的常用命令
 
 >* 修改 手机hosts-- 错误的用法
@@ -404,5 +419,6 @@ $: 匹配正则表达式的结束行。
 - [Objetive-C内存布局](https://zhiwei.li/text/2012/03/10/objetive-c%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/)
 - [十年•杭研技术秀iOS App的加固保护原理](http://blog.163yun.com/archives/1065)
 - [常用工具总结](https://tomatobin.gitbooks.io/iosreproject/content/chang_yong_gong_ju_zong_jie.html)
+- [总结linux清理垃圾命令](http://blog.csdn.net/mndlyt/article/details/17029105)
 
 
