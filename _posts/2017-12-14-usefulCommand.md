@@ -39,6 +39,12 @@ User root
 IdentityFile ~/.ssh/id_rsa_Theos125
 ```
 
+### nm
+>* dump symbol table
+```
+devzkndeMacBook-Pro:MookkknV5.4.0 devzkn$ nm -gUj Molon.decrypted |head -n 20
+```
+
 ### killall
 ```
 killall -9 SpringBoard

@@ -49,6 +49,9 @@ Running dot for graph 1175/42806
 >* 9、Cydia Substrate (call/hook any method)
 >* 10、[frida-server](https://build.frida.re/frida/)
 >* 11、nm 旨在浏览mach-o可执行文件中的名称和符号  nm --help
+```
+devzkndeMacBook-Pro:MookkknV5.4.0 devzkn$ nm -gUj Molon.decrypted |head -n 20
+```
 >* 12、debugserver :Xcode附带的远程调试工具,它运行在iOS上,可以执行你在lldb(作为客户端)输入的指令同时返回执行结果到lldb上--即所谓的“远程调试”
 ```
 在设备使用Xcode调试过app之后，debugserver才会被Xcode安装到iOS的“/Developer/usr/bin/”目录下。
