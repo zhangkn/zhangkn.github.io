@@ -84,6 +84,73 @@ cy# choose(CALayer) instanceof Array
 true
 ```
 
+>* Foreign Function Calls
+```
+cy# var a = malloc(128)
+(typedef void*)(0x8b00b90)
+```
+
+>* Magical Tab-Complete
+```
+cy# a = ({m: 4, b: 5})
+{m:4,b:5}
+cy# a["m"]
+4
+```
+
+>* C++11 Lambda Syntax
+```
+cy#  [&](int a)->int{return a}
+(extern "C" int 80904192(int))
+```
+
+### 私有API的使用
+
+>* 打印出当前界面的view层级
+```
+cy# UIApp.keyWindow.recursiveDescription().toString()
+```
+
+>* 通过view的nextResponder方法，可以找出它的下一个事件传递来源，常用来确定它所属的视图控制器
+```
+cy# [#0x181009f0 nextResponder]
+```
+
+>* _shortMethodDescription 也可以用于lldb的断点调试，避免地址计算
+```
+# 1、iPhone端开启debugserver的端口监听
+iPhone:~ root# debugserver *:12345 -a "WeKNChat"
+# 2、Mac端LLDB的接入：在terminal上输入lldb命令，然后输入下方的地址进行连接。因为我们使用usbmuxd进行了端口的转发，因此可以使用本地的环回测试地址来进行debugserver的连接。
+process connect connect://127.0.0.1:12345
+# 3、找到需要下断点的类，然后在LLDB命令行输入_shortMethodDescription
+(lldb) po [CMesKNsageMgr _shortMethodDescription]
+#进行断点
+(lldb) b 0x52260f9
+#resuming Process
+# 查看register
+(lldb) register read --all
+#补充 ： 打印数据模型内容很有用的私有函数方法[模型对象 _ivarDescription]；
+```
+
+>* 快捷的获取ViewControlle(Shortcut to find the ViewController’s class name on the keyWindow): _printHierarchy
+```
+#支持iOS8之后
+cy# [[[UIWindow keyWindow] rootViewController] _printHierarchy].toString()
+```
+>* _ivarDescription: Prints all names and values of instance variables of a specified object
+```
+cy# [#0x5822600 _ivarDescription].toString()
+```
+>* _autolayoutTrace:基于layout展示View架构 
+```
+cy# [[UIApp keyWindow] _autolayoutTrace].toString()
+```
+>* choose():get an array of existing objects of a certain class(当前堆栈中查找到特定类的对象数据)
+```
+cy# a = choose(UILabel).toString()
+```
+
+
 
 
 
@@ -96,6 +163,8 @@ true
 - [iosdevlog](http://iosdevlog.com/)
 - [JiaXianhua blog](https://jiaxianhua.github.io/)
 - [weak_classdump](https://github.com/limneos/weak_classdump)
+- [Powerful private methods for debugging in Cycript & LLDB](http://iosre.com/t/powerful-private-methods-for-debugging-in-cycript-lldb/3414)
+
 
 
 ### 附
