@@ -86,6 +86,35 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 换个思路，直接访问手机的站点:手机做的站点其性能比较重要，往往做得比较简单，而且容易暴露一些API接口
 ```
 
+
+### 把函数名隐藏在结构体里,以函数指针成员的形式存储
+>* KNUtil.h
+
+```
+@interface KNUtil : NSObject
+/**
+ 把函数名隐藏在结构体里，以函数指针成员的形式存储。
+ 编译后，只留了下地址，去掉了名字和参数表，提高了逆向成本和攻击门槛.
+ */
+typedef struct _util {
+    void (*cign)(char *kns[],unsigned int kncount, const char *knkey, unsigned char *knput);
+}CNtKNil_t ;
+#define SharedUtilStruct ([KNUtil sharedUtil])//提供给外围的接口
++ (CNtKNil_t *)sharedUtil;
+```
+>* KNUtil.m
+```
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+//留给读者自己实践
+```
+>* 外围调用
+```
+SharedUtilStruct->cign(key ,count,knkey, knput);
+```
+
+
 ### 参考资源
 - [theiphonewiki](https://www.theiphonewiki.com/)
 - [Objective-C Runtime](https://developer.apple.com/documentation/objectivec/objective_c_runtime)

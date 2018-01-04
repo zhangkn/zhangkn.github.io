@@ -14,6 +14,7 @@ tag: iOSre
 ```
 # 这里拷贝的是公钥，，如果是指定私钥ssh-copy-id 会自己寻找公钥。
 devzkndeMacBook-Pro:.ssh devzkn$ ssh-copy-id -i ~/.ssh/id_rsa_Theos125 root@192.168.2.144
+# 本质上是将id_rsa.pub拷贝一份保存为authorized_keys iPhone:~/.ssh root# cat /var/root/.ssh/authorized_keys
 ```
 ```
 # 指定端口
