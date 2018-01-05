@@ -14,15 +14,6 @@ Cycript 是一个能够理解Objective-C语法的javascript解释器， 它能�
 
 >* 刚开始分析逆向的时候，常常利用它进行控制器class的定位;完成类似功能的工具有[AFlexLoader](https://zhangkn.github.io/2017/12/KNAFlexLoader/)、[Passionfruit](https://zhangkn.github.io/2017/12/Passionfruit/)
 
-
->* 动态库的注入方式
-```
-# 二次打包动态库的注入
-通过修改可执行文件的Load Commands来实现的. 在Load Commands中增加一个LC_LOAD_DYLIB , 写入dylib路径
-# cycript注入动态库的方式
-在挂载的进程上创建一个挂起的线程, 然后在这个线程里申请一片用于加载动态库的内存,然后恢复线程,动态库就被注入
-```
-
 >* Powerful private methods
 ```
 _ivarDescription
@@ -32,6 +23,30 @@ _autolayoutTrace
 recursiveDescription
 _methodDescription
 ```
+
+
+
+###  动态库的注入方式
+
+>* cycript注入动态库的方式
+```
+在挂载的进程上创建一个挂起的线程, 然后在这个线程里申请一片用于加载动态库的内存,然后恢复线程,动态库就被注入
+```
+>* 通过环境变量DYLD_INSERT_LIBRARIES 注入
+```
+DYLD_INSERT_LIBRARIES=/PathFrom/dumpdecrypted.dylib /PathTo
+#New Run Script Phase：
+cd ${TARGET_BUILD_DIR}
+export DYLD_INSERT_LIBRARIES=./libKNoke.dylib && /Applications/QKNQ.app/Contents/MacOS/QKNQ
+```
+>* 二次打包动态库的注入,避免每次从环境变量注入
+```
+#通过修改可执行文件的Load Commands来实现的. 在Load Commands中增加一个LC_LOAD_DYLIB , 写入dylib路径
+Usage: insert_dylib dylib_path binary_path [new_binary_path]
+```
+[insert_dylib:# Command line utility for inserting a dylib load command into a Mach-O binary ](https://github.com/Tyilo/insert_dylib)
+
+
 
 
 ### cycript的常用命令

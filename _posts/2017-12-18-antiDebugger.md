@@ -116,6 +116,9 @@ SharedUtilStruct->cign(key ,count,knkey, knput);
 
 
 ### 参考资源
+- [ios-auditor](http://riusksk.me/2016/06/23/ios-auditor/)
+- [restore-symbol](https://github.com/tobefuturer/restore-symbol)
+- [正确获取struct结构体的内容](http://iosre.com/t/struct/9585/1)
 - [theiphonewiki](https://www.theiphonewiki.com/)
 - [Objective-C Runtime](https://developer.apple.com/documentation/objectivec/objective_c_runtime)
 - [nshipster](http://nshipster.com/xctool/)
@@ -190,13 +193,20 @@ SharedUtilStruct->cign(key ,count,knkey, knput);
 - [Lena151的逆向工程教程](https://tuts4you.com/e107_plugins/download/download.php?list.17)
 
 - [iOS app开发安全攻略](https://www.jianshu.com/p/2aef92f6849b)
-
+- [gf&zjの盗梦空间'links](https://www.gfzj.us/links/)
 ### github
 
 - [snakeninny](https://github.com/snakeninny)
 
 - [gitbook](https://www.gitbook.com/@tomatobin)
 - [osx & ios re 101](https://github.com/michalmalik/osx-re-101)
+- [charles-hacking](https://github.com/zhangkn/charles-hacking)
+- [restore-symbol](https://github.com/tobefuturer/restore-symbol)
+### gist.github
+- [t1t_hack.js](https://gist.github.com/feix/6dd1f62a54c5efa10f1e1c24f8efc417)
+- [unwxapkg.py](https://gist.github.com/feix/32ab8f0dfe99aa8efa84f81ed68a0f3e)
+
+
 
 ### 安全论坛
 

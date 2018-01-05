@@ -47,6 +47,13 @@ devzkndeMacBook-Pro:MookkknV5.4.0 devzkn$ nm -gUj Molon.decrypted |head -n 20
 nm -gUj MoKNon.decrypted |grep Observer
 ```
 
+### hopper 的快捷键
+
+```
+1、按x查找引用关系
+2、hopper按g跳转到指定地址:
+```
+
 ### killall
 ```
 killall -9 SpringBoard
