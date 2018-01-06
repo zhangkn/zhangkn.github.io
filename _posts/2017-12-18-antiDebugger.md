@@ -194,6 +194,7 @@ SharedUtilStruct->cign(key ,count,knkey, knput);
 
 - [iOS app开发安全攻略](https://www.jianshu.com/p/2aef92f6849b)
 - [gf&zjの盗梦空间'links](https://www.gfzj.us/links/)
+- [wxapkg解包](http://lrdcq.com/me/read.php/66.htm)
 ### github
 
 - [snakeninny](https://github.com/snakeninny)

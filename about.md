@@ -153,7 +153,7 @@ stackoverflow user: 8633507
 
 <h1 id="技术博客">技术博客</h1>
 <ul>
-  <li><a href="https://blog.leancloud.cn/">leancloud blog</a></li>
+  <li><a href="https://developer.arm.com/">developer.arm.com</a></li>
   <li><a href="http://www.wandoujia.com/blog">豌豆家 | 豌豆实验室 Blog</a></li>
   <li><a href="https://research.google.com/">Research at Google</a></li>
   <li><a href="http://phrack.org">Phrack Magazine</a></li>

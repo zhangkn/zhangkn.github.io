@@ -56,7 +56,23 @@ null
     "CFBundleDisplayName": "Safari",
     "CFBundleExecutable": "MobileSafari",
 ```
+### -[objc-method-observer](https://codeshare.frida.re/@mrmacete/objc-method-observer/)
 
+使用这个的好处的，不用频繁的修改代码
+>*  使用示例
+
+```
+devzkndeMacBook-Pro:redPackageRebort devzkn$ frida-ps -Uai
+devzkndeMacBook-Pro:redPackageRebort devzkn$ frida --codeshare mrmacete/objc-method-observer -U -p 10490
+/*
+ * To observe a single class by name:
+ *     observeClass('NSString');
+ *
+ * To dynamically resolve methods to observe (see ApiResolver):
+ *     observeSomething('*[* *Password:*]');
+ */
+
+```
 
 ### 参考资料
 
