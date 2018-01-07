@@ -78,6 +78,10 @@ Otool可以提取并显示目标文件的相关信息:包括头部，加载命�
 
 利用 Objective-C 语言的 runtime 特性，将存储在 Mach-O 文件中的 @interface 和 @protocol 信息提取出来，并生成相应的 .h 文件
 
+>* [dump swift code embedded with ObjC code](https://github.com/zhangkn/MonkeyDev/blob/master/bin/class-dump)
+```
+devzkndeMacBook-Pro:KNMNV5.4.0 devzkn$  /Users/devzkn/Downloads/class-dump --arch armv7 KNMN.decrypted -H  -o ./header
+```
 
 ### 总结
 
@@ -116,6 +120,7 @@ SharedUtilStruct->cign(key ,count,knkey, knput);
 
 
 ### 参考资源
+- [ SOLVED : Classdump Error: Cannot find offset for address XXXXX in stringAtAddress:](http://iosre.com/t/solved-classdump-error-cannot-find-offset-for-address-xxxxx-in-stringataddress/10626)
 - [ios-auditor](http://riusksk.me/2016/06/23/ios-auditor/)
 - [restore-symbol](https://github.com/tobefuturer/restore-symbol)
 - [正确获取struct结构体的内容](http://iosre.com/t/struct/9585/1)

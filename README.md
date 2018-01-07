@@ -159,7 +159,7 @@ $(document).ready(function(){
 - [gitbook 发布到 GitHub Pages](http://www.chengweiyang.cn/gitbook/github-pages/README.html)
 - [chengweiv5.github.io](https://github.com/chengweiv5/chengweiv5.github.io)
 - [使用多种方法进行验证可让您的拥有权得到更全面的保护](https://www.google.com/webmasters/verification/verification?hl=en&siteUrl=https://zhangkn.github.io/)
-
+- [链接提交](http://ziyuan.baidu.com/linksubmit/url?sitename=https%3A%2F%2Fzhangkn.github.io%2Ftags%2F)
 - [tagmanager.google.com/ 代码跟踪管理器](https://tagmanager.google.com/#/admin/accounts/create)
 - [xmlsitemapgenerator 站点地图](https://xmlsitemapgenerator.org/free/waiting.aspx?job=8b793801-6086-4d18-976a-5e8c004c2bd7)
 # 辅助 post.sh  
