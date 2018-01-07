@@ -12,13 +12,20 @@ tag: iOSre
 
 >* 1、ssh-copy-id
 ```
-# 这里拷贝的是公钥，，如果是指定私钥ssh-copy-id 会自己寻找公钥。
+# 1、IP+默认端口 这里拷贝的是公钥，，如果是指定私钥ssh-copy-id 会自己寻找公钥。
 devzkndeMacBook-Pro:.ssh devzkn$ ssh-copy-id -i ~/.ssh/id_rsa_Theos125 root@192.168.2.144
 # 本质上是将id_rsa.pub拷贝一份保存为authorized_keys iPhone:~/.ssh root# cat /var/root/.ssh/authorized_keys
-```
-```
-# 指定端口
+# 2、指定端口
 devzkndeMacBook-Pro:SQTaoke devzkn$ ssh-copy-id -i -p 2222  ~/.ssh/id_rsa_Theos125 root@localhost:2222
+# 3、使用别名
+devzkndeMacBook-Pro:bin devzkn$ ssh-copy-id -i ~/.ssh/id_rsa_Theos125 iphone150
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "/Users/devzkn/.ssh/id_rsa_Theos125.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@192.168.2.163's password: 
+Number of key(s) added:        1
+Now try logging into the machine, with:   "ssh 'iphone150'"
+and check to make sure that only the key(s) you wanted were added.
 ```
 
 ### 利用 ssh 的用户配置文件 config 管理 ssh 会话（How do I connect to ssh with a different public key）
