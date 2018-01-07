@@ -155,7 +155,7 @@ stackoverflow user: 8633507
 <ul>
   <li><a href="https://developer.arm.com/">developer.arm.com</a></li>
   <li><a href="https://blog.zz173.com/detail/16">怎么分析ios/mac系统私有库的二进制文件？</a></li>
-  <li><a href="https://research.google.com/">Research at Google</a></li>
+  <li><a href="http://www.iphonehacks.com/2018/01/saurik-provides-update-cydia-substrate-ios-11-1-2-jailbreak.html/amp">saurik-provides-update-cydia-substrate-ios-11-1-2-jailbreak</a></li>
   <li><a href="http://phrack.org">Phrack Magazine</a></li>
   <li><a href="http://blog.jeswang.org/">Jeswang’s Blog</a></li>
   <li><a href="http://blog.cnbang.net/">bang’s blog</a></li>
