@@ -24,7 +24,10 @@ recursiveDescription
 _methodDescription
 ```
 
-
+>* 安装
+```
+iPhone:~ root# apt-get install cycript
+```
 
 ###  动态库的注入方式
 

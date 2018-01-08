@@ -156,8 +156,7 @@ stackoverflow user: 8633507
   <li><a href="https://developer.arm.com/">developer.arm.com</a></li>
   <li><a href="https://blog.zz173.com/detail/16">怎么分析ios/mac系统私有库的二进制文件？</a></li>
   <li><a href="http://www.iphonehacks.com/2018/01/saurik-provides-update-cydia-substrate-ios-11-1-2-jailbreak.html/amp">saurik-provides-update-cydia-substrate-ios-11-1-2-jailbreak</a></li>
-  <li><a href="http://phrack.org">Phrack Magazine</a></li>
-  <li><a href="http://blog.jeswang.org/">Jeswang’s Blog</a></li>
+  <li><a href="https://www.jianshu.com/p/a631b5584de6">LLVM在iOS中的实践</a></li>
   <li><a href="http://blog.cnbang.net/">bang’s blog</a></li>
   <li><a href="http://tech.meituan.com/">首页 - 美团技术团队</a></li>
   <li><a href="http://yulingtianxia.com/">yulingtianxia's blog</a></li>

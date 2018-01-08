@@ -26,6 +26,12 @@ root@192.168.2.163's password:
 Number of key(s) added:        1
 Now try logging into the machine, with:   "ssh 'iphone150'"
 and check to make sure that only the key(s) you wanted were added.
+#4、使用负责脚本
+#!/bin/sh
+# devzkndeMacBook-Pro:mplink devzkn$ sship 192.168.2.183
+postName="root@"$1
+ssh-copy-id -i ~/.ssh/id_rsa_Theos125 $postName
+exit 0
 ```
 
 ### 利用 ssh 的用户配置文件 config 管理 ssh 会话（How do I connect to ssh with a different public key）
