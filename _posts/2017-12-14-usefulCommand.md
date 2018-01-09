@@ -420,6 +420,11 @@ iphone  安装pstree 即可
 A01-27:~ root# reboot
 ```
 
+>*  Could not get lock /var/lib/dpkg/lock - open (35: Resource temporarily unavailable)
+```
+rm -rf /var/lib/dpkg/lock 
+#即可
+```
 ### grep命令
 
 ```
