@@ -171,8 +171,8 @@ stackoverflow user: 8633507
   <li><a href="https://maniacdev.com/">iOS App Dev Libraries, Controls, Tutorials, Examples and Tools</a></li>
   <li><a href="https://github.com/kpwn/yalu102">yalu102</a></li>
   <li><a href="https://medium.com/@jamztang">James Tang — Medium</a></li>
-  <li><a href="http://www.jianshu.com/users/b82d2721ba07">叶孤城___</a></li>
-  <li><a href="http://geeklu.com/">Luke’s Homepage - 卢克</a></li>
+  <li><a href="http://www.iosopendev.com/">iosopendev</a></li>
+  <li><a href="https://github.com/kokoabim/iOSOpenDev/wiki/Quick-Setup">iosopendev Quick Setup</a></li>
   <li><a href="http://blog.callmewhy.com/">Why’s Blog</a></li>
   <li><a href="http://xuexuefeng.com/">Vincent Sit</a></li>
   <li><a href="http://www.hpique.com/">Hermes Pique | I make digital things.</a></li>
