@@ -22,10 +22,34 @@ iPhone:/var/log root# ls -l /usr/lib/librocketbootstrap.dylib
 ### Q&A 
 
 >* 使用yalu102 激活了之后，无法连接ssh
+
 ```
 #/usr/local/bin/dropbear 此次越狱工具默认安装了 SSH。采用了 Dropbear 取代 Openssh。
 因此在部署安装使用yalu102的时候记得修改dropbear.plist的信息：ProgramArguments的127.0.0.1:22 直接改为22。
 如果部署完成，直接修改沙盒的信息的话，记得重启设备,且必须卸载Openssh。
+
+# 获取直接修改对应的配置信息
+iPhone:~ root# ps -e |grep yalu*
+ 1174 ??         0:00.80 /var/containers/Bundle/Application/B831448D-BCD0-4F29-BDA6-9FC03903D30C/yalu102.app/yalu102
+
+#plutil plist 内容
+iPhone:/var/containers/Bundle/Application/B831448D-BCD0-4F29-BDA6-9FC03903D30C/yalu102.app root# plutil dropbear.plist
+{
+    KeepAlive = 1;
+    Label = ShaiHulud;
+    Program = "/usr/local/bin/dropbear";
+    ProgramArguments =     (
+        "/usr/local/bin/dropbear",
+        "-F",
+        "-R",
+        "-p",
+        22
+    );
+    RunAtLoad = 1;
+}
+# dropbear 参数
+ iPhone:/var/containers/Bundle/Application/B831448D-BCD0-4F29-BDA6-9FC03903D30C/yalu102.app root# ps -e |grep dropbear
+  228 ??         0:00.05 /usr/local/bin/dropbear -F -R -p 22
 ```
 
 >* [deviceconsole](https://github.com/rpetrich/deviceconsole)
