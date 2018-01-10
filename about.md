@@ -162,14 +162,14 @@ stackoverflow user: 8633507
   <li><a href="http://yulingtianxia.com/">yulingtianxia's blog</a></li>
   <li><a href="http://beta.wikiversity.org/wiki/Topic:iOS%E5%BC%80%E5%8F%91">Topic:iOS开发 - Wikiversity</a></li>
   <li><a href="http://www.swiftv.cn/">SwiftV课堂 - 中国最大的Swift视频学习站</a></li>
-  <li><a href="http://www.maiziedu.com">麦子学院</a></li>
+  <li><a href="https://canijailbreak.com/">https://canijailbreak.com/</a></li>
   <li><a href="http://blog.devtang.com/">唐巧的技术博客</a></li>
   <li><a href="http://limboy.me/">Limboy’s HQ</a></li>
   <li><a href="http://coolshell.cn/">酷 壳</a></li>
   <li><a href="http://blog.cocoabit.com/">Cocoabit</a></li>
   <li><a href="http://blog.sunnyxx.com/">sunnyxx的技术博客</a></li>
   <li><a href="https://maniacdev.com/">iOS App Dev Libraries, Controls, Tutorials, Examples and Tools</a></li>
-  <li><a href="http://iosframeworks.com/">iOS Frameworks</a></li>
+  <li><a href="https://github.com/kpwn/yalu102">yalu102</a></li>
   <li><a href="https://medium.com/@jamztang">James Tang — Medium</a></li>
   <li><a href="http://www.jianshu.com/users/b82d2721ba07">叶孤城___</a></li>
   <li><a href="http://geeklu.com/">Luke’s Homepage - 卢克</a></li>
