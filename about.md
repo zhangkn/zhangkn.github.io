@@ -9,6 +9,8 @@ stackoverflow user: 8633507
  [I](https://about.me/kunnan) am a iOS Reverse Engineer, My interests range from technology to Information security. 
  <br>I enjoy sharing my security knowledge and learning from [iosre](http://iosre.com). Always happy to help people learn and teach about security.
 <p>
+<a target="_blank" href="https://join.slack.com/t/iosreverseengineering/shared_invite/enQtMjk3MjQ2Mjg2MTYyLThiNGU3ZmVlNTkzYzViNjY0YjJkZTI5MzdiZjhhZWJmZjk2YTY3N2Q3ZDBkMmJmOTMyMTJhNWIyZGE0NjFkZDI">iosreverseengineering.slack.com</a>
+
 <p>
 推荐一个我维护的小专栏
 <a target="_blank" href="https://xiaozhuanlan.com/iosre"> iosre </a>
@@ -174,8 +176,7 @@ stackoverflow user: 8633507
   <li><a href="http://www.iosopendev.com/">iosopendev</a></li>
   <li><a href="https://github.com/kokoabim/iOSOpenDev/wiki/Quick-Setup">iosopendev Quick Setup</a></li>
   <li><a href="http://blog.callmewhy.com/">Why’s Blog</a></li>
-  <li><a href="http://xuexuefeng.com/">Vincent Sit</a></li>
-  <li><a href="http://www.hpique.com/">Hermes Pique | I make digital things.</a></li>
+  <li><a title="鬼仔’s Blog | 关注网络安全" href="http://huaidan.org" target="_blank"><img src="http://huaidan.org/images/logo.gif" alt=" 鬼仔’s Blo |关注网络安全"/></a></li>
   <li><span style="color:red">♥</span><a href="https://www.mikeash.com/pyblog/">mikeash.com: NSBlog</a></li>
   <li><span style="color:red">♥</span><a href="http://www.newosxbook.com/index.php">Mac OS X and iOS Internals: To the Apple’s Core - Welcome!</a></li>
   <li><span style="color:red">♥</span><a href="http://blog.mugunthkumar.com/">MKBlog</a></li>
