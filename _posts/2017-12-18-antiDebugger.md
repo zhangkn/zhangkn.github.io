@@ -156,7 +156,7 @@ SharedUtilStruct->cign(key ,count,knkey, knput);
 - [introducing-the-ios-reverse-engineering-toolkit](https://www.veracode.com/blog/2014/03/introducing-the-ios-reverse-engineering-toolkit)
 - [how-to-reverse-engineer-os-x-and-ios-software](https://www.apriorit.com/dev-blog/363-how-to-reverse-engineer-os-x-and-ios-software) 
 - [基于OLLVM定制的开源混淆工具Hikari](http://iosre.com/t/ollvm-hikari/10475)
-
+- [在iOS 7中获取UDID的3种可能方法](http://bbs.iosre.com/t/ios-7-udid-3/45)
  
 
 

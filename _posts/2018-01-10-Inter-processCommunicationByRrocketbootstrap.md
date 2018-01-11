@@ -105,4 +105,9 @@ Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] <Info>: nw_connec
 - [Does syslogd work on 9.3.3 ](https://www.reddit.com/r/jailbreak/comments/50niif/question_does_syslogd_work_on_933/)
 - [cydia 搜索安装com.ichitaso.syslogflipswitch](http://cydia.saurik.com/package/com.ichitaso.syslogflipswitch/)
 - [An iOS system log tailer that doesn't suck. Improved](https://github.com/MegaCookie/deviceconsole)
-
+- [How to SSH via WiFi/USB on Yalu Jailbreak iOS 10](https://yalujailbreak.net/ssh-ios-10-tutorial/)
+- [在iOS 7中获取UDID的3种可能方法](http://bbs.iosre.com/t/ios-7-udid-3/45)
+- [CFInternal.h](https://opensource.apple.com/source/CF/CF-744.18/CFInternal.h)
+```
+#define CONST_STRING_DECL(S, V) const CFStringRef S = (const CFStringRef)__builtin___CFStringMakeConstantString(V);
+```
