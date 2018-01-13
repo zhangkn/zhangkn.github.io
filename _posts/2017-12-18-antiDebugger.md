@@ -161,7 +161,8 @@ SharedUtilStruct->cign(key ,count,knkey, knput);
 
 
 ###  参考博客
-
+- [LLDB Cheat Sheet](https://gist.github.com/ryanchang/a2f738f0c3cc6fbd71fa)
+- [Patching for process attaching](http://iphonedevwiki.net/index.php/Debugserver#Patching_for_process_attaching)
 - [jmpews](http://jmpews.github.io/2017/08/09/darwin/%E5%8F%8D%E8%B0%83%E8%AF%95%E5%8F%8A%E7%BB%95%E8%BF%87/)
 - [/iOS-Reverse-Engineering-presentation](https://aozhimin.github.io/iOS-Reverse-Engineering-presentation/#/title) aozhimin
 - [Pegasus间谍套件内部原理及流程剖析](https://bbs.pediy.com/thread-212483.htm)

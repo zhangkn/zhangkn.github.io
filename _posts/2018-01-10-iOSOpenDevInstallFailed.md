@@ -25,7 +25,7 @@ devzkndeMacBook-Pro:Xcode devzkn$ /Applications/Xcode.app/Contents/Developer/Pla
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin
 ```
 
-### 错误2 :PrivateFrameworks apple已经将私有framework全部移走
+### [错误2 :PrivateFrameworks apple已经将私有framework全部移走](https://github.com/zhangkn/knPrivateFrameworks)
 
 >*  mkdir PrivateFrameworks
 ```
@@ -38,6 +38,40 @@ devzkndeMacBook-Pro:Library devzkn$ sudo  mkdir PrivateFramework
 404:https://codeload.github.com/kokoabim/iOSOpenDev-Xcode-Templates/tar.gz/master%20to%20/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T/iod-setup.cDoMQ34f/file.tar.gz
 ```
 
+###  今天下载Xcode7.2 专门用于调用PrivateFramework和安装iOSOpenDev
+
+```
+devzkndeMacBook-Pro: devzkn$ xcodebuild -version
+Xcode 7.2
+Build version 7C68
+```
+
+>*  File not found iPhoneOSPackageTypes.xcspec
+```
+devzkndeMacBook-Pro:PrivateFrameworks devzkn$ mkdir mkdir /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Specifications/
+devzkndeMacBook-Pro:PrivateFrameworks devzkn$ cp -R  /Applications/Xcode9.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Specifications/*  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Specifications/
+```
+
+>* File not found: iPhone Simulator PackageTypes.xcspec
+```
+devzkndeMacBook-Pro:PrivateFrameworks devzkn$ cp -R  /Applications/Xcode9.1.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Specifications/*  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Xcode/Specifications/
+```
+>*  usr -> ../../../usr
+
+```
+devzkndeMacBook-Pro:PrivateFrameworks devzkn$ cp -R /Applications/Xcode9.1.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/
+```
+
+### Q&A
+
+>*  如果Xcode总是莫名其妙闪退 就删除xcodeproj/xcuserdata
+
+>* Mac Xcode的首选项,偏好设置(Userdefault)文件地址 ~/Library/Preferences/com.apple.dt.Xcode.plist
+
+>* [Alcatraz](https://github.com/alcatraz/Alcatraz)
+
+
+
 ### 参考
 
 >* 官方参考
@@ -45,6 +79,12 @@ devzkndeMacBook-Pro:Library devzkn$ sudo  mkdir PrivateFramework
 Follow — https://twitter.com/kokoabim
 Download — http://iOSOpenDev.com
 Wiki — https://github.com/kokoabim/iOSOpenDev/wiki
+
+• The `iosod` command-line tool was placed in /opt/iOSOpenDev/bin. This is used by Xcode during Build Phases of projects created from iOSOpenDev templates. It also provides other various functions. To see all of its usages: Open Terminal and type `iosod --help`.
+
+• The `iod-setup` command-line tool was placed in /opt/iOSOpenDev/bin. It provides ability to set up different Xcode and iOS SDK versions. To see all of its usages: Open Terminal and type `iod-setup`.
+
+• The `iod-uninstall` command-line tool was placed in /opt/iOSOpenDev/bin. It provides ability to uninstall iOSOpenDev. To see all of its usages: Open Terminal and type `iod-uninstall`.
 ```
 
 - [iOSOpenDev Installer Failures](https://github.com/kokoabim/iOSOpenDev/wiki/Troubleshoot)

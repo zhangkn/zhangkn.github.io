@@ -21,6 +21,7 @@ iPhone:/var/log root# ls -l /usr/lib/librocketbootstrap.dylib
 
 ### Q&A 
 
+
 >* 使用yalu102 激活了之后，无法连接ssh
 
 ```
@@ -52,7 +53,20 @@ iPhone:/var/containers/Bundle/Application/B831448D-BCD0-4F29-BDA6-9FC03903D30C/y
   228 ??         0:00.05 /usr/local/bin/dropbear -F -R -p 22
 ```
 
->* [deviceconsole](https://github.com/rpetrich/deviceconsole)
+>* scp   的使用-- 利用wget 安装scp
+```
+#wget + 空格 + 要下载文件的url路径
+# cydia里面安装wget
+#  安装scp,默认安装在当前目录
+wget mila432.com/scp
+ldid -S scp
+# chmod +x scp
+chmod 777 scp
+mv scp /usr/bin/scp
+```
+
+
+>* [deviceconsole](https://github.com/rpetrich/deviceconsole)  查看log
 
 ```
 devzkndeMacBook-Pro:deviceconsole-master devzkn$ /Users/devzkn/Library/Developer/Xcode/DerivedData/deviceconsole-gfjsthvevyxiqyahugfpmzjlseye/Build/Products/Debug/deviceconsole --help
@@ -91,7 +105,15 @@ Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] <Info>: nw_connec
 Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] <Info>: nw_connection_endpoint_report [6.2 123.53.139.209:443 waiting path (satisfied)] reported event path:satisfied
 ```
 
+>*ldid 
+```
+devzkndeMacBook-Pro:bin devzkn$ which ldid
+/opt/iOSOpenDev/bin/ldid
+```
+
 ### 参考
+- [iOS10 经过yalu越狱后无法ssh登录和无法scp拷贝问题](http://blog.csdn.net/dianshanglian/article/details/62422627)
+- [http://pangu.io/ ios 9+](http://pangu.io/)
 - [iOS Tweak 进程间通讯](https://www.jianshu.com/p/8a3c492cb5fb)
 - [RocketBootstrap](http://iphonedevwiki.net/index.php/RocketBootstrap#How_to_use_this_library)
 - [Updating_extensions_for_iOS_7](http://iphonedevwiki.net/index.php/Updating_extensions_for_iOS_7)
