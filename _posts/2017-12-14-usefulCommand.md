@@ -64,7 +64,11 @@ ldid -S "$TARGET_BUILD_DIR/$EXECUTABLE_NAME"
 cp "$PROJECT_DIR/$TARGET_NAME/Package/Library/MobileSubstrate/DynamicLibraries/$TARGET_NAME".plist "$TARGET_BUILD_DIR"
 scp -r "$TARGET_BUILD_DIR/"* ip:/var/stash/_.UmC91h/DynamicLibraries/
 ```
-
+>*  [一次性编译多个dylib、framework、.a、tweakTool 的方法](https://github.com/zhangkn/KNCocoaTouchStaticLibrary)
+```
+# 1、 建立一个iOSapp 工程之后，将对应的dylib、framework、.a、tweakTool 工程目录导入到app工程
+# 2、将需要一起编译的dylib、framework、.a、tweakTool 加入iOSapp的TargetDependencies列表
+```
 
 ### nm
 >* dump symbol table
@@ -470,8 +474,11 @@ $: 匹配正则表达式的结束行。
 chrome://chrome-urls/
 ```
 
-### 参考资源
-
+### 参考
+- [搭建一个提高开发效率的iOS静态库工程](http://blog.csdn.net/z929118967/article/details/73872024)
+- [OS X 上的动态链接库劫持 (下)](https://82flex.com/2016/06/08/1461d81d0e5b014ab754aa68f6bbd86c92e42ec6/)
+- [KNCocoaAsyncSocketDemo](https://github.com/zhangkn/KNCocoaAsyncSocketDemo)
+- [MPProcessMessage](https://github.com/zhangkn/MPProcessMessage)
 - [unix shell scripts](https://github.com/samsonjs/bin)
 - [lldb远程调试命令](https://zhiwei.li/text/category/reverse_engineering/)
 - [Objetive-C内存布局](https://zhiwei.li/text/2012/03/10/objetive-c%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80/)
