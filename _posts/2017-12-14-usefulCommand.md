@@ -53,6 +53,19 @@ User root
 IdentityFile ~/.ssh/id_rsa_Theos125
 ```
 
+### Xcode 编译相关的 run script
+
+>* 将与tweak工程同名的plist文件和dylib文件放入/Library/MobileSubstrate/DynamicLibraries目录下
+```
+#/Library/MobileSubstrate/DynamicLibraries -> /var/stash/_.UmC91h/DynamicLibraries/
+/opt/iOSOpenDev/bin/iosod --xcbp
+echo "$TARGET_BUILD_DIR/$EXECUTABLE_NAME"
+ldid -S "$TARGET_BUILD_DIR/$EXECUTABLE_NAME"
+cp "$PROJECT_DIR/$TARGET_NAME/Package/Library/MobileSubstrate/DynamicLibraries/$TARGET_NAME".plist "$TARGET_BUILD_DIR"
+scp -r "$TARGET_BUILD_DIR/"* ip:/var/stash/_.UmC91h/DynamicLibraries/
+```
+
+
 ### nm
 >* dump symbol table
 ```
