@@ -48,7 +48,7 @@ Build version 7C68
 
 >*  File not found iPhoneOSPackageTypes.xcspec
 ```
-devzkndeMacBook-Pro:PrivateFrameworks devzkn$ mkdir mkdir /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Specifications/
+devzkndeMacBook-Pro:PrivateFrameworks devzkn$ mkdir  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Specifications/
 devzkndeMacBook-Pro:PrivateFrameworks devzkn$ cp -R  /Applications/Xcode9.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Specifications/*  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Specifications/
 ```
 
@@ -71,10 +71,41 @@ devzkndeMacBook-Pro:PrivateFrameworks devzkn$ cp -R /Applications/Xcode9.1.app/C
 >* [Alcatraz](https://github.com/alcatraz/Alcatraz)
 
 
+>*  target specifies product type 'com.apple.product-type.tool'
+
+```
+# 具体的解决方案：
+#1、重新安装Xcode； xcode-select
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+# 2、xcodebuild
+sudo xcodebuild -license
+# 3、# 大部分是因为Xcode升级引起的 重新安装iOSopendev
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Specifications/iPhoneOSProductType.xcspec里面没有类型为tool的配置。
+devzkndeMacBook-Pro:Library devzkn$ cd /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/PrivateFrameworks
+devzkndeMacBook-Pro:Library devzkn$ git clone https://github.com/zhangkn/knPrivateFrameworks.git
+# 备用方案：可以采用theos 创建新的工程
+```
+
+>*  PrivateFrameworks的使用最好不要放置在/opt/iOSOpenDev/frameworks,否则Xcode 会找不到。
+```
+# 找不到通常是由于/opt/iOSOpenDev/frameworks权限 和frameworks search paths 配置有关。
+drwx------  3 root  wheel     96 Jan 10 14:04 oncrpc.framework
+```
+
+>* Xcode won't start, stuck on 'Verifying “Xcode”…'
+```
+#“Xcode.app” is damaged and can’t be opened. You should move it to the Trash.
+xattr -d com.apple.quarantine '/Applications/Xcode.app'
+# 拷贝其他机器的Xcode app 之后，记得执行上述命令，以及一下命令
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+sudo xcodebuild -license
+```
+
 
 ### 参考
 
 >* 官方参考
+
 ```
 Follow — https://twitter.com/kokoabim
 Download — http://iOSOpenDev.com
@@ -86,11 +117,11 @@ Wiki — https://github.com/kokoabim/iOSOpenDev/wiki
 
 • The `iod-uninstall` command-line tool was placed in /opt/iOSOpenDev/bin. It provides ability to uninstall iOSOpenDev. To see all of its usages: Open Terminal and type `iod-uninstall`.
 ```
-
+- [iOS安全–使用iOSOpenDev进行越狱开发](http://www.blogfshare.com/iosopendev.html)
 - [iOSOpenDev Installer Failures](https://github.com/kokoabim/iOSOpenDev/wiki/Troubleshoot)
 - [iOSOpenDev](https://github.com/iFindTA/iOSOpenDev)
 - [在xcode7下安装iOSOpendev，并使用iOSOpendev模板编译iOS9钩子](http://iosre.com/t/xcode7-iosopendev-iosopendev-ios9/1963)
 - [Xcode 9 iOSOpenDev 安装及编译](http://bbs.iosre.com/t/xcode-9-iosopendev/10019/1)
 - [https://developer.apple.com/download/more/ 下载Xcode7.2](https://developer.apple.com/download/more/) 
 - [Inter-process communication](http://iphonedevwiki.net/index.php/Updating_extensions_for_iOS_7)
-
+- [https://hr.163.com/position/list.do?postType=0104&currentPage=1](https://hr.163.com/position/list.do?postType=0104&currentPage=1)

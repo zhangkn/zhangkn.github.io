@@ -111,7 +111,11 @@ devzkndeMacBook-Pro:bin devzkn$ which ldid
 /opt/iOSOpenDev/bin/ldid
 ```
 
-### 参考
+### See also
+- [IPC](http://iphonedevwiki.net/index.php/IPC)
+- [libobjcipc An inter-process communication (between app and SpringBoard) solution for jailbroken iOS](https://github.com/a1anyip/libobjcipc)
+- [Libobjcipc iphonedevwiki](http://iphonedevwiki.net/index.php/Libobjcipc)
+- [多个App之间的数据传输](https://github.com/lzyroot/MPProcessMessage)
 - [iOS10 经过yalu越狱后无法ssh登录和无法scp拷贝问题](http://blog.csdn.net/dianshanglian/article/details/62422627)
 - [http://pangu.io/ ios 9+](http://pangu.io/)
 - [iOS Tweak 进程间通讯](https://www.jianshu.com/p/8a3c492cb5fb)
