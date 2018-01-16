@@ -101,11 +101,26 @@ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 sudo xcodebuild -license
 ```
 
+>* 设置默认的Xcode版本
+```
+sudo xcode-select -switch /Applications/Xcode.app
+```
+
 >* /opt/theos/vendor/include
 
 ```
 # 这里路径包含一些重要的私有的库 比如SpringBoardServices.h
 ```
+
+>*  xcodebuild[84329:6787073] [MT] PluginLoading: Required plug-in compatibility UUID ACA8656B-FEA8-4B6D-8E4A-93F4C95C362C for plug-in at path
+
+```
+#  rm -rf ZXPUnicodeDecodePlugsForXcode.xcplugin 删除第三方插件
+cd ~/Library/Application*Support/Developer/Shared/Xcode/Plug-ins/
+# 方式二，或者直接查询DVTPlugInCompatibilityUUID；对应的插件找到info.plist,找到DVTPlugInCompatibilityUUIDs，新增一项UUID
+devzkndeMacBook-Pro:taoke devzkn$ defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID
+```
+
 
 ### 参考
 
@@ -130,3 +145,6 @@ Wiki — https://github.com/kokoabim/iOSOpenDev/wiki
 - [https://developer.apple.com/download/more/ 下载Xcode7.2](https://developer.apple.com/download/more/) 
 - [Inter-process communication](http://iphonedevwiki.net/index.php/Updating_extensions_for_iOS_7)
 - [https://hr.163.com/position/list.do?postType=0104&currentPage=1](https://hr.163.com/position/list.do?postType=0104&currentPage=1)
+- [升级Xcode插件失效解决方法](https://www.jianshu.com/p/bf48ab908bba)
+- [Technical Note TN2339](https://developer.apple.com/library/content/technotes/tn2339/_index.html)
+- [mac-headers](https://github.com/zhangkn/mac-headers)

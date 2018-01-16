@@ -158,6 +158,8 @@ apt-get install socat
 
 ### git
 
+在遇到git 冲突的时候，常常可以利用git status 来查看解决方案
+
 >* 1、 git log 
 ```
 devzkndeMacBook-Pro:SQTaoke devzkn$ git log --pretty=oneline
