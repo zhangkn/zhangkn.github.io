@@ -84,6 +84,16 @@ nm -gUj MoKNon.decrypted |grep Observer
 2、hopper按g跳转到指定地址:
 ```
 
+### ln
+
+>* 创建文件的软连接
+```
+devzkndeMacBook-Pro:bin devzkn$ sudo  ln -s /opt/iOSOpenDev/bin/ldid /opt/theos/bin/ldid
+Password:
+devzkndeMacBook-Pro:bin devzkn$ ls -l  /opt/theos/bin/ldid
+lrwxr-xr-x  1 root  wheel  24 Jan 16 11:09 /opt/theos/bin/ldid -> /opt/iOSOpenDev/bin/ldid
+```
+
 ### killall
 ```
 killall -9 SpringBoard

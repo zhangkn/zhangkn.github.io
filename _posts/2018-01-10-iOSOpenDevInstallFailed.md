@@ -101,6 +101,11 @@ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 sudo xcodebuild -license
 ```
 
+>* /opt/theos/vendor/include
+
+```
+# 这里路径包含一些重要的私有的库 比如SpringBoardServices.h
+```
 
 ### 参考
 
