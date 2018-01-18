@@ -34,6 +34,22 @@ ssh-copy-id -i ~/.ssh/id_rsa_Theos125 $postName
 exit 0
 ```
 
+>* 2、scp 到Mac
+
+```
+iPhone:/Applications/iNalyzer.app root# scp /var/root/Documents/iNalyzer/2B559443-6CEE-4731-AA3B-7E587BE67219/static_2017_12_09-14_24_57.zip devzkn@192.168.2.186://Users/devzkn/decrypted/knMokssnossV5.4.0
+
+```
+ps :iPhone SSH Mac 的前提是mac setremotelogin on
+
+```
+devzkndeMacBook-Pro:.ssh devzkn$ sudo systemsetup -setremotelogin off
+
+devzkndeMacBook-Pro:.ssh devzkn$ sudo systemsetup -setremotelogin on
+devzkndeMacBook-Pro:.ssh devzkn$ sudo systemsetup -getremotelogin
+Remote Login: On
+```
+
 ### 利用 ssh 的用户配置文件 config 管理 ssh 会话（How do I connect to ssh with a different public key）
 
 ```

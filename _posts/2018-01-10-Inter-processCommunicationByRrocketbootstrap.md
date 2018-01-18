@@ -9,15 +9,181 @@ site: https://zhangkn.github.io
 
 ### 前言
 
-### Install this from Cydia
-直接搜索librocketbootstrap安装即可
->* 获取librocketbootstrap 
+ These are some of the existing methods to implement IPC on iOS:
+- [Mach Ports]
+- [Pasteboard]
+- [AppleEvents & AppleScript]
+- [Distributed Objects]
+- [XPC](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingXPCServices.html)
+- [Notifications](http://iphonedevwiki.net/index.php/Notifications)
+- [libobjcipc](http://iphonedevwiki.net/index.php/Libobjcipc)
+- [LightMessaging](https://github.com/rpetrich/LightMessaging)
+
+>* Community Libraries to Help
+
+```
+1、RocketBootstrap： Service registration and lookup system for iOS
+2、OBJCIPC ：High-level API for hosting services inside apps (by Alan Yip/a1anyip)
+3、LightMessaging： Header-only library for simple IPC
+```
+
+
+### [LightMessaging](http://iphonedevwiki.net/index.php/LightMessaging)
+
+>* feature
+
+```
+ 1、Mid-level API,
+ 2、Message-oriented 
+ 3、Zero copy, for certain message types
+ 4、No additional cost over standard mach calls 
+ 5、Easy integration with RocketBootstrap 
+ 6、No package dependencies
+
+```
+>*  using
+
+```
+ 1、Start services with LMStartService
+
+ 2、Send messages with LMConnectionSendTwoWay (and friends)
+
+ 3、Send replies with LMSendReply (and friends)
+
+ 4、Bring your own security checks still ：Community developers, your input on API please!
+
+
+```
+
+
+
+### [librocketbootstrap](http://iphonedevwiki.net/index.php/RocketBootstrap#How_to_use_this_library)
+
+>* feature
+```
+1、Uses iOS7’s security model: Privileged processes can register, any process can look up 
+2、Works with existing mach-based IPC mechanisms
+3、Similar to Apple’s bootstrap APIs: bootstrap_look_up becomes rocketbootstrap_look_up
+bootstrap_register becomes rocketbootstrap_register
+```
+![](/images/posts/{{page.title}}/bootstrap_look_up.png)
+
+```
+4、Easy to use wrappers for CFMessagePort and CPDistributedMessagingCenter(todo: XPC) 
+5、Bring your own security model by using audit_token_to_au32 to know who’s calling
+6、Requires package dependency, commonly installed on users’ devices
+```
+
+ 
+>* 获取librocketbootstrap ：Install this from Cydia 直接搜索rocketbootstrap安装即可
+
 ```
 iPhone:/var/log root# ls -l /usr/lib/librocketbootstrap.dylib
 -rwxr-xr-x 1 root wheel 221776 Feb  6  2017 /usr/lib/librocketbootstrap.dylib*
+
+/Library/LaunchDaemons/com.rpetrich.rocketbootstrapd.plist
+/usr/libexec/rocketd
+launchctl load  /Library/LaunchDaemons/com.rpetrich.rocketbootstrapd.plist
+launchctl unload /Library/LaunchDaemons/com.rpetrich.rocketbootstrapd.plist
 ```
 
 
+
+### [IPC](http://iphonedevwiki.net/index.php/IPC)
+allows processes to send each other messages and data
+
+
+
+### [libobjcipc](http://iphonedevwiki.net/index.php/Libobjcipc)
+
+>* [feature](http://iphonedevwiki.net/index.php/Libobjcipc)
+```
+• High level API provides service lookup and IPC, easy to use
+• Background-launches and fakes app lifecycle for you 
+• Message-oriented
+• Mostly asynchronous
+• “Open” security model 
+• Requires separate package dependency, but very small
+• Simple Objective-C APIs: 
+Register using --registerIncomingMessageFromAppHandlerForMessageName:handler:
+Send using -- sendMessageToAppWithIdentifier:messageName:dictionary:replyHandler:  
+• Similar patterns for App to SpringBoard
+```
+
+### [XPC](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingXPCServices.html)
+
+XPC can be accessed through either the libxpc C API, or the NSXPCConnection Objective-C API.
+
+>* feature
+```
+1、High level API, easy to use ：One of Apple’s many wrappers for Mach messages；
+2、Message-oriented
+3、Public API on OS X only
+4、Asynchronous always, no synchronous versions
+5、Service lookup is restricted on iOS 7+ 
+```
+>* [参考文章](http://blog.linhere.com/archives/552.html)
+>* [Inter-Process Communication](http://nshipster.com/inter-process-communication/)
+
+
+
+### [Tweaks on a multi-process iOS](https://rpetri.ch/jbcon2016/JailbreakCon2016.pdf)
+
+>* Inter-Process Communication 
+```
+1、Mechanisms provided by the kernel to facilitate coordinated sharing of data and commands between processes
+2、Used heavily in recent versions of iOS and OS X to implement system frameworks and APIs
+```
+>* Standard Techniques
+```
+1、Save to temp files：High level APIs, easy to use
+2、Unix Domain Sockets： Low level API  ，Stream oriented, requires basic parsing to reconstruct
+messages
+```
+>* Other standard techniques
+```
+• Shared Memory
+• Signals
+• Named pipes
+• Network sockets 
+```
+>* Apple/iOS-specific Techniques
+```
+1、Darwin Notifications：No data, only a simple “go” message，Any process can post or observe ，Always asynchronous
+2、Mach Ports ：seriously low level 
+3、CPDistributedNotificationCenter： Private API, does change between iOS versions
+4、CFMessagePort： Public API，Only supports synchronous use ，Service lookup is restricted on iOS 6+
+5、XPC ： High level API, easy to use �，One of Apple’s many wrappers for Mach messages ；
+```
+>* Creative Techniques
+```
+1、Relax existing service permissions
+2、Repurpose existing iOS services’ IPC channels：Service internals are frequently rewritten in new iOS versions
+3、Delegate to someone else
+```
+
+>* Libraries that use IPC under the hood
+```
+1、http://iphonedevwiki.net/index.php/AppList
+2、http://iphonedevwiki.net/index.php/Flipswitch
+3、http://iphonedevwiki.net/index.php/Libactivator
+4、https://github.com/r-plus/libcanopenurl
+```
+
+>* Community Libraries to Help
+```
+1、RocketBootstrap： Service registration and lookup system for iOS
+```
+
+>* Be aware of potential deadlocks
+```
+1、 SpringBoard will block on backboardd—don’t call from backboardd to SpringBoard! 
+2、Communicate with these processes using one-way IPC, asynchronous IPC, or two-way IPC with timeouts 
+3、Avoid the pitfall of accidentally sending blocking API calls to one’s own process
+4、SpringBoard is usually a good choice for coordinator as it often has much work to do anyway
+5、Batch all of the operations for a single user action into one IPC call, if possible 
+6、Filter to only the data required before sending 
+```
 
 ### Q&A 
 
@@ -27,7 +193,7 @@ iPhone:/var/log root# ls -l /usr/lib/librocketbootstrap.dylib
 ```
 #/usr/local/bin/dropbear 此次越狱工具默认安装了 SSH。采用了 Dropbear 取代 Openssh。
 因此在部署安装使用yalu102的时候记得修改dropbear.plist的信息：ProgramArguments的127.0.0.1:22 直接改为22。
-如果部署完成，直接修改沙盒的信息的话，记得重启设备,且必须卸载Openssh。
+如果部署完成，直接修改沙盒的信息的话，记得重启设备。
 
 # 获取直接修改对应的配置信息
 iPhone:~ root# ps -e |grep yalu*
@@ -48,13 +214,19 @@ iPhone:/var/containers/Bundle/Application/B831448D-BCD0-4F29-BDA6-9FC03903D30C/y
     );
     RunAtLoad = 1;
 }
-# dropbear 参数
+```
+
+>* dropbear 参数
+
+```
  iPhone:/var/containers/Bundle/Application/B831448D-BCD0-4F29-BDA6-9FC03903D30C/yalu102.app root# ps -e |grep dropbear
   228 ??         0:00.05 /usr/local/bin/dropbear -F -R -p 22
 ```
 
->* scp   的使用-- 利用wget 安装scp
+>* 利用wget 安装scp( 解决：sh: scp: command not found)
+
 ```
+#两台服务器都要安装scp才能传文件
 #wget + 空格 + 要下载文件的url路径
 # cydia里面安装wget
 #  安装scp,默认安装在当前目录
@@ -63,8 +235,10 @@ ldid -S scp
 # chmod +x scp
 chmod 777 scp
 mv scp /usr/bin/scp
+# 或者使用curl: curl -O mila432.com/scp ./scp
 ```
 
+dyld: Library not loaded: /usr/lib/libssl.0.9.8.dylib 重新安装openssl
 
 >* [deviceconsole](https://github.com/rpetrich/deviceconsole)  查看log
 
@@ -137,3 +311,104 @@ devzkndeMacBook-Pro:bin devzkn$ which ldid
 ```
 #define CONST_STRING_DECL(S, V) const CFStringRef S = (const CFStringRef)__builtin___CFStringMakeConstantString(V);
 ```
+
+### xpc资料
+- [Creating XPC Services](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingXPCServices.html)
+- [关于 XPC](https://objccn.io/issue-14-4/)
+- [XPC Services xpc.h](https://developer.apple.com/documentation/xpc/xpc_services_xpc.h?preferredLanguage=occ)
+- [usr/include/xpc](https://github.com/zhangkn/mac-headers/tree/master/usr/include/xpc)
+- [iOS冰与火之歌 – 利用XPC过App沙盒](http://cb.drops.wiki/drops/papers-14170.html)
+```
+1、最简单最常见的IPC就是URL Schemes
+2、XPC也是iOS IPC的一种，通过XPC，app可以与一些系统服务进行通讯，并且这些系统服务一般都是在沙盒外的，如果我们可以通过IPC控制这些服务的话，也就成功的做到沙盒逃逸了
+```
+- [iOS_ICE_AND_FIRE](https://github.com/zhengmin1989/iOS_ICE_AND_FIRE)
+- [iOS冰与火之歌系列，一步一步学ROP系列，安卓动态调试七种武器系列等](https://github.com/zhengmin1989/MyArticles)
+- [rpetri.ch](https://rpetri.ch/)
+- [Mattt Thompson](http://nshipster.com/authors/mattt-thompson/)
+- [Mattt](https://mat.tt/)
+- [打码兔](http://dama2.com/)
+- [iOS冰与火之歌番外篇 - 在非越狱手机上进行App Hook](http://geek.csdn.net/news/detail/56195)
+- [ios安全攻防](http://www.droidsec.cn/category/ios%E5%AE%89%E5%85%A8%E6%94%BB%E9%98%B2/)
+- [深夜福利！越狱iOS清痕暨■■■■■■■■核心代码の无料放送-clearTrace](http://bbs.iosre.com/t/ios-igrimace/448)
+
+```
+- (void)clearTrace
+{
+        // Kill all App Store Apps
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        if ([fileManager fileExistsAtPath:@"/var/mobile/Library/Caches/com.apple.mobile.installation.plist"])
+        {
+                NSDictionary *dictionary1 = [NSDictionary dictionaryWithContentsOfFile:@"/var/mobile/Library/Caches/com.apple.mobile.installation.plist"];
+                NSDictionary *dictionary2 = [dictionary1 objectForKey:@"User"];
+                NSEnumerator *enumerator = [dictionary2 keyEnumerator];
+                NSString *key;
+                while ((key = [enumerator nextObject]))
+                {
+                        NSDictionary *dictionary3 = [dictionary2 objectForKey:key];
+                        NSString *targetApp = [dictionary3 objectForKey:@"CFBundleExecutable"];
+                        system([NSString stringWithFormat:@"killall -9 %@", targetApp] UTF8String]);
+                }
+        }
+
+        // Kill Safari
+        system("killall -9 MobileSafari");
+
+        // Enumerate all App Store Apps' directories and delete /Documents, /Library, /tmp, /StoreKit
+        NSDirectoryEnumerator *dirEnum = [fileManager enumeratorAtPath:@"/var/mobile/Applications/"];
+        NSString *file;
+        while ((file = [dirEnum nextObject]))
+                if ([file hasSuffix:@"/Documents"] || [file hasSuffix:@"/Library"] || [file hasSuffix:@"/tmp"] || [file hasSuffix:@"/StoreKit"])
+                {
+                        [fileManager removeItemAtPath:[NSString stringWithFormat:@"/var/mobile/Applications/%@", file] error:nil];
+                        [fileManager createDirectoryAtPath:[NSString stringWithFormat:@"/var/mobile/Applications/%@", file] withIntermediateDirectories:NO attributes:[NSDictionary dictionaryWithObjectsAndKeys:@"mobile", NSFileOwnerAccountName, @"mobile", NSFileGroupOwnerAccountName, nil] error:nil];
+                }
+
+        // Delete cookies
+        [fileManager removeItemAtPath:@"/var/mobile/Library/Cookies/Cookies.binarycookies" error:nil];
+        [fileManager removeItemAtPath:@"/private/var/root/Library/Cookies/Cookies.binarycookies" error:nil];
+        [fileManager removeItemAtPath:@"/var/mobile/Library/Safari/History.plist" error:nil];
+        [fileManager removeItemAtPath:@"/var/mobile/Library/Safari/SuspendState.plist" error:nil];
+
+        // Delete pasteboard contents and relaunch pasteboardd
+        system("launchctl unload -w /System/Library/LaunchDaemons/com.apple.UIKit.pasteboardd.plist");
+
+        dirEnum = [fileManager enumeratorAtPath:@"/var/mobile/Library/Caches/com.apple.UIKit.pboard/"];
+        while ((file = [dirEnum nextObject]))
+                [fileManager removeItemAtPath:[NSString stringWithFormat:@"/var/mobile/Library/Caches/com.apple.UIKit.pboard/%@", file] error:nil];
+
+        system("launchctl load -w /System/Library/LaunchDaemons/com.apple.UIKit.pasteboardd.plist");
+
+        // Delete entries in keychain-2.db
+        sqlite3 *database;
+        int openResult = sqlite3_open("/var/Keychains/keychain-2.db", &database);
+        if (openResult == SQLITE_OK)
+        {
+                int execResult = sqlite3_exec(database, "DELETE FROM genp WHERE agrp<>'apple'", NULL, NULL, NULL);
+                if (execResult != SQLITE_OK) NSLog(@"iOSRE: Failed to exec DELETE FROM genp WHERE agrp<>'apple', error %d", execResult);
+
+                execResult = sqlite3_exec(database, "DELETE FROM cert WHERE agrp<>'lockdown-identities'", NULL, NULL, NULL);
+                if (execResult != SQLITE_OK) NSLog(@"iOSRE: Failed to exec DELETE FROM cert WHERE agrp<>'lockdown-identities', error %d", execResult);
+
+                execResult = sqlite3_exec(database, "DELETE FROM keys WHERE agrp<>'lockdown-identities'", NULL, NULL, NULL);
+                if (execResult != SQLITE_OK) NSLog(@"iOSRE: Failed to exec DELETE FROM keys WHERE agrp<>'lockdown-identities'', error %d", execResult);
+
+                execResult = sqlite3_exec(database, "DELETE FROM inet", NULL, NULL, NULL);
+                if (execResult != SQLITE_OK) NSLog(@"iOSRE: Failed to exec DELETE FROM inet, error %d", execResult);
+
+                execResult = sqlite3_exec(database, "DELETE FROM sqlite_sequence", NULL, NULL, NULL);
+                if (execResult != SQLITE_OK) NSLog(@"iOSRE: Failed to exec DELETE FROM sqlite_sequence, error %d", execResult);
+
+                sqlite3_close(database);
+        }
+        else NSLog(@"iOSRE: Failed to open /var/Keychains/keychain-2.db, error %d", openResult);
+}
+```
+- [LSApplicationWorkspace](https://github.com/nst/iOS-Runtime-Headers/blob/master/Frameworks/MobileCoreServices.framework/LSApplicationWorkspace.h)
+- [iOS10-Runtime-Headers/PrivateFrameworks/AppStoreDaemon.framework/ASDJobManager.h ASDJobManager](https://github.com/JaviSoto/iOS10-Runtime-Headers/blob/master/PrivateFrameworks/AppStoreDaemon.framework/ASDJobManager.h)
+- [iOS Symbol Pool](https://ios.ddf.net/)
+- [mengwuji](http://www.mengwuji.net/thread-2950-1-1.html)
+- [Apple ID 网页协议注册机源代码 163邮箱](https://bbs.pediy.com/thread-223622.htm)
+- [qimai](https://www.qimai.cn/search/index/country/cn/search/%E7%9C%81%E9%92%B1)
+
+

@@ -137,6 +137,7 @@ Wiki — https://github.com/kokoabim/iOSOpenDev/wiki
 
 • The `iod-uninstall` command-line tool was placed in /opt/iOSOpenDev/bin. It provides ability to uninstall iOSOpenDev. To see all of its usages: Open Terminal and type `iod-uninstall`.
 ```
+- [PrivateFrameworks](https://github.com/theos/sdks/tree/master/iPhoneOS9.3.sdk/System/Library/PrivateFrameworks)
 - [iOS安全–使用iOSOpenDev进行越狱开发](http://www.blogfshare.com/iosopendev.html)
 - [iOSOpenDev Installer Failures](https://github.com/kokoabim/iOSOpenDev/wiki/Troubleshoot)
 - [iOSOpenDev](https://github.com/iFindTA/iOSOpenDev)
@@ -148,3 +149,5 @@ Wiki — https://github.com/kokoabim/iOSOpenDev/wiki
 - [升级Xcode插件失效解决方法](https://www.jianshu.com/p/bf48ab908bba)
 - [Technical Note TN2339](https://developer.apple.com/library/content/technotes/tn2339/_index.html)
 - [mac-headers](https://github.com/zhangkn/mac-headers)
+- [theos.github.io](https://github.com/theos/theos.github.io)
+- [pensource.apple.com](https://opensource.apple.com/)

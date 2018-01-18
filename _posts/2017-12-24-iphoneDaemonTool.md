@@ -178,8 +178,17 @@ iPhone:/Library root# ls -lrt /Library/LaunchAgents
 - [run-a-daemon-as-root-on-ios](http://iosre.com/t/run-a-daemon-as-root-on-ios/212)
 - [Preferences_specifier_plist](http://iphonedevwiki.net/index.php/Preferences_specifier_plist)
 - [Makefiles](http://www.gnu.org/software/make/manual/html_node/Makefiles.html)
+- [Run a daemon (as root) on iOS](http://blog.linhere.com/archives/539.html)
+- [jailbreakqa](http://www.jailbreakqa.com/)
+- [Cydia Substrate](http://www.cydiasubstrate.com/)
+- [iphonedevwiki](http://iphonedevwiki.net/index.php/Main_Page)
+- [theiphonewiki](https://www.theiphonewiki.com/)
+- [http://bbs.iosre.com/](http://bbs.iosre.com/)
+- [security.ios-wiki.com](https://wizardforcel.gitbooks.io/ios-sec-wiki/content/index.html)
+- [iossecurity](https://github.com/zhangkn/iossecurity)
+- [Apple OpenSource](https://github.com/opensource-apple)
 
-### 
+### see also
 >* osx
 ![](/images/posts/{{page.title}}/osx.png)
 
