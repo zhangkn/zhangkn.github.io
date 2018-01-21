@@ -38,7 +38,7 @@ exit 0
 
 ```
 iPhone:/Applications/iNalyzer.app root# scp /var/root/Documents/iNalyzer/2B559443-6CEE-4731-AA3B-7E587BE67219/static_2017_12_09-14_24_57.zip devzkn@192.168.2.186://Users/devzkn/decrypted/knMokssnossV5.4.0
-
+#sftp（ /usr/libexec/sftp-server  ）、scp （ /usr/bin/scp）
 ```
 ps :iPhone SSH Mac 的前提是mac setremotelogin on
 
@@ -67,6 +67,10 @@ Host iphone150
 HostName  192.168.2.144
 User root 
 IdentityFile ~/.ssh/id_rsa_Theos125
+```
+>* scp 
+```
+scp com.my.al.deb usb2222:/var/root
 ```
 
 ### Xcode 编译相关的 run script

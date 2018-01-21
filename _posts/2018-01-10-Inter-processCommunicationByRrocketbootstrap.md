@@ -240,6 +240,13 @@ mv scp /usr/bin/scp
 
 dyld: Library not loaded: /usr/lib/libssl.0.9.8.dylib 重新安装openssl
 
+>* 浏览器下载scp 
+
+```
+ find . -name "scp" 
+ 
+```
+
 >* [deviceconsole](https://github.com/rpetrich/deviceconsole)  查看log
 
 ```
