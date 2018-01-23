@@ -230,6 +230,15 @@ git log -p -2|head -n 6
 
 [更多辅助脚本参考这里](https://github.com/zhangkn/KNBin)
 
+>* 创建分支develop ，并提交到远程仓库
+```
+git checkout -b develop
+#  提交本地develop分支作为远程的develop分支
+git push origin develop:develop
+# 本地分支和远程分支建立联系(使用git branch -vv 可以查看本地分支和远程分支的关联关系)
+#git branch --set-upstream-to=origin/远程分支的名字 本地分支的名字
+git branch --set-upstream-to=origin/develop develop
+```
 
 ### Remote Virtual Interface Tool
 

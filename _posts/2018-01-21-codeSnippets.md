@@ -34,6 +34,9 @@ NSString *lJs = @"document.documentElement.innerHTML";//获取当前网页的htm
 
 
 ### see also
-
+- [ 打码图像识别tensorflow](https://github.com/tensorflow)
+- [学习资料资源入口](http://iosre.com/t/topic/4680)
+- [C0F3 is a Jailbreak for 10.0 - 10.3.3 & 11.0 - 11.1.2](https://github.com/zhangkn/C0F3.git)
+- [iOS内核调试教程](http://jaq.alibaba.com/community/art/show?spm=a313e.7916642.220000NaN1.3.50a8eb88EUySUE&articleid=1320)
 - [https://open.alipay.com](https://open.alipay.com)
 - [https://docs.alipay.com/mini/ide](https://docs.alipay.com/mini/ide)
