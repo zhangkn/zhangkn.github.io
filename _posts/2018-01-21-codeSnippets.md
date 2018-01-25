@@ -40,3 +40,4 @@ NSString *lJs = @"document.documentElement.innerHTML";//获取当前网页的htm
 - [iOS内核调试教程](http://jaq.alibaba.com/community/art/show?spm=a313e.7916642.220000NaN1.3.50a8eb88EUySUE&articleid=1320)
 - [https://open.alipay.com](https://open.alipay.com)
 - [https://docs.alipay.com/mini/ide](https://docs.alipay.com/mini/ide)
+- [Victor Zhang](http://www.googleplus.party/)

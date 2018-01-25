@@ -48,9 +48,17 @@ DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib /var/mobile/Containers/Bundle/Applicat
 
 
 
+### 可以dump混编的
+
+>* [可以dump混编的](https://github.com/zhangkn/KNBin/blob/master/swiftOCclass-dump)
+```
+devzkndeMBP:bin devzkn$ swiftOCclass-dump  --arch arm64 /Users/devzkn/decrypted/AppStoreV10.2/Payload/AppStore.app/AppStore -H -o  /Users/devzkn/decrypted/AppStoreV10.2/head
+```
 
 
-
+### see also
+>* [KNas10.2Head](https://github.com/zhangkn/KNas10.2Head/tree/master/as10.2/head)
+>* [NSFileManager](http://iosre.com/t/ios-igrimace/448)
 
 
 
