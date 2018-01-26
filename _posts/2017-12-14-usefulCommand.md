@@ -230,7 +230,7 @@ git log -p -2|head -n 6
 
 [更多辅助脚本参考这里](https://github.com/zhangkn/KNBin)
 
->* [创建分支develop ，并提交到远程仓库](https://github.com/zhangkn/KNBin/blob/master/knco)
+>* [创建分支develop ，并提交到远程仓库;保证版本提交、分支结构清晰](https://github.com/zhangkn/KNBin/blob/master/knco)
 ```
 git checkout -b develop
 #  提交本地develop分支作为远程的develop分支
@@ -239,6 +239,8 @@ git push origin develop:develop
 #git branch --set-upstream-to=origin/远程分支的名字 本地分支的名字
 git branch --set-upstream-to=origin/develop develop
 ```
+![](/images/posts/{{page.title}}/knco.png)
+
 >* git branch -vv
 
 ```
