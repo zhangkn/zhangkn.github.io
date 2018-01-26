@@ -205,11 +205,14 @@ git remote remove origin
 ```
 #切换回master分支
 git checkout master
-# merge
+# merge  --no-ff参数，表示禁用Fast forward;可以保存你之前的分支历史。能够更好的查看merge历史，以及branch 状态.
+#保证版本提交、分支结构清晰
 git merge --no-ff  develop
 #push
 git push
 ```
+![](/images/posts/{{page.title}}/knco.png)
+
 >* [kngit](https://github.com/zhangkn/KNBin/blob/master/kngit) ：提交代码到本地仓库和远程仓库
 ```
 devzkndeMacBook-Pro:bin devzkn$ cat kngit
@@ -230,7 +233,7 @@ git log -p -2|head -n 6
 
 [更多辅助脚本参考这里](https://github.com/zhangkn/KNBin)
 
->* [创建分支develop ，并提交到远程仓库;保证版本提交、分支结构清晰](https://github.com/zhangkn/KNBin/blob/master/knco)
+>* [创建分支develop ，并提交到远程仓库;](https://github.com/zhangkn/KNBin/blob/master/knco)
 ```
 git checkout -b develop
 #  提交本地develop分支作为远程的develop分支
@@ -239,7 +242,6 @@ git push origin develop:develop
 #git branch --set-upstream-to=origin/远程分支的名字 本地分支的名字
 git branch --set-upstream-to=origin/develop develop
 ```
-![](/images/posts/{{page.title}}/knco.png)
 
 >* git branch -vv
 
