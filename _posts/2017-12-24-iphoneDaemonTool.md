@@ -174,6 +174,18 @@ iPhone:/Library root# ls -lrt /Library/LaunchAgents
 ```
 
 
+### knDaemonDemo/main.mm
+
+>* 入口方法
+```
+int main(int argc, char **argv, char **envp) {
+  return 0;
+}
+int main (int argc, const char * argv[]) {
+  return 0;
+}
+```
+
 ### 参考
 - [run-a-daemon-as-root-on-ios](http://iosre.com/t/run-a-daemon-as-root-on-ios/212)
 - [Preferences_specifier_plist](http://iphonedevwiki.net/index.php/Preferences_specifier_plist)

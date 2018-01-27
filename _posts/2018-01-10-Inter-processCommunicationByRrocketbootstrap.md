@@ -22,9 +22,14 @@ site: https://zhangkn.github.io
 >* Community Libraries to Help
 
 ```
-1、RocketBootstrap： Service registration and lookup system for iOS
+1、RocketBootstrap： Service registration and lookup system for iOS 
 2、OBJCIPC ：High-level API for hosting services inside apps (by Alan Yip/a1anyip)
 3、LightMessaging： Header-only library for simple IPC
+```
+
+>* 本文重点讲解 RocketBootstrap的两种包装方式：CFMessagePort、CPDistributedMessagingCenter
+```
+Easy to use wrappers for CFMessagePort and CPDistributedMessagingCenter(todo: XPC) 
 ```
 
 
@@ -72,6 +77,78 @@ bootstrap_register becomes rocketbootstrap_register
 4、Easy to use wrappers for CFMessagePort and CPDistributedMessagingCenter(todo: XPC) 
 5、Bring your own security model by using audit_token_to_au32 to know who’s calling
 6、Requires package dependency, commonly installed on users’ devices
+```
+
+>* 本文重点讲解 RocketBootstrap的两种包装方式：CFMessagePort、CPDistributedMessagingCenter
+```
+Easy to use wrappers for CFMessagePort and CPDistributedMessagingCenter(todo: XPC) 
+```
+
+>* [CFMessagePort: Only supports synchronous use](https://github.com/zhangkn/RocketBootstrap/blob/ios7/tests/tests.m)
+
+```
+//registerMsgCenter 基本可以解决双向通信；例子：避免重启其他进程从sb获取源地址信息的变更。 守护进行都可以注册成为服务
++ (kern_return_t)rockettest_messageport_server
+{
+    static CFMessagePortRef messagePort;//
+    if (messagePort)
+        return 0;
+    messagePort = CFMessagePortCreateLocal(kCFAllocatorDefault, CFSTR("rockettest_messageport"), messagePortCallback, NULL, NULL);//CFSTR("rockettest_messageport")即server key,
+    CFRunLoopSourceRef source = CFMessagePortCreateRunLoopSource(kCFAllocatorDefault, messagePort, 0);
+    CFRunLoopAddSource(CFRunLoopGetCurrent(), source, kCFRunLoopCommonModes);
+    CFRunLoopAddSource(CFRunLoopGetCurrent(), source, (CFStringRef)UITrackingRunLoopMode);
+    return rocketbootstrap_cfmessageportexposelocal(messagePort);
+}
+typedef CFDataRef (*CFMessagePortCallBack)(CFMessagePortRef local, SInt32 msgid, CFDataRef data, void *info);
+//回调的定义
+static CFDataRef messagePortCallback(CFMessagePortRef local, SInt32 msgid, CFDataRef data, void *info)
+{
+    NSLog(@"rockettest_messageport_server: received %@", data);
+    return CFDataCreate(kCFAllocatorDefault, (const UInt8 *)"bootstrap", 9);
+}
+```
+- [CFMessagePort_Example](http://iphonedevwiki.net/index.php/RocketBootstrap#CFMessagePort_Example)
+
+>* [CPDistributedMessagingCenter: Asynchronous, if you go through the trouble](http://iphonedevwiki.net/index.php/RocketBootstrap#CPDistributedMessagingCenter_Example)
+
+```
+Private API, does change between iOS versions  ： 目前发现这种方式只能在SpringBoard   注册为服务端，处理消息，；进程间其实是单向通信;  http://iphonedevwiki.net/index.php/RocketBootstrap#LightMessaging_example
+#TweakDemo.xm  SpringBoard  接受消息
+#import "rocketbootstrap.h"
+
+#define kXPCCenterNameKey  @"kXPCCenterNameKey_83641"
+
+%hook SpringBoard
+- (void)applicationDidFinishLaunching:(id)application {
+   %orig;
+   CPDistributedMessagingCenter *c = [%c(CPDistributedMessagingCenter) centerNamed:kXPCCenterNameKey];
+   rocketbootstrap_distributedmessagingcenter_apply(c);
+   [c runServerOnCurrentThread];
+   [c registerForMessageName:@"myMessageName" target:self selector:@selector(handleMessage:withUserInfo:)];
+   NSLog(@"注册监听 start");
+}
+
+%new
+- (void)handleMessage:(NSString *)name withUserInfo:(NSDictionary *)userInfo {
+   NSLog(@"handleMessage withUserInfo:%@",userInfo);
+   //TODO:something
+}
+
+%end
+//在需要发送的地方(沙盒 app )，如此这般的写： 
+%hook SomeClass
+
+-(void)someMethod{
+   %orig;
+    NSMutableDictionary *userInfo = [@{} mutableCopy];
+    [userInfo setObject:@"123" forKey:@"arg001"];
+    [userInfo setObject:@"456" forKey:@"arg002"];
+    NSLog(@"发送: %@=%@",kXPCCenterNameKey,userInfo);
+    CPDistributedMessagingCenter *c = [%c(CPDistributedMessagingCenter) centerNamed:kXPCCenterNameKey];
+    rocketbootstrap_distributedmessagingcenter_apply(c);
+    [c sendMessageName:@"myMessageName" userInfo:userInfo];
+}
+%end
 ```
 
  
