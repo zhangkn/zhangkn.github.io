@@ -370,6 +370,7 @@ devzkndeMacBook-Pro:bin devzkn$ which ldid
 ```
 
 ### See also
+- [Inter-process communication](http://iphonedevwiki.net/index.php/Updating_extensions_for_iOS_7#Inter-process_communication)
 - [IPC](http://iphonedevwiki.net/index.php/IPC)
 - [libobjcipc An inter-process communication (between app and SpringBoard) solution for jailbroken iOS](https://github.com/a1anyip/libobjcipc)
 - [Libobjcipc iphonedevwiki](http://iphonedevwiki.net/index.php/Libobjcipc)

@@ -179,14 +179,74 @@ iPhone:/Library root# ls -lrt /Library/LaunchAgents
 >* 入口方法
 ```
 int main(int argc, char **argv, char **envp) {
-  return 0;
+  return 0;//可以用来注册 CFMessagePort
 }
 int main (int argc, const char * argv[]) {
   return 0;
 }
 ```
 
+>* hook 的代码在main()执行结束之前或者之后执行(解释一下：__attribute__((constructor)) 在main() 之前执行,__attribute__((destructor)) 在main()执行结束之后执行.)--- 可以用来hook 守护进程。
+
+```
+//constructor   在main之前 
+%ctor {
+    setuid(0); //设置超级用户
+}
+ 等价于
+static __attribute__((constructor)) void _logosLocalCtor_f35a0c0f(int __unused argc, char __unused **argv, char __unused **envp) {
+
+}
+%dtor { … }
+```
+
+>* 设置constructor优先级
+
+```
+//声明
+__attribute__((constructor(101))) void before1();
+
+//实现
+void before1()
+{
+    printf("before1\n");
+}
+```
+>* NSProcessInfo
+```
+	if ([[[NSProcessInfo processInfo] processName] isEqualToString:@"hat"])
+```
+- [Inter-process communication](http://iphonedevwiki.net/index.php/Updating_extensions_for_iOS_7#Inter-process_communication)
+
+
+
 ### 参考
+- [Logos](http://iphonedevwiki.net/index.php/Logos)
+
+- [__ATTRIBUTE__ 你知多少？](http://www.cnblogs.com/astwish/p/3460618.html)
+
+```
+解释一下：__attribute__((constructor)) 在main() 之前执行,__attribute__((destructor)) 在main()执行结束之后执行.
+#include <stdio.h>
+#include <stdlib.h>
+ 
+static  __attribute__((constructor)) void before()
+{
+ 
+    printf("Hello");
+}
+ 
+static  __attribute__((destructor)) void after()
+{
+    printf(" World!\n");
+}
+ 
+int main(int args,char ** argv)
+{
+ 
+    return EXIT_SUCCESS;
+}
+```
 - [run-a-daemon-as-root-on-ios](http://iosre.com/t/run-a-daemon-as-root-on-ios/212)
 - [Preferences_specifier_plist](http://iphonedevwiki.net/index.php/Preferences_specifier_plist)
 - [Makefiles](http://www.gnu.org/software/make/manual/html_node/Makefiles.html)
