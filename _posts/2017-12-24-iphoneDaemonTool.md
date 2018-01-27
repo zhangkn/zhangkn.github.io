@@ -259,7 +259,11 @@ int main(int args,char ** argv)
 - [security.ios-wiki.com](https://wizardforcel.gitbooks.io/ios-sec-wiki/content/index.html)
 - [iossecurity](https://github.com/zhangkn/iossecurity)
 - [Apple OpenSource](https://github.com/opensource-apple)
-
+- [颤抖吧，■■■■■■■■！手把手教你hook以root权限运行的App](http://iosre.com/t/igrimace-hook-root-app/440)
+- [moderators](http://iosre.com/groups/moderators)
+- [查看微信的源文件组织架构（超级入门级别）](http://iosre.com/t/topic/5773)
+- [http://everettjf.com/](http://everettjf.com/)
+- [First step towards LLVM clang plugin](http://everettjf.com/2017/04/18/llvm-clang-plugin-first-step/)
 ### see also
 >* osx
 ![](/images/posts/{{page.title}}/osx.png)
