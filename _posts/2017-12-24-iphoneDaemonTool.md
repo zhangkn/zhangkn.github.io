@@ -260,10 +260,17 @@ int main(int args,char ** argv)
 - [iossecurity](https://github.com/zhangkn/iossecurity)
 - [Apple OpenSource](https://github.com/opensource-apple)
 - [颤抖吧，■■■■■■■■！手把手教你hook以root权限运行的App](http://iosre.com/t/igrimace-hook-root-app/440)
+```
+现在iOS上的绝大多数以root权限运行的App，都是通过setuid + bash来实现的
+App运行所需要的信息，一般都存放在其MachO头部43中，其中dylib的信息是由load commands指定的
+这些信息是以静态的方式存放在二进制文件里（不是由DYLD_INSERT_LIBRARIES动态指定），而又是由dyld动态加载的，所以我们给它起了个“偏静态”的名字
+```
 - [moderators](http://iosre.com/groups/moderators)
 - [查看微信的源文件组织架构（超级入门级别）](http://iosre.com/t/topic/5773)
 - [http://everettjf.com/](http://everettjf.com/)
 - [First step towards LLVM clang plugin](http://everettjf.com/2017/04/18/llvm-clang-plugin-first-step/)
+- [File format](https://en.wikipedia.org/wiki/File_format)
+
 ### see also
 >* osx
 ![](/images/posts/{{page.title}}/osx.png)

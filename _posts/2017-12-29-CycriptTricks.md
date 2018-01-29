@@ -32,8 +32,10 @@ iPhone:~ root# apt-get install cycript
 ###  动态库的注入方式
 
 >* cycript注入动态库的方式
+
 ```
-在挂载的进程上创建一个挂起的线程, 然后在这个线程里申请一片用于加载动态库的内存,然后恢复线程,动态库就被注入
+
+在挂载的进程上创建一个挂起的线程, 然后在这个线程里申请一片用于加载动态库的内存,然后恢复线程,动态库就被注入(通过 taskfor_pid函数获取目标进程句柄，然后通过在进程内创建新线程并执行自己的代码。)
 ```
 >* 通过环境变量DYLD_INSERT_LIBRARIES 注入
 ```
@@ -42,13 +44,20 @@ DYLD_INSERT_LIBRARIES=/PathFrom/dumpdecrypted.dylib /PathTo
 cd ${TARGET_BUILD_DIR}
 export DYLD_INSERT_LIBRARIES=./libKNoke.dylib && /Applications/QKNQ.app/Contents/MacOS/QKNQ
 ```
->* 二次打包动态库的注入,避免每次从环境变量注入
+>* [二次打包动态库的注入,避免每次从环境变量注入--偏静态：通过LC_LOAD_DYLIB实现dylib的加载](https://github.com/Tyilo/insert_dylib)
+
 ```
 #通过修改可执行文件的Load Commands来实现的. 在Load Commands中增加一个LC_LOAD_DYLIB , 写入dylib路径
 Usage: insert_dylib dylib_path binary_path [new_binary_path]
+
+1、现在iOS上的绝大多数以root权限运行的App，都是通过setuid + bash来实现的
+2、App运行所需要的信息，一般都存放在其MachO头部43中，其中dylib的信息是由load commands指定的
+这些信息是以静态的方式存放在二进制文件里（不是由DYLD_INSERT_LIBRARIES动态指定），而又是由dyld动态加载的，所以我们给它起了个“偏静态”的名字--在此App得到执行时，dyld会查看其MachO头部中的load commands，并把里面LC_LOAD_DYLIB相关的dylib给加载到进程的内存空间
 ```
 [insert_dylib:# Command line utility for inserting a dylib load command into a Mach-O binary ](https://github.com/Tyilo/insert_dylib)
-
+```
+修改App可执行文件的头部，给它添加这么一个load command，并指定load我们构造的dylib就好
+```
 
 
 
@@ -183,8 +192,14 @@ cy# a = choose(UILabel).toString()
 - [weak_classdump](https://github.com/limneos/weak_classdump)
 - [Powerful private methods for debugging in Cycript & LLDB](http://iosre.com/t/powerful-private-methods-for-debugging-in-cycript-lldb/3414)
 
-
-
+- [颤抖吧，■■■■■■■■！手把手教你hook以root权限运行的App](http://iosre.com/t/igrimace-hook-root-app/440)
+```
+现在iOS上的绝大多数以root权限运行的App，都是通过setuid + bash来实现的
+App运行所需要的信息，一般都存放在其MachO头部43中，其中dylib的信息是由load commands指定的
+这些信息是以静态的方式存放在二进制文件里（不是由DYLD_INSERT_LIBRARIES动态指定），而又是由dyld动态加载的，所以我们给它起了个“偏静态”的名字
+```
+- [snakeninny](http://iosre.com/u/snakeninny/activity/topics)
+- [mikulove](https://mikulove.com/)
 ### 附
 
 >* 查找进程名称

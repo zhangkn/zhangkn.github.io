@@ -19,7 +19,11 @@ site: https://zhangkn.github.io
 Frida环境的搭建可以看下[这篇文章](https://zhangkn.github.io/2017/12/frida/#gsc.tab=0)
 
 ### dumpdecrypted.dylib 
-dumpdecrypted的原理是让app预先加载一个解密的dumpdecrypted.dylib，然后在程序运行后，将代码动态解密，最后在内存中dump出来整个程序。
+>*dumpdecrypted的原理：
+
+```
+把自己通过DYLD_INSERT_LIBRARIES这个环境变量注入到已经通过系统加载器解密的 mach-o文件(因此要求程序是运行状态)，再把解密后的内存数据 dump出来--并没有破解 appstore的加密算法
+```
 
 砸壳的步骤：
 
@@ -46,7 +50,16 @@ DYLD_INSERT_LIBRARIES=dumpdecrypted.dylib /var/mobile/Containers/Bundle/Applicat
 第一个path为dylib，目标path 为app二进制文件对应的目录
 
 
-
+>* iPhone:~ root# find / -name "*.*" | xargs grep "DYLD_INSERT_LIBRARIES" > ~/text.text
+```
+iPhone:~ root# cat  text.text
+Binary file /Developer/Library/PrivateFrameworks/DTDDISupport.framework/libViewDebuggerSupport.dylib matches
+Binary file /Developer/usr/lib/libBacktraceRecording.dylib matches
+Binary file /Library/Frameworks/CydiaSubstrate.framework/Libraries/SubstrateLauncher.dylib matches
+Binary file /Library/Frameworks/CydiaSubstrate.framework/Libraries/SubstrateLoader.dylib matches
+Binary file /System/Library/Caches/com.apple.xpcd/xpcd_cache.dylib matches
+/System/Library/LaunchDaemons/com.apple.searchd.plist:		<key>no_DYLD_INSERT_LIBRARIES</key>
+```
 
 ### 可以dump混编的
 
@@ -59,9 +72,20 @@ devzkndeMBP:bin devzkn$ swiftOCclass-dump  --arch arm64 /Users/devzkn/decrypted/
 ### see also
 >* [KNas10.2Head](https://github.com/zhangkn/KNas10.2Head/tree/master/as10.2/head)
 >* [NSFileManager](http://iosre.com/t/ios-igrimace/448)
-
-
-
+- [防止tweak依附，App有高招；破解App保护，tweak留一手](http://bbs.iosre.com/t/tweak-app-app-tweak/438)
+```
+三种情况下，DYLD_环境变量会被dyld无视，分别是：
+1. 可执行文件被setuid或setgid了；
+2. 可执行文件含有__RESTRICT/__restrict这个section；
+3. 可执行文件被签了某个entitlements。
+```
+- [MachOView](https://github.com/gdbinit/MachOView)
+- [anti-DYLD_INSERT_LIBRARIES](http://geohot.com/e7writeup.html)
+- [Sam Marshall总结的逆向工程学习资源](http://bbs.iosre.com/t/sam-marshall/92)
+- [Reverse Engineering Resources](https://pewpewthespells.com/re.html)
+- [Samantha Demi](https://pewpewthespells.com/)
+- [Blocking Code Injection on iOS and OS X](https://pewpewthespells.com/blog/blocking_code_injection_on_ios_and_os_x.html)
+- [pewpewthespells](https://pewpewthespells.com/ramble.html)
 
 
 
