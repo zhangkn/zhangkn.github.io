@@ -33,6 +33,55 @@ Easy to use wrappers for CFMessagePort and CPDistributedMessagingCenter(todo: XP
 ```
 
 
+### UIPasteboard\NSPasteboard
+
+>* [OpenUDID的使用例子](https://github.com/zhangkn/OpenUDID/blob/master/OpenUDID.m)
+```
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+#import <UIKit/UIPasteboard.h>
+#import <UIKit/UIKit.h>
+#else
+#import <AppKit/NSPasteboard.h>
+#endif
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+        UIPasteboard* slotPB = [UIPasteboard pasteboardWithName:slotPBid create:NO];
+#else
+        NSPasteboard* slotPB = [NSPasteboard pasteboardWithName:slotPBid];
+#endif
+```
+
+>* [//pasteboardWithName 方法的使用](https://github.com/zhangkn/KNcodeSnippets/blob/master/KNcodeSnippets/KNUIPasteboardIPC.m)
+
+```
+/**
+ 应用级别的，数据在属于自己的应用内部共享；
+ (默认情况下是不会把数据写进沙盒的，也就是说（复制、剪切）粘贴内容会因为应用的退出而销毁掉，我们可以设置相关属性 persistent值为 YES让其进行数据的持久化存储起来)
+ 
+ Ps：例如 persistent 是否进行数据持久化 还有 changeCount 改变次数（剪切板）系统重启方才重新计数
+ 
+ */
+- (NSObject *)model{
+    
+    if (_model == nil) {
+        
+        NSString *contentUserID =@"";
+        UIPasteboard *pasteboardUserID = [UIPasteboard pasteboardWithName:KNpasteboardWithNameKeyUserID create:NO];
+        
+        if (pasteboardUserID){
+            contentUserID = pasteboardUserID.string;////获取内容
+        }
+        
+        _model = [[NSObject alloc]init];
+//        _model.UserId =contentUserID;
+        
+        
+    }
+    return _model;
+}
+```
+
+
+
 ### [LightMessaging](http://iphonedevwiki.net/index.php/LightMessaging)
 
 >* feature
@@ -370,6 +419,7 @@ devzkndeMacBook-Pro:bin devzkn$ which ldid
 ```
 
 ### See also
+- [Distributed Notifications](http://nshipster.com/inter-process-communication/)
 - [Inter-process communication](http://iphonedevwiki.net/index.php/Updating_extensions_for_iOS_7#Inter-process_communication)
 - [IPC](http://iphonedevwiki.net/index.php/IPC)
 - [libobjcipc An inter-process communication (between app and SpringBoard) solution for jailbroken iOS](https://github.com/a1anyip/libobjcipc)

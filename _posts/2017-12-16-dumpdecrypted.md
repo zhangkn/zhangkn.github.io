@@ -87,5 +87,6 @@ devzkndeMBP:bin devzkn$ swiftOCclass-dump  --arch arm64 /Users/devzkn/decrypted/
 - [Blocking Code Injection on iOS and OS X](https://pewpewthespells.com/blog/blocking_code_injection_on_ios_and_os_x.html)
 - [pewpewthespells](https://pewpewthespells.com/ramble.html)
 
-
-
+- [Getting runtime information about blocks](https://github.com/zhangkn/CTObjectiveCRuntimeAdditions)
+- [Block-ABI-Apple.html](http://clang.llvm.org/docs/Block-ABI-Apple.html)
+- [UIDebuggingInformationOverlay](http://ryanipete.com/blog/ios/swift/objective-c/uidebugginginformationoverlay/)
