@@ -206,6 +206,6 @@ App运行所需要的信息，一般都存放在其MachO头部43中，其中dyli
 ```
 iPhone:~ root# ps -e |grep  /var/mobile*
 ```
-
+- [iOS逆向记录(三)](https://www.jianshu.com/p/7ab7234f5187)
 
 
