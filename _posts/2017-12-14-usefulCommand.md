@@ -494,6 +494,11 @@ A01-27:~ root# reboot
 rm -rf /var/lib/dpkg/lock 
 #即可
 ```
+
+>*  dpkg: status database area is locked by another process
+```
+ sshusb rm -rf  /var/lib/dpkg/lock
+```
 ### grep命令
 
 ```
