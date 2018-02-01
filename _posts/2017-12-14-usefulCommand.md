@@ -8,6 +8,35 @@ tag: iOSre
 
 常用的命令和工具
 
+### python
+
+>* SimpleHTTPServer 开启一个本地服务器，访问方式：http://127.0.0.1:8088/IOS%EF%BC%8DKevin/
+```
+devzkndeMBP:~ devzkn$  python -m SimpleHTTPServer 8088
+Serving HTTP on 0.0.0.0 port 8088 ...
+127.0.0.1 - - [01/Feb/2018 13:00:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [01/Feb/2018 13:00:16] code 404, message File not found
+127.0.0.1 - - [01/Feb/2018 13:00:16] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [01/Feb/2018 13:00:29] "GET /.bash_history HTTP/1.1" 200 -
+127.0.0.1 - - [01/Feb/2018 13:00:33] "GET /IOS%EF%BC%8DKevin/ HTTP/1.1" 200 -
+^CTraceback (most recent call last):
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/runpy.py", line 162, in _run_module_as_main
+    "__main__", fname, loader, pkg_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/runpy.py", line 72, in _run_code
+    exec code in run_globals
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/SimpleHTTPServer.py", line 235, in <module>
+    test()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/SimpleHTTPServer.py", line 231, in test
+    BaseHTTPServer.test(HandlerClass, ServerClass)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/BaseHTTPServer.py", line 599, in test
+    httpd.serve_forever()
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/SocketServer.py", line 236, in serve_forever
+    poll_interval)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/SocketServer.py", line 155, in _eintr_retry
+    return func(*args)
+KeyboardInterrupt
+```
+
 ### ssh 远程控制
 
 >* 1、ssh-copy-id

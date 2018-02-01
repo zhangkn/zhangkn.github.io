@@ -196,7 +196,7 @@ stackoverflow user: 8633507
   <li><a href="https://zhuanlan.zhihu.com/iOSRe">iOS应用逆向工程</a></li>
   <li><a href="http://casatwy.com/">Casa Taloyum</a></li>
   <li><a href="http://blog.linhere.com/link">东风路倒垃圾的</a></li>
-  <li><a href="http://blog.kernelpanic.im/"></a>kernelpanic</li>
+  <li><a href="http://blog.kernelpanic.im/2014/01/25/how-to-develop-jailbreak-apps-for-ios">kernelpanic</a></li>
   <li><a href="http://blog.cnbang.net/">bang’s blog</a></li>
   <li><a href="http://bachiscoding.com/">巴赫在编码</a></li>
   <li><a href="http://blog.ibireme.com/">Garan no dou | 一只魔法师的工坊</a></li>
@@ -332,7 +332,7 @@ stackoverflow user: 8633507
   <li><a href="https://github.com">Github <em>代码</em></a></li>
   <li><a href="https://www.cocoacontrols.com/">Custom Controls for iOS and OS X</a></li>
   <li><a href="http://code4app.com/">Code4App-iOS开发</a></li>
-  <li><a href="http://www.umindex.com/">友盟指数</a></li>
+  <li><a href="https://coldfunction.com/user/86">coldfunction</a></li>
   <li><a href="http://itjuzi.com/">IT桔子</a></li>
   <li><a href="http://17startup.com/">17statup</a></li>
   <li><a href="http://d.cocoachina.com/">iOS开发者中心 - CocoaChina</a></li>

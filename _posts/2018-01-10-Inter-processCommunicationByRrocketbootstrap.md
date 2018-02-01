@@ -10,6 +10,10 @@ site: https://zhangkn.github.io
 ### 前言
 
  These are some of the existing methods to implement IPC on iOS:
+- [URL Scheme](http://blog.csdn.net/z929118967/article/details/77449097)
+- [Keychain]
+- [UIDocumentInteractionController]
+- [利用socket进行本地通信](https://github.com/zhangkn/MPProcessMessage)
 - [Mach Ports]
 - [Pasteboard]
 - [AppleEvents & AppleScript]
