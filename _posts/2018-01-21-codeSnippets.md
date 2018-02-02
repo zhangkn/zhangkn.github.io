@@ -14,7 +14,7 @@ site: https://zhangkn.github.io
 ### 正文
 
 
-### dispatch信号量（dispatch semaphore）和 dispatch_sync(dispatch_get_main_queue() ----威力强大，建议使用递归，在block中触发退出条件
+### [dispatch信号量（dispatch semaphore）和 dispatch_sync(dispatch_get_main_queue() ----威力强大，建议使用递归，在block中触发退出条件](https://github.com/zhangkn/KNcodeSnippets/blob/master/KNcodeSnippets/KNdispatch_semaphore_t.m)
 
 >* 使用dispatch信号量是如何实现同步
 
