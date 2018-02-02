@@ -10,6 +10,8 @@ tag: iOSre
 
 ### python
 
+SimpleHTTPServer 可以使用在部署机器工作中，比如在cydia，中创建一个自己的私有源
+
 >* SimpleHTTPServer 开启一个本地服务器，访问方式：http://127.0.0.1:8088/IOS%EF%BC%8DKevin/
 ```
 devzkndeMBP:~ devzkn$  python -m SimpleHTTPServer 8088

@@ -118,6 +118,7 @@ $(document).ready(function(){
 - [site:https://zhangkn.github.io/   iosre](https://www.google.com.sg/search?dcr=0&ei=QdE4Wov3EYeFvQTNzY24Cg&q=site%3Ahttps%3A%2F%2Fzhangkn.github.io%2F+++iosre&oq=site%3Ahttps%3A%2F%2Fzhangkn.github.io%2F+++iosre&gs_l=psy-ab.3...44442.46722.0.47230.9.9.0.0.0.0.588.1838.3-2j0j2.4.0....0...1.1j4.64.psy-ab..6.0.0....0.1uwBt5n_ubs)
 
 # 其他参考文章
+- [http://simiki.org/zh-docs/](http://simiki.org/zh-docs/)
 - [Jekyll创始人的示例库](https://github.com/mojombo/tpw)
 - [使用BitBucket和FTPloy私有Jekyll源码](http://chenjun.com/)
 - [http://chenjun.com/模版](https://github.com/Zhu8/zhu8.github.io)
