@@ -7,7 +7,7 @@ stackoverflow user: 8633507
 # whoami
 
  [I](https://about.me/kunnan) am a iOS Reverse Engineer, My interests range from technology to Information security. 
- <br>I enjoy sharing my security knowledge and learning from [iosre](http://iosre.com). Always happy to help people learn and teach about security.
+ <br>I enjoy sharing my security knowledge and learning from [iosre：http://bbs.iosre.com/latest.rss](http://iosre.com). Always happy to help people learn and teach about security.
 <p>
 <a target="_blank" href="https://join.slack.com/t/iosreverseengineering/shared_invite/enQtMjk3MjQ2Mjg2MTYyLThiNGU3ZmVlNTkzYzViNjY0YjJkZTI5MzdiZjhhZWJmZjk2YTY3N2Q3ZDBkMmJmOTMyMTJhNWIyZGE0NjFkZDI">iosreverseengineering.slack.com</a>
 
