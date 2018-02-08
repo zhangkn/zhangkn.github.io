@@ -196,6 +196,36 @@ static void CanonicaliseHeaders(NSMutableURLRequest * request)
 [写一个tweak ，修改请求的HTTPHeaderField](https://github.com/zhangkn/KNCustomHTTPProtocol)。
 
 
+### Q&A
+
+>* createEncodedCachedResponseAndRequestForXPCTransmission
+```
+ ERROR: createEncodedCachedResponseAndRequestForXPCTransmission - Invalid protocol-property list - CFURLRequestRef. protoProps=<CFBasicHash 0x14526560 [0x39487460]>{type = mutable dict, count = 3,
+    entries =>
+        0 : <CFString 0xa8f968 [0x39487460]>{contents = "networkProtocolCount"} = <CFString 0xa81038 [0x39487460]>{contents = "1"}
+        1 : <CFString 0xa8e4c8 [0x39487460]>{contents = "network-send-type"} = <CFString 0xa91228 [0x39487460]>{contents = "spdy"}
+        2 : <CFString 0xa8f258 [0x39487460]>{contents = "connection_register"} = <TBSDKRequestDelegate: 0x1452d710>
+    }
+```
+
+>* NSURLProtocol
+```
+%hook NSURLProtocol
+
+
++ (void)setProperty:(id)value 
+forKey:(NSString *)key 
+inRequest:(NSMutableURLRequest *)request{
+    
+    %log();
+    %orig;
+}
+
+%end
+```
+
+
+
 ### 注意
 
 >* 1、NSURLProtocol 只能拦截 UIURLConnection、NSURLSession 和 UIWebView 中的请求;

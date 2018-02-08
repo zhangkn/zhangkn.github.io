@@ -8,11 +8,21 @@ tag: iOSre
 
 常用的命令和工具
 
+
+### mkdir
+
+>* -p
+```
+# mkdir -p或--parents 若所要建立目录的上层目录目前尚未建立，则会一并建立上层目录；
+# devzkndeMacBook-Pro:Layout devzkn$ mkdir -p private/var/mobile/Media/TouchSprite/lua/
+```
+
 ### python
 
-SimpleHTTPServer 可以使用在部署机器工作中，比如在cydia，中创建一个自己的私有源
+>* [SimpleHTTPServer 可以使用在部署机器工作中，比如在cydia，中创建一个自己的私有源](https://github.com/zhangkn/KNBin/blob/master/kncydia)
 
->* SimpleHTTPServer 开启一个本地服务器，访问方式：http://127.0.0.1:8088/IOS%EF%BC%8DKevin/
+
+>* [SimpleHTTPServer 开启一个本地服务器，访问方式：http://127.0.0.1:8088/IOS%EF%BC%8DKevin/](https://github.com/zhangkn/KNBin/blob/master/kncydiaServer)
 ```
 devzkndeMBP:~ devzkn$  python -m SimpleHTTPServer 8088
 Serving HTTP on 0.0.0.0 port 8088 ...
@@ -40,6 +50,11 @@ KeyboardInterrupt
 ```
 
 ### ssh 远程控制
+
+>* scp -r 同步目录
+```
+scp -r ~/cydia cydia://home/
+```
 
 >* 1、ssh-copy-id
 ```

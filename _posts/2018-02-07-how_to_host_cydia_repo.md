@@ -106,5 +106,6 @@ Packages|Pacakges.gz/bz2, repo的package清单
 可以通过rsync同步到服务器上, 跑个文件下载的web服务就可以了---python -m SimpleHTTPServer 8088
 ```
 
+- [hewigovens.github.com](https://github.com/hewigovens/hewigovens.github.com/wiki)
 
 
