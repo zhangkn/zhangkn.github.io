@@ -14,6 +14,73 @@ site: https://zhangkn.github.io
 ### 正文
 
 
+### [上传验证码图片进行识别- 打码100](https://github.com/zhangkn/KNcodeSnippets/blob/master/KNcodeSnippets/KNmultipartFormRequestWithMethod.m)
+
+>* POST http://dama.a4a.cn/api/upload HTTP/1.1
+
+```
+    AFHTTPRequestSerializer *serializer = [AFHTTPRequestSerializer serializer];
+        NSMutableURLRequest *request = [serializer multipartFormRequestWithMethod:@"POST"
+                                                                    URLString:apiURLString
+                                                                   parameters:parameters
+                                                    constructingBodyWithBlock:^(id <AFMultipartFormData> formData) {
+                                                        [formData appendPartWithFileData:imageData name:@"file" fileName:@"captcha.gif" mimeType:@"image/gif"];
+                                                        [imageData release];
+                                                    }
+                                                                        error:&error];
+
+
+    NSURLSessionDataTask *task = [manager uploadTaskWithStreamedRequest:request....
+
+```
+
+>* 打码兔： 通过POST文件打码方式二 Base64编码的字符串
+
+```
+        NSString *imgBase64 = [imageData base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        //        NSMutableURLRequest *request = [serializer requestWithMethod:@"POST"
+//                                                           URLString:apiURLString
+//                                                          parameters:nil
+//                                                               error:nil];
+//        request.timeoutInterval = 30;
+//        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+//        [request setHTTPBody:[self makeHttpBody:parameters]];
+        
+//        [[manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+
+
+```
+
+
+###  NSURL
+
+
+>*  [使用NSURLComponents 进行 url请求 ge参数的构建](https://github.com/zhangkn/KNcodeSnippets/blob/master/KNcodeSnippets/KNNSURLComponents.m)
+
+```
+    /**
+    使用NSURLComponents 进行 url请求 ge参数的构建
+     */
+    + (void)setupNsUrl{
+        
+        NSURLComponents *components = [NSURLComponents componentsWithString:@"url"];
+        
+        NSURLQueryItem * v = [NSURLQueryItem queryItemWithName:@"v" value:@"2"];
+
+        [components setQueryItems:@[v]];
+        
+        NSURL* url = [components URL];
+
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+                                                               cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                           timeoutInterval:30];
+        
+        
+    }
+```
+
+
+
 ### [dispatch信号量（dispatch semaphore）和 dispatch_sync(dispatch_get_main_queue() ----威力强大，建议使用递归，在block中触发退出条件](https://github.com/zhangkn/KNcodeSnippets/blob/master/KNcodeSnippets/KNdispatch_semaphore_t.m)
 
 >* 使用dispatch信号量是如何实现同步
