@@ -56,7 +56,7 @@ KeyboardInterrupt
 scp -r ~/cydia cydia://home/
 ```
 
->* 1、ssh-copy-id
+>* 1、ssh-copy-id：千万不要把私钥泄漏！只是把公钥（*.pub 文件）复制给远程服务器，公钥就是要对外公开的。
 ```
 # 1、IP+默认端口 这里拷贝的是公钥，，如果是指定私钥ssh-copy-id 会自己寻找公钥。
 devzkndeMacBook-Pro:.ssh devzkn$ ssh-copy-id -i ~/.ssh/id_rsa_Theos125 root@192.168.2.144

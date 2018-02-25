@@ -34,6 +34,10 @@ stackoverflow user: 8633507
 
 常去访问的安全网站推荐
 <p>
+<a href="https://www.reddit.com/r/ReverseEngineering/">https://www.reddit.com/r/ReverseEngineering/</a>
+
+<p>
+
 
 <a href="http://v3.dama2.com/?id=2130266&valid=337c3ae4f27462d773540e2157fbcd32">dama2</a>
 
