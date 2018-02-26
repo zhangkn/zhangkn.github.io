@@ -60,6 +60,27 @@ Theos 是一个基于 Unix 平台(OS X，iOS…)和大多数的 Linux 平台下�
 >* otool 
 Otool可以提取并显示目标文件的相关信息:包括头部，加载命令，各个段，共享库，动态库。
 
+>* Charles、Wireshark
+
+```
+1、Wireshark可以详细的看到网络请求的三次握手，并且可支持spdy、tcp等等的网络协议抓包。
+
+2、比较重要的是Cookie，网站为了辨别用户身份、进行 session 跟踪而储存在用户本地终端上的数据；
+<!-- 3、同时Cookie在爬虫的时候也是一个必不可少的东西，那么如何自动化获取Cookie？ -->
+a.清除当前浏览器保存的Cookie，并重启浏览器
+b.重启之后我们访问www.csdxxxn.net , 比如 Cookie在Response的Headers->set-cookie
+c.做登录操作并携带Cookie在请求Headers中，登录成功之后该Cookie就会生
+<!-- 某些请求携带sign参数的,例如wx,有时候不是直接的破解而是函数的Hook -->
+iOS是通过IDA找到sign函数,并使用cycript调用;-- 简单的举例
+4、charlesV4.2 的辅助功能：调试我们的接口
+Compose:可直接自定义对应的请求，并执行该请求。这个对我们抓包用处很大。我们可以从中得到该接口的必填参数、验证我们生成的Sign等等的。
+Repeat：很简单就是执行一次重复请求操作
+Repeat Advanved：重复请求的高级操作，可自定义重复的次数、每隔多少秒执行、启动请求的线程数。这个功能对于我们的接口的压测是很有用的。
+
+```
+
+
+
 
 
 
@@ -248,3 +269,7 @@ ios kext load
 
 >* lldb
 ![](/images/posts/{{page.title}}/lldb-commands-map.png)
+
+>* SSL相信大家都不陌生。其实Https就是在Http基础上通过SSL协议进行加密之后的网络传输。
+![](/images/posts/{{page.title}}/ssl.png)
+

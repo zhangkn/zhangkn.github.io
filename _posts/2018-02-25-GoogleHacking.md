@@ -215,5 +215,13 @@ proxy="protocal://ip:port"
 - [reverse-engineering](https://github.com/wtsxDev/reverse-engineering)
 - [iOS-Reverse-Engineering-presentation](https://github.com/aozhimin/iOS-Reverse-Engineering-presentation)
 - [http://www.freetechbooks.com](http://www.freetechbooks.com)
+- [Google Hacking————你真的会用Google吗？](https://zhuanlan.zhihu.com/p/22161675)
+- [https://blog.quarkslab.com/category/reverseengineering.html](https://blog.quarkslab.com/category/reverseengineering.html)
+- [charles 手机抓https包: Configure your device to use Charles as its HTTP proxy on 192.168.2.139:8888, then browse to chls.pro/ssl to download and install the certificate.](https://mp.weixin.qq.com/s/c0RIfRhEPmVzR0JHvorgFw)
+```
+charlesV4.2 的辅助功能：
+Compose:可直接自定义对应的请求，并执行该请求。这个对我们抓包用处很大。我们可以从中得到该接口的必填参数、验证我们生成的Sign等等的。
+Repeat：很简单就是执行一次重复请求操作
+```
 
 
