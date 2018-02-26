@@ -180,7 +180,7 @@ exit 0
 
 - [Gitment：使用 GitHub Issues 搭建评论系统 https://github.com/imsun/gitment](https://imsun.net/posts/gitment-introduction/)
 ```
-使用最新的界面与特性:
+1、使用最新的界面与特性:
 <div id="container"></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -197,8 +197,12 @@ var gitment = new Gitment({
 gitment.render('container')
 </script>
 
+2、页面发布后，你需要访问页面并使用你的 GitHub 账号登录（请确保你的账号是第二步所填 repo 的 owner），点击初始化按钮。
+
+之后其他用户即可在该页面发表评论。
+
 ```
-- [Register a new  github OAuth application](https://github.com/settings/applications/new)
+- [Register a new  github OAuth application 用于登陆GitHub，获取GitHub用户权限](https://github.com/settings/applications/new)
 - [duoshuo](https://github.com/duoshuo)
 - [gitment  Demo示例页面](https://imsun.github.io/gitment/)
 - [Source code of (https://blog.tylinux.com) 使用gitment的例子](https://github.com/tylinux/Blog)
