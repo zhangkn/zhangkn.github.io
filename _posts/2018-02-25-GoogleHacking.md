@@ -123,6 +123,8 @@ proxy="protocal://ip:port"
 
 ```
 
+- [闷骚的悟空](https://zongquan.wang/archives/)
+- [Luke's Homepage](http://luklab.com/)
 
 
 

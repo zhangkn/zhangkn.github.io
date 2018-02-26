@@ -198,6 +198,25 @@ gitment.render('container')
 </script>
 
 ```
-
+- [Register a new  github OAuth application](https://github.com/settings/applications/new)
 - [duoshuo](https://github.com/duoshuo)
 - [gitment  Demo示例页面](https://imsun.github.io/gitment/)
+- [Source code of (https://blog.tylinux.com) 使用gitment的例子](https://github.com/tylinux/Blog)
+- [conceptclear.github.io github pages 使用gitment的例子](https://github.com/conceptclear/conceptclear.github.io)
+```
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'location.href', // 可选。默认为 location.href
+  owner: 'conceptclear',
+  repo: 'githubpages-comments',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('container')
+</script>
+```
