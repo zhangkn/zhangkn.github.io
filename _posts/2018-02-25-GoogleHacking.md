@@ -24,6 +24,13 @@ https://www.reddit.com/r/ReverseEngineering/
 ```
 intitle搜索网页标题中是否有所输入字符
 ```
+>* [cache:https://zhangkn.github.io intitle:ReverseEngineering intext:ios](http://webcache.googleusercontent.com/search?q=cache:https://zhangkn.github.io++intitle:ReverseEngineering+intext:ios&num=1&safe=strict&biw=1280&bih=656&strip=1&vwsrc=0)
+```
+This is Google's cache of https://zhangkn.github.io/. It is a snapshot of the page as it appeared on 20 Feb 2018 15:37:02 GMT.
+输入URL，搜索特定页面的缓存快照，即使目标页面发生变动甚至不存在了，依然可以看到它的副本
+```
+
+
 
 ### see also
 
