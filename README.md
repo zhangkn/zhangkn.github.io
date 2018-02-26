@@ -178,6 +178,11 @@ open -b com.sublimetext.3 ${postName}
 exit 0
 ```
 
+-[Gitment：使用 GitHub Issues 搭建评论系统 https://github.com/imsun/gitment](https://imsun.net/posts/gitment-introduction/)
+```
+使用最新的界面与特性:
 
+```
 
-
+- [duoshuo](https://github.com/duoshuo)
+- [gitment  Demo示例页面](https://imsun.github.io/gitment/)
