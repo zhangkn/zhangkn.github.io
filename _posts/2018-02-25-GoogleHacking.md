@@ -8,6 +8,9 @@ site: https://zhangkn.github.io
 
 ### 前言
 
+Google不仅能帮我们找到所需要的文章，电影，本子[8]和各种gv，还能让我们在渗透检测过程中省时省力
+
+
 ### 正文
 
 >* intext:ReverseEngineering 
@@ -24,12 +27,89 @@ https://www.reddit.com/r/ReverseEngineering/
 ```
 intitle搜索网页标题中是否有所输入字符
 ```
+
+>* allintitle:zhangkn.github.io
+```
+和ntitle类似，能接多个关键字，但是不能与其他操作符混合使用，可单独使用
+```
+
+
 >* [cache:https://zhangkn.github.io intitle:ReverseEngineering intext:ios](http://webcache.googleusercontent.com/search?q=cache:https://zhangkn.github.io++intitle:ReverseEngineering+intext:ios&num=1&safe=strict&biw=1280&bih=656&strip=1&vwsrc=0)
 ```
 This is Google's cache of https://zhangkn.github.io/. It is a snapshot of the page as it appeared on 20 Feb 2018 15:37:02 GMT.
 输入URL，搜索特定页面的缓存快照，即使目标页面发生变动甚至不存在了，依然可以看到它的副本
 ```
 
+>* define:ReverseEngineering
+```
+搜索输入关键词或关键词组的定义来源链接;该操作符不能与其他操作符及关键字混用。
+```
+
+>* filetype:md intext:Reverse Engineering intitle:Reverse Engineering
+```
+搜索指定类型的文件;可以与其他操作符混合使用;
+ext:与filetype等价
+```
+
+>* info:https://zhangkn.github.io
+```
+搜索输入URL的摘要信息和其他相关信息，该操作符不能与其他操作符及关键字混用
+```
+
+>* site:https://zhangkn.github.io
+```
+将搜索范围缩小到特定的网站，域或子域
+```
+>* inurl:vi  site:https:zhangkn.github.io
+```
+1、搜索输入字符是否存在于URL中.可以联合site 使用
+https://zhangkn.github.io/2018/02/vi/
+2、allinurl:类似inurl:,但是可指定多个字符，不能与其他操作符混合使用，可单独使用
+allinurl:vi 02 site:https:zhangkn.github.io
+```
+
+>* link:https:zhangkn.github.io
+```
+搜索链接到所输入URL的页面
+```
+
+>* related:https:zhangkn.github.io
+```
+冒号后接一个URL，搜索与该URL相关的页面
+```
+
+>* inanchor:reverseEngineering intext:ios
+```
+搜索一个HTML标记中的一个链接的文本表现形式:
+```
+
+>* stocks:高阳
+
+```
+搜索关于指定公司的股票市场信息
+
+```
+
+>* insubject:reverseEngineering intext:ios
+
+```
+搜索Google组的标题行
+
+```
+### 例子
+
+>* 端口扫描 inurl:8080 -intext:8080
+```
+inurl:8080 -intext:8080
+inurl:nqt -intext:8080 filetype:php intext:"network query tool"  --http://portal.trgsites.de/network/nqt.php
+```
+
+>*  SQL数据库挖掘
+```
+filetype:sql + "IDENTIFIED BY" -cvs
+filetype:sql + "IDENTIFIED BY" ("Grant * on *" | "create user")
+filetype:mp4 inurl:xxx intext:xxx: Google不仅能帮我们找到所需要的文章，电影，本子[8]和各种gv，还能让我们在渗透检测过程中省时省力
+```
 
 
 ### see also
@@ -132,11 +212,8 @@ proxy="protocal://ip:port"
 
 - [闷骚的悟空](https://zongquan.wang/archives/)
 - [Luke's Homepage](http://luklab.com/)
-
-
-
-
-
-
+- [reverse-engineering](https://github.com/wtsxDev/reverse-engineering)
+- [iOS-Reverse-Engineering-presentation](https://github.com/aozhimin/iOS-Reverse-Engineering-presentation)
+- [http://www.freetechbooks.com](http://www.freetechbooks.com)
 
 
