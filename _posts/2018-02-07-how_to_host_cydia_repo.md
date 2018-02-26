@@ -9,14 +9,17 @@ site: https://zhangkn.github.io
 ### 前言
 
 
->* 目录结构
+将 Tweak 部署到大量设备上和更新的解决方案是搭建私有Cydia源 ；而非通常的make package install 、dpkg -i
+
+
+>* 目录结构：deb 的源本质上就是需要特定结构的目录
 ```
 cydia--
            |--debs--*.deb
-           |--Packages
-           |--Packages.bz2
+           |--Packages  :dpkg-scanpackages debs /dev/null > Packages ;Packages 文件中包含源中每个包文件的信息，包括文件路径、大小、依赖、架构及校验信息
+           |--Packages.bz2 ：由Packages文件压缩而来, 命令行: bzip2 Packages；
            |--Packages.gz
-           |--Release
+           |--Release  ：是一个普通的文本文件，用于描述当前源的信息；这些信息会在 Cydia 的源列表及 Tweak 搜索列表中显示
            |--Release.gpg
 ```
 
@@ -107,5 +110,13 @@ Packages|Pacakges.gz/bz2, repo的package清单
 ```
 
 - [hewigovens.github.com](https://github.com/hewigovens/hewigovens.github.com/wiki)
+- [create-private-cydia-repo](https://blog.tylinux.com/2017/08/22/create-private-cydia-repo/)
+```
+control  文件 的Depends 项中添加 Tweak 的依赖，以逗号隔开。要注意：这里填写的是包名，比如 Open 这个工具，需要填写的是 com.conradkramer.open，可以先用Cydia安装，然后 dpkg -l 查看。
+```
+- [《iOS逆向工程》- 砸壳](https://blog.tylinux.com/2017/07/24/reverse-engineering-002/)
+```
+iOS的加壳操作则是由苹果进行的。这个壳的主要目的不是防止被逆向分析，而是一种DRM(数字版权管理)手段，它与iTunes Store中的其他资源一样，使用FairPlay(Wikipedia)进行加密，只能在特定账户的特定设备上运行。
+```
 
 

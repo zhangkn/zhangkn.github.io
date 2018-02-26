@@ -38,3 +38,7 @@ intitle搜索网页标题中是否有所输入字符
 - [知名 Tweak 开发者 CoolStar 基于 Comex 开发的 CydiaSubstrate 的开源替代: Substitute](https://github.com/comex/substitute)
 - [手动完成一个 Tweak 的安装（因为没有 Cydia）,结合 https://github.com/BishopFox/bfinject 使用----期待Electra的最终版本](https://blog.tylinux.com/2018/02/07/install-tweak-with-electra-on-ios11/)
 
+```
+知名 Tweak 开发者 CoolStar 基于 Comex 开发的 CydiaSubstrate 的开源替代: Substitute，开发了 Electra 越狱工具。支持 iOS11.0 - iOS 11.1.2 的全部 iOS 设备。
+```
+
