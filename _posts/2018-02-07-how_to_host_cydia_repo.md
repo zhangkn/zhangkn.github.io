@@ -9,8 +9,27 @@ site: https://zhangkn.github.io
 ### 前言
 
 
-将 Tweak 部署到大量设备上和更新的解决方案是搭建私有Cydia源 ；而非通常的make package install 、dpkg -i
+将 Tweak 部署到大量设备上和更新的解决方案是搭建私有Cydia源 ；而非通常的make package install 、dpkg -i;
 
+>* Cydia
+
+```
+由 Jay Freeman（saurik）和他的公司开发，用于安装、管理越狱设备上的第三方软件、插件。它移植了Debian上的包管理器dpkg并提供了图形化前端，方便普通用户使用。Cydia 中还有个 Cydia Store，提供付费的第三方应用。
+
+```
+
+>* [CydiaSubstrate](http://iphonedevwiki.net/index.php/Cydia_Substrate)
+
+```
+ iOS7 之前也叫MobileSubstrate，也是由saurik开发的。Cydia Substrate consists of 3 major components: MobileHooker, MobileLoader and safe mode.
+
+```
+
+>* [Electra](https://github.com/coolstar/electra.git)
+
+```
+知名 Tweak 开发者 CoolStar 基于 Comex 开发的 CydiaSubstrate 的开源替代: Substitute，开发了 Electra 越狱工具。支持 iOS11.0 - iOS 11.1.2 的全部 iOS 设备
+```
 
 >* 目录结构：deb 的源本质上就是需要特定结构的目录
 ```
@@ -118,5 +137,38 @@ control  文件 的Depends 项中添加 Tweak 的依赖，以逗号隔开。要�
 ```
 iOS的加壳操作则是由苹果进行的。这个壳的主要目的不是防止被逆向分析，而是一种DRM(数字版权管理)手段，它与iTunes Store中的其他资源一样，使用FairPlay(Wikipedia)进行加密，只能在特定账户的特定设备上运行。
 ```
+- [《iOS逆向工程》- 越狱](https://blog.tylinux.com/2017/07/24/reverse-engineering-001/)
 
+```
+<!-- 写成一个iproxy服务: -->
+touch ~/Library/LaunchAgents/com.usbmux.iproxy.plist
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ ls -ler ~/Library/LaunchAgents
+total 32
+-rw-r--r--  1 devzkn  staff  971 Feb 23 10:33 com.qiuyuzhou.shadowsocksX-NG.local.plist
+-rw-r--r--  1 devzkn  staff  909 Feb 23 10:33 com.qiuyuzhou.shadowsocksX-NG.kcptun.plist
+-rw-r--r--  1 devzkn  staff  735 Feb 23 10:33 com.qiuyuzhou.shadowsocksX-NG.http.plist
+-rw-r--r--@ 1 devzkn  staff  803 Aug  2  2017 com.google.keystone.agent.plist
+<!-- iproxy 2222 22 配置执行iproxy的参数 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.usbmux.iproxy</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/iproxy</string>
+        <string>2222</string>
+        <string>22</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+</dict>
+</plist>
+<!-- 启动iproxy服务:iproxy就不依赖终端，独立运行于后台了 -->
+launchctl load com.usbmux.iproxy.plist
+
+```
 

@@ -41,4 +41,10 @@ intitle搜索网页标题中是否有所输入字符
 ```
 知名 Tweak 开发者 CoolStar 基于 Comex 开发的 CydiaSubstrate 的开源替代: Substitute，开发了 Electra 越狱工具。支持 iOS11.0 - iOS 11.1.2 的全部 iOS 设备。
 ```
+- [《iOS逆向工程》- 越狱](https://blog.tylinux.com/2017/07/24/reverse-engineering-001/)
+```
+jailbreak在Android上叫Root，在iOS上叫越狱，在Symbian上叫免签，在Web入侵时叫提权; 
+iOS 10开始，非完美越狱也越来越难，虽然在 Google Project Zero 的“帮助”下，Luca Todesco 开发了 Yalu102 ，但是支持设备有限，越狱稳定性不高。
+```
+
 

@@ -18,11 +18,19 @@ site: https://zhangkn.github.io
 
 Frida环境的搭建可以看下[这篇文章](https://zhangkn.github.io/2017/12/frida/#gsc.tab=0)
 
-### dumpdecrypted.dylib 
->*dumpdecrypted的原理：
+### [dumpdecrypted.dylib](https://github.com/stefanesser/dumpdecrypted)
+>*dumpdecrypted的原理：通过向宏 DYLD_INSERT_LIBRARIES 里写入动态库的完整路径，就可以在可执行文件加载的时候，将动态链接库插入。
 
 ```
 把自己通过DYLD_INSERT_LIBRARIES这个环境变量注入到已经通过系统加载器解密的 mach-o文件(因此要求程序是运行状态)，再把解密后的内存数据 dump出来--并没有破解 appstore的加密算法
+```
+
+>* [dumpdecrypted/dumpdecrypted.c](https://github.com/zhangkn/dumpdecrypted/blob/master/dumpdecrypted.c)
+```
+<!-- __attribute__((constructor)) 在main() 之前执行,__attribute__((destructor)) 在main()执行结束之后执行. -->
+__attribute__((constructor))
+void dumptofile(int argc, const char **argv, const char **envp, const char **apple, struct ProgramVars *pvars)
+<!--  -->
 ```
 
 砸壳的步骤：
@@ -84,6 +92,10 @@ codesign --force --verify --verbose --sign "iPhone Developer: xxx xxxx (xxxxxxxx
 ```
 
 ### see also
+- [《iOS逆向工程》- 砸壳](https://blog.tylinux.com/2017/07/24/reverse-engineering-002/)
+```
+DYLD_INSERT_LIBRARIES=/Library/MobileSubstrate/DynamicLibraries/dumpdecrypted.dylib ./xxxxx
+```
 >* [KNas10.2Head](https://github.com/zhangkn/KNas10.2Head/tree/master/as10.2/head)
 >* [NSFileManager](http://iosre.com/t/ios-igrimace/448)
 - [防止tweak依附，App有高招；破解App保护，tweak留一手](http://bbs.iosre.com/t/tweak-app-app-tweak/438)
