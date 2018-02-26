@@ -7,7 +7,6 @@ site: https://zhangkn.github.io
 ---
 ### 前言
 
-总结入门级的东西的时候，代码互相抄很正常，但是解释的部分最好自己写。
 
 软件的逆向工程指的是通过分析一个程序或系统的功能、结构或行为，将它的技术实现或设计细节推导出来的过程。
 当我们因为工作需要，或是对一个软件的功能很感兴趣，却又拿不到它的源代码时，往往可以通过逆向工程的方式对它进行分析，探索它的实现原理。
@@ -19,7 +18,7 @@ site: https://zhangkn.github.io
 ### iOS 逆向分析方法
 
 
-
+从二进制文件入手，尝试从汇编代码中理清原始逻辑，并修改/绕过以达到目的。
 
 >* 1、网络分析
 ```
@@ -120,6 +119,11 @@ SharedUtilStruct->cign(key ,count,knkey, knput);
 
 
 ### 参考资源
+- [《iOS逆向工程-介绍》](https://blog.tylinux.com/2017/07/24/reverse-engineering-000/)
+```
+逆向工程则是从最后的二进制文件入手，通过反汇编、静态分析、动态调试等手段，达到了解程序执行逻辑，修改或者重新实现这一逻辑的目的。
+软件开发商通常会对软件进行混淆、加密、加壳等操作，在真正分析软件的逻辑之前，通常需要先对应用进行脱壳、反混淆等操作。
+```
 - [ SOLVED : Classdump Error: Cannot find offset for address XXXXX in stringAtAddress:](http://iosre.com/t/solved-classdump-error-cannot-find-offset-for-address-xxxxx-in-stringataddress/10626)
 - [ios-auditor](http://riusksk.me/2016/06/23/ios-auditor/)
 - [restore-symbol](https://github.com/tobefuturer/restore-symbol)
