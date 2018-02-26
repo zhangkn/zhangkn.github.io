@@ -14,6 +14,13 @@ mainEntityOfPage: "https://zhangkn.github.io/archive/"
 comment:
     disqus: iosre
     # uyan: 2143225  # 有言id,登录有言官网申请
+    gitment: yes
+
+gitcomments:
+    repo: githubpages-comments
+    client_id: eb8baa6afd018fb78abf
+    client_secret: c7b3a1a69585b929f76b9b849a5266c6198d8498
+
 
 # Social
 social:
