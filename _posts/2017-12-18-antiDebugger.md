@@ -273,3 +273,6 @@ ios kext load
 >* SSL相信大家都不陌生。其实Https就是在Http基础上通过SSL协议进行加密之后的网络传输。
 ![](/images/posts/{{page.title}}/ssl.png)
 
+- [理解 HTTPS 原理，SSL/TLS 协议](https://www.w3cschool.cn/cuhkj/cuhkj-gkna2671.html)
+- [https://www.w3cschool.cn/project/iosre](https://www.w3cschool.cn/project/iosre)
+- [https://www.w3cschool.cn/iosre/](https://www.w3cschool.cn/iosre/)

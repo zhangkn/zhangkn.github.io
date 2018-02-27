@@ -297,6 +297,13 @@ devzkndeMacBook-Pro:zhangkn.github.io devzkn$ git branch -vv
 * test   7fcaf91 [origin/test] 创建分支develop
 ```
 
+>* 查看最近一次更改。
+```
+devzkndeMacBook-Pro:aso.git devzkn$ git show HEAD
+commit 7b5fa90112e9f49
+```
+
+
 ### Remote Virtual Interface Tool
 
 ```
