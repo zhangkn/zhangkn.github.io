@@ -29,6 +29,12 @@ stackoverflow user: 8633507
 本站的feed地址:
 <a href="feed:https://zhangkn.github.io/feed.xml">feed:https://zhangkn.github.io/feed.xml</a>
 
+<br>
+<h3> 上帝喜欢笨人 
+- 做事情，不在于开了多少个头，而在于结了多少次尾；就像计算机一样记得及时关闭一些进程，否则会死机的</h3>
+```
+不错，半农确是浅。但他的浅，却如一条清溪澄澈见底，纵有多少沉渣和腐草，也不掩其大体的清。倘使装的是烂泥，一时就看不出它的深浅来了；如果是烂泥的深渊呢，那就不如浅一点的好
+```
 
 <h3> friendship blog </h3>
 
