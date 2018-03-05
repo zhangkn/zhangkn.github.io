@@ -113,7 +113,35 @@ filetype:mp4 inurl:xxx intext:xxx: Google不仅能帮我们找到所需要的文
 
 
 ### see also
+- [如何用好 Google 搜索引擎解决你的问题](https://xiaozhuanlan.com/topic/5798613204)
 
+```
+一、基础搜索语法: +、-(逻辑“非”的操作)、OR、""(表示是完全匹配搜索) 
+备注：目前 Google filetype 指令支持以下文档和图片类型：
+Adobe Acrobat PDF (.pdf)
+Adobe Postscript (.ps)
+Autodesk DWF (.dwf)
+Google地球 KML (.kml)
+Google地球 KMZ (.kmz)
+Lotus 1-2-3（wk1、wk2、wk3、wk4、wk5、wki、wks、wku）
+Lotus WordPro (.lwp)
+MacWrite (.mw)
+Microsoft Excel (.xls)
+Microsoft Powerpoint (.ppt)
+Microsoft Word (.doc)
+Microsoft Works（wks、wps、wdb）
+Microsoft Write (.wri)
+Rich Text Format富文本格式 (.rtf)
+Shockwave Flash (.swf)
+纯文本（ans、txt）
+图片类型：
+
+filetype:jpg
+filetype:gif
+filetype:png
+filetype:bmp
+
+```
 - [bfinject](https://github.com/BishopFox/bfinject/blob/master/README.md#credits)
 - [https://minapp.com/miniapp/](https://minapp.com/miniapp/)
 - [breaking-into-ios-11](https://blog.elcomsoft.com/2018/02/breaking-into-ios-11/)
