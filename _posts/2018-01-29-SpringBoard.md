@@ -13,7 +13,7 @@ site: https://zhangkn.github.io
 
 ### 正文
 
->*  hook SpringBoard
+>*  sandboxPath
 
 ```
 %hook SpringBoard
@@ -21,7 +21,10 @@ site: https://zhangkn.github.io
 {
     @autoreleasepool {
         %orig;
-
+        SBApplicationController *sbApplicationCtrl=[%c(SBApplicationController) sharedInstance];
+        id app = [sbApplicationCtrl applicationWithBundleIdentifier:@"com.tencent.xin"];
+        NSString *contentUserID =  [app sandboxPath];
+        NSLog(@"contentUserID %@",contentUserID);//微信的沙盒路径 /private/var/mobile/Containers/Data/Application/D63C96C4-CA75-41E1-BA33-D39F97DA709C
     }
 }
 %end
@@ -29,6 +32,7 @@ site: https://zhangkn.github.io
 
 
 ### see also
+- [SBApplication: - (NSString *)sandboxPath;  ](http://iphonedevwiki.net/index.php/SBApplication)
 - [liberios jailbreakiOS11.1.1Liberios](https://mrmad.com.tw/liberios
 - [可以越狱成功的ipa](http://pangu8.com/jailbreak/11/Liberios.ipa)
 - [Electra_JB](https://www.reddit.com/r/Electra_JB/)
