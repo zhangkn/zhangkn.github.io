@@ -29,7 +29,7 @@ site: https://zhangkn.github.io
 }
 %end
 ```
-
+>* uicache 刷新桌面图标
 
 ### see also
 - [SBApplication: - (NSString *)sandboxPath;  ](http://iphonedevwiki.net/index.php/SBApplication)
