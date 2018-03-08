@@ -238,6 +238,7 @@ proxy="protocal://ip:port"
 
 ```
 
+- [OpenJailbreak](https://github.com/OpenJailbreak)
 - [闷骚的悟空](https://zongquan.wang/archives/)
 - [Luke's Homepage](http://luklab.com/)
 - [reverse-engineering](https://github.com/wtsxDev/reverse-engineering)
