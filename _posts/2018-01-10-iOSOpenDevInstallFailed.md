@@ -6,6 +6,19 @@ tag: iOSre
 site: https://zhangkn.github.io
 ---
 
+### 前言
+
+- [Com.apple.product-type.tool解决方法,通常Xcode9 和Xcode8 都会遇到这个问题,尤其是在开发 Command Line Tools的时候](http://www.iosre.com/t/com-apple-product-type-tool/7060)
+
+```
+下载此文件夹 https://svn.webkit.org/repository/webkit/trunk/Tools/Scripts
+或者下载本帖附件解压
+
+然后运行 
+cd Scripts
+sudo ./configure-xcode-for-ios-development
+```
+
 
 ###  iOSOpenDevInstallFailed（iOSOpenDev-1.6-2）
 
