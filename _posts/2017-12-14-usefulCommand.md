@@ -299,7 +299,7 @@ devzkndeMacBook-Pro:zhangkn.github.io devzkn$ git branch -vv
 
 >* 查看最近一次更改。
 ```
-devzkndeMacBook-Pro:aso.git devzkn$ git show HEAD
+devzkndeMacBook-Pro:.git devzkn$ git show HEAD
 commit 7b5fa90112e9f49
 ```
 

@@ -81,7 +81,7 @@ devzkndeMBP:bin devzkn$ swiftOCclass-dump  --arch arm64 /Users/devzkn/decrypted/
 
 >* 查询可签名证书 
 ```
-exit 0devzkndeMacBook-Pro:aso.git devzkn$ security find-identity -v -p codesigning
+exit 0devzkndeMacBook-Pro:.git devzkn$ security find-identity -v -p codesigning
 2) CB45FC98D2F6BC553EF706D835077 "iPhone Developer: kn zhang (48M9)"
 17 valid identities found
 ```

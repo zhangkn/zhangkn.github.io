@@ -408,7 +408,7 @@ Options:
      --force-color          Force colored text
      --message-only          Display only level and message
 Control-C to disconnect
-devzkndeMacBook-Pro:aso.git devzkn$ knlog -i -f AppStore
+devzkndeMacBook-Pro:.git devzkn$ knlog -i -f AppStore
 Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] <Info>: nw_endpoint_resolver_start_next_child [6 su.itunes.apple.com:443 in_progress resolver (satisfied)] starting child endpoint 123.53.139.209:443
 Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] <Info>: nw_endpoint_resolver_start_next_child [6 su.itunes.apple.com:443 in_progress resolver (satisfied)] starting next child endpoint in 250ms
 Jan 10 18:57:45 iPhone appstored(libsystem_network.dylib)[587] <Info>: nw_endpoint_handler_start [6.2 123.53.139.209:443 initial path (null)]

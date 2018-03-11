@@ -10,6 +10,8 @@ site: https://zhangkn.github.io
 
 ### 前言
 
+>* 知识的获取: 亲身感知（旅行）、他人告知（学习）、逻辑推知
+
 计算机从专用到通用背后的逻辑、为什么算盘是计算机、计算机从简单到复杂、五级工程师和职业发展、为什么要学习科学
 
 
@@ -84,6 +86,14 @@ site: https://zhangkn.github.io
 
 
 ### see also
+- [LarryAmino丰元 http://www.meipai.com/user/1083835846](http://www.meipai.com/user/1083835846)
+- [wu-jun-bo-shi](http://www.aminocapital.com/team/wu-jun-bo-shi)
+
+- [史上第一次：硅谷华人高管自建VC，只投从0到1的ideahttps://www.toutiao.com/i6230666789043307010/](https://www.toutiao.com/i6230666789043307010/)
+```
+劳工、->、码农(中产阶级)-》高管，决策层（精英阶段）-〉制定游戏规则（政治家，法律法官）
+```
+
 
 - [不破不立：一个iOS开发工程师的职业规划思考](http://iosre.com/t/ios/689)
 ```
