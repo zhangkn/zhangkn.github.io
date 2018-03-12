@@ -103,6 +103,37 @@ Release文件几乎不用改, 只要准备好deb文件, 然后用dpkg-scanpackag
 ```
 
 
+
+### 将自己的源地址添加到cyida 中
+
+>* /private/etc/apt/sources.list.d/cydia.list -> /var/mobile/Library/Caches/com.saurik.Cydia/sources.list
+```
+iPhone:~ root# cat  /var/mobile/Library/Caches/com.saurik.Cydia/sources.list
+deb http://apt.saurik.com/ ios/1144.17 main
+deb https://build.frida.re/ ./
+deb http://cydia.zodttd.com/repo/cydia/ stable main
+deb http://repo666.ultrasn0w.com/ ./
+deb http://192.168.2.185/cydia/ ./
+deb http://192.168.2.69:8088/ ./
+``` 
+
+>* 让普通人不懂得如何删除我们的源 /private/etc/apt/sources.list.d/wl.list;以后部署新机器，不用烦琐的添加多个源
+```
+:/private/etc/apt/sources.list.d root# cat  wl.list
+deb http://192.168.2.69:8088/ ./
+deb http://192.168.2.185/cydia/ ./
+<!-- 一行命令添加内置的源   -e 参数是为了使用换行符\n -->
+     echo -e 'deb http://192.168.2.69:8088/ ./ \ndeb http://192.168.2.69:8088/ ./' > /private/etc/apt/sources.list.d/wl.list
+```
+
+### preinst
+
+>*  删除其他deb 的install ok half-configured   EOF before value of field `Icon' (missing final newline)
+
+```
+  rm -rf /var/lib/dpkg/updates/*
+```
+
 ### see also
 
 
