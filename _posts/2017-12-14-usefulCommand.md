@@ -8,6 +8,16 @@ tag: iOSre
 
 常用的命令和工具
 
+### [常用的lua脚本，例如：检测屏幕解锁、执行shell、运行app](https://github.com/zhangkn/knlua)
+
+>* [检测屏幕解锁、执行shell、运行app](https://github.com/zhangkn/knlua/blob/master/popen.lua)
+```
+io.popen('echo "" > /private/var/log/syslog')
+```
+
+### rm
+
+>*  echo "" > /private/var/log/syslog 清空日志信息
 
 ### mkdir
 
