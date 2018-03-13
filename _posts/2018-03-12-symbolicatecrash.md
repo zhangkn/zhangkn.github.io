@@ -94,3 +94,11 @@ Thread 16 Crashed:
 
 
 ### see also 
+- [How iCloud.com works?](https://github.com/prabhu/iCloud)
+- [Lets study iTunes for fun and learning](https://github.com/prabhu/iTunes)
+```
+devzkndeMacBook-Pro:code devzkn$ scp -r  usb2222:/var/mobile/Library/Caches/sharedCaches/com.apple.iTunesStore.NSURLCache  ~/code/com.apple.iTunesStore.NSURLCache
+NSFilePath=/var/mobile/Library/Caches/com.apple.storeservices/SSAppImageDatabaseCacheEntry
+```
+- [https://github.com/zhangkn/KNcom.apple.iTunesStore.NSURLCache.git](https://github.com/zhangkn/KNcom.apple.iTunesStore.NSURLCache.git)
+
