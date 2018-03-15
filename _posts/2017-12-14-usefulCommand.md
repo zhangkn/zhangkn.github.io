@@ -8,6 +8,14 @@ tag: iOSre
 
 常用的命令和工具
 
+### rvictl
+
+>* sudo tcpdump -i rvi0 -AAl
+
+>*  rvictl -s bea23bf
+
+>* rvictl help
+
 ### [常用的lua脚本，例如：检测屏幕解锁、执行shell、运行app](https://github.com/zhangkn/knlua)
 
 >* [检测屏幕解锁、执行shell、运行app](https://github.com/zhangkn/knlua/blob/master/popen.lua)
@@ -268,6 +276,54 @@ git merge --no-ff  develop
 git push
 ```
 ![](/images/posts/{{page.title}}/knco.png)
+
+
+>* git ls-remote 查看远程仓库的
+
+```
+tag里程碑和分支branch一样也是以引用的形式存在的，保存在.git/refs/路径下
+From git@gitlab..cn:/.git
+681389eae525ca1fe46aead4f8d564e10cc5718f  HEAD
+e5249781e569b1c23ac3bda3b44b27ab8f69b9b6  refs/heads/develop
+681389eae525ca1fe46aead4f8d564e10cc5718f  refs/heads/master
+28e14e66b0a89c30bf75a498696384517d4b9150  refs/heads/test
+708197c9b640ee6d8d4d9cbb328ca81356afaf31  refs/heads/vpn
+239b195b0077e1e70ee81c26dd1aa323163640c2  refs/tags/2.1.1
+7bed7644f557e6ce527d8309c87332bab0d52571  refs/tags/2.1.1^{}
+6deab190fdd83209cc72a5305c84b86febbc0d59  refs/tags/2.1.2
+681389eae525ca1fe46aead4f8d564e10cc5718f  refs/tags/2.1.2^{}
+8617a8b2d16e3c1784e13723c1af34f61a5fd558  refs/tags/V1.0.0
+021f1cb5431217c80b58147db1cad3f868281913  refs/tags/V1.0.0^{}
+9a6ec62a6f1420ce2639d9d3582bed211812ec4b  refs/tags/V1.0.1
+b40af1f2b9cb379d862fc8dfb8be375f55b9e582  refs/tags/V1.0.1^{}
+974bf8ffffba62ebd28a4b7866a6f72bf4b134d4  refs/tags/V1.0.2
+7b811ba51a056f8a965a3fa6e09dc2b422bd8aee  refs/tags/V1.0.2^{}
+6c97cfd5f53b72e34ffb98101f235db83dcf0833  refs/tags/V2.0
+22a7f69a4e93c7a65c5d92e48307aaa2cfb63478  refs/tags/V2.0^{}
+1e433007576ae2f5db299ff56edf432184c770ca  refs/tags/V2.1
+e8f456064134af3bb10bb0ce32891d30bc0b407a  refs/tags/V2.1^{}
+<!-- 查看当前分支  -->
+devzkndeMacBook-Pro:aso.git devzkn$ git branch
+  develop
+  master
+* test
+  vpn
+
+```
+
+>* git branch -d  vpn
+
+```
+Deleted branch vpn (was 708197c).
+<!-- 参数-D则可强制删除尚未合并的分支。 -->
+<!-- 使用推送分支命令时要使用一个特殊的引用表达式（冒号前为空）,进行远程分支的删除 -->
+ git push origin :vpn
+ To gitlab..cn:/.git
+ - [deleted]         vpn
+
+```
+
+
 
 >* [kngit](https://github.com/zhangkn/KNBin/blob/master/kngit) ：提交代码到本地仓库和远程仓库
 ```

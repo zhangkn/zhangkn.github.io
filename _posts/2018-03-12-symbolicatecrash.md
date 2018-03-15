@@ -101,4 +101,15 @@ devzkndeMacBook-Pro:code devzkn$ scp -r  usb2222:/var/mobile/Library/Caches/shar
 NSFilePath=/var/mobile/Library/Caches/com.apple.storeservices/SSAppImageDatabaseCacheEntry
 ```
 - [https://github.com/zhangkn/KNcom.apple.iTunesStore.NSURLCache.git](https://github.com/zhangkn/KNcom.apple.iTunesStore.NSURLCache.git)
+- [deb](https://baike.baidu.com/item/deb)
 
+```
+一般有 5 个文件：
+1、control，用了记录软件标识，版本号，平台，依赖信息等数据；
+
+2、preinst，在解包data.tar.gz 前运行的脚本；postinst，在解包数据后运行的脚本；
+
+3、prerm，卸载时，在删除文件之前运行的脚本；
+
+4、postrm，在删除文件之后运行的脚本；在 Cydia 系统中，Cydia 的作者 Saurik 另外添加了一个脚本，extrainst_，作用与 postinst 类似。
+```
