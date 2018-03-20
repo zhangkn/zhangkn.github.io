@@ -85,6 +85,15 @@ site: https://zhangkn.github.io
 ```
 
 
+### 索引带来搜索的效率、灵活性
+
+Google在建索引时，是对所有的词建索引的，而不仅仅是对于一些重要的词建立索引
+
+>* 一般索引只会根据一个维度的信息建立，而不会用几个维度的组合信息建立，比如，不会建立“人名＋毕业学校”这样的索引。
+```
+对索引 进行查询： 按照一个公式，将关键词变成一个编号，然后再取尾数（火车安排座位，座位号重合的，就就近坐下）-》 伪随机数 -〉 数据加密-》公开密钥
+```
+
 ### see also
 - [LarryAmino丰元 http://www.meipai.com/user/1083835846](http://www.meipai.com/user/1083835846)
 - [wu-jun-bo-shi](http://www.aminocapital.com/team/wu-jun-bo-shi)

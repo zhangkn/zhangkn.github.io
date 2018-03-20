@@ -29,7 +29,8 @@ stackoverflow user: 8633507
 <p>
 本站的feed地址:
 <a href="feed:https://zhangkn.github.io/feed.xml">feed:https://zhangkn.github.io/feed.xml</a>
-
+<br>
+>* Email: devzkndeMacBook-Pro:work devzkn$ echo 7a68616e675f6b6e4069636c6f75642e636f6d0a |xxd -r -p
 <br>
 <h3> 上帝喜欢笨人 
 - 做事情，不在于开了多少个头，而在于结了多少次尾；就像计算机一样记得及时关闭一些进程，否则会死机的</h3>

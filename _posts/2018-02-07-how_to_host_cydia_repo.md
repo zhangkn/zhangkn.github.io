@@ -39,7 +39,7 @@ cydia--
            |--Packages.bz2 ：由Packages文件压缩而来, 命令行: bzip2 Packages；
            |--Packages.gz
            |--Release  ：是一个普通的文本文件，用于描述当前源的信息；这些信息会在 Cydia 的源列表及 Tweak 搜索列表中显示
-           |--Release.gpg
+           |--Release.gpg :Package Signatures,from our Release file. This file will be downloaded by the clients first and then is used to verify the validity of the Release file. gpg -abs -o Release.gpg Release
 ```
 
 
@@ -136,7 +136,15 @@ deb http://192.168.2.185/cydia/ ./
 
 ### see also
 
+- [How to host your own Cydia repo with Github](http://h6nry.github.io/tutorial-cydia-repo.html)
 
+```
+https://github.com/H6nry/h6nry.github.io/blob/master/repo/dptemplate.js
+https://github.com/H6nry/h6nry.github.io/blob/master/repo/
+./dpkg-scanpackages Files /dev/null > Packages
+Optionally, you can also add an icon named "CydiaIcon.png" in your root dir so the user finds your repo at a glance.
+
+```
 >* [How to Host a Cydia™ Repository](http://www.saurik.com/id/7)
 
 ```
@@ -144,6 +152,34 @@ Creating a Repository
 dpkg-scanpackages -m . /dev/null >Packages
  bzip2 Packages
 
+<!-- http://test.saurik.com/macciti/dpkg-scanpackages  -->
+<!-- Repository Metadata (Optional) -->
+Origin: Saurik's Example for Cydia
+Label: Cydia Example
+Suite: stable
+Version: 0.9
+Codename: tangelo
+Architectures: iphoneos-arm
+Components: main
+Description: An Example Repository from HowTo Instructions
+
+<!-- Step 5: Package Signatures (Optional) -->
+
+
+<!-- Step 6: Adding the Repository 即添加源地址到cydia 的配置文件中 /etc/apt/sources.list  sources.list.d -->
+iPhone:/var/lib/apt/lists root# ls -lrt
+
+/etc/apt/sources.list.d 这个目录下创建自己wl.list，或者直接添加到 cydia.list
+
+echo -e 'deb http://192.168.2.69:8088/ ./' > /private/etc/apt/sources.list.d/wl.list
+iPhone:/etc/apt/sources.list.d root# ls -lrt
+total 8
+-rw-r--r-- 1 root wheel 227 Feb 16  2017 saurik.list
+lrwxr-xr-x 1 root wheel  56 Mar 15 10:26 cydia.list -> /var/mobile/Library/Caches/com.saurik.Cydia/sources.list
+
+<!-- "apt-get update" to pick up the new source information, and then we use "apt-get install" to get our package. -->
+deb http://apt.saurik.com/xmpl/ ./ 添加到cydia.list，或者手动添加
+iPhone:~ root# apt-get install com.saurik.myprogram
 ```
 
 

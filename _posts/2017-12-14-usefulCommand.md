@@ -303,7 +303,7 @@ b40af1f2b9cb379d862fc8dfb8be375f55b9e582  refs/tags/V1.0.1^{}
 1e433007576ae2f5db299ff56edf432184c770ca  refs/tags/V2.1
 e8f456064134af3bb10bb0ce32891d30bc0b407a  refs/tags/V2.1^{}
 <!-- 查看当前分支  -->
-devzkndeMacBook-Pro:aso.git devzkn$ git branch
+devzkndeMacBook-Pro:com.wl. devzkn$ git branch
   develop
   master
 * test
