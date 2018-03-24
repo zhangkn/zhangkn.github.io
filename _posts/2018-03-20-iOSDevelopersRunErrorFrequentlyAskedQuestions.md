@@ -29,6 +29,32 @@ Failed.
 searching for "iPhone" in Keychain and removing all expired certificates,只留下一个有效的即可
 ```
 
+
+###  dpkg
+
+>* dpkg-deb: error: control directory has bad permissions 700 (must be >=0755 and <=0775)
+
+```
+devzkndeMacBook-Pro:DEBIAN devzkn$ ls -lrt
+total 40
+-rwxr-xr-x  1 devzkn  staff   153 Mar 22 14:03 prerm
+-rwxr-xr-x  1 devzkn  staff  5480 Mar 22 16:17 postinst
+-rwxr-xr-x  1 devzkn  staff  3026 Mar 22 16:17 preinst
+-rw-r--r--  1 devzkn  staff   287 Mar 22 16:17 control
+
+<!-- 需要修改为 -->
+ -rwxr-xr-x  1 devzkn  staff   302 Mar 19 10:26 control
+
+<!-- 解决方法 -->
+ devzkndeMacBook-Pro:DEBIAN devzkn$ chmod +x control
+
+ # devzkndeMacBook-Pro: devzkn$ chmod -R 0755 Package
+
+```
+
+
+
+
 ### see also 
 
 - [iOS 10-10.1.1重新越獄與誤點清除所有內容和設定解決方法](https://mrmad.com.tw/ios10-1-1-re-jailbreak-device-after-erase-all-content-and-settings)

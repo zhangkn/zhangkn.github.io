@@ -109,6 +109,17 @@ Thread 16 Crashed:
 -rw-rw-rw- 1 mobile mobile  94165 Mar 12 16:25 SpringBoard-2018-03-12-162524.ips
 ```
 
+>* 简单的例子
+
+```
+
+devzkndeMacBook-Pro:com.wl..git devzkn$ scp usb2222:/private/var/mobile/Library/Logs/CrashReporter/SpringBoard-2018-03-23-153316.ips ~
+
+
+devzkndeMacBook-Pro:com.wl..git devzkn$ symbolicatecrash --dsym=/Users/devzkn/com..dylib.dSYM /Users/devzkn/SpringBoard-2018-03-23-153316.ips | open -f
+
+```
+
 ### Mach-O 文件
 
 
