@@ -74,6 +74,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       ga('create', '{{site.ga.id}}', '{{site.ga.host}}');
       ga('send', 'pageview');
   </script>
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{site.ga.id}}"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111030597-1"></script> -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  <!-- // gtag('config', 'UA-111030597-1');-->
+  gtag('config', '{{site.ga.id}}');
+  <!-- // '{{site.ga.id}}'-->
+</script>
   {% endif %}
 
   
@@ -87,6 +101,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- linkedin  http://www.linkedin.com/badges/profile/create?vanityname=iosre&trk=pprof-settings-badge 
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
 
+<!-- amp-auto-ads  -->
+<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 
 
 </head>

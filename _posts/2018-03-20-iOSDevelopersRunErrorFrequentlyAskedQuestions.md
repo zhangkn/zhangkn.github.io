@@ -57,6 +57,43 @@ total 40
 
 ### see also 
 
+- [IOS高级开发～开机启动&无限后台运行&监听进程](https://blog.csdn.net/bao990423420/article/details/14123445)
+
+- [逆向分析网络协议 iOS 篇](https://mp.weixin.qq.com/s?__biz=MzIwMTYzMzcwOQ==&mid=403204191&idx=1&sn=514664cc05597f8b76730cbf9f3a57f5&scene=23&srcid=0309yRmQiN6spspIEAk8t6kO#rd)
+
+```
+<!--1、 Class-dump   -A             show implementation addresses -->
+
+devzkndeMacBook-Pro:KNMNV5.4.0 devzkn$  /Users/devzkn/Downloads/class-dump --arch armv7 KNMN.decrypted -H  -o ./header
+
+Class-Dump XApp -H -A -S -o headers/
+
+<!-- devzkndeMacBook-Pro:~ devzkn$ class-dump --arch armv7 tmp -H -A -S -o ./header -->
+
+
++ (id)ret32bitString;	// IMP=0x00013887
++ (id)setupHttpSign;	// IMP=0x0001395f
+
+地址空间布局随机化 (ASLR) 可防止对内存损坏缺陷的利用。
+<!-- image list -o -f -->
+
+<!--2、 br s -a "0x00000000000f8000+0x000000010024b99c" -->
+
+执行 c 或 continue 让 app 跑起来，触发断点的地址，就会发现断点停下来的。
+
+<!-- po $arg1 -->
+
+ OC 方法 $arg1 就是 self
+
+<!-- 3、断点变 Log -->
+breakpoint command add 1
+
+> po $arg1
+> c
+> DONE
+
+```
+
 - [iOS 10-10.1.1重新越獄與誤點清除所有內容和設定解決方法](https://mrmad.com.tw/ios10-1-1-re-jailbreak-device-after-erase-all-content-and-settings)
 
 ```

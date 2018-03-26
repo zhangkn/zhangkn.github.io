@@ -54,6 +54,10 @@ less than 小于 < lt
 
 不等 ne
 
+<!-- !mdns && http && ip.dst_host eq 11.190.181.63  -->
+<!-- !mdns && http.request.full_uri contains  "http://...com" -->
+
+
 ```
 
 >* 过滤端口
@@ -128,8 +132,25 @@ Internet 安全关联和密钥管理协议. 一种协议框架，定义了有效
  是为网络通信提供安全及数据完整性的一种安全协议。TLS与SSL在传输层对网络连接进行加密。
 ```
 
+>* VPN 
+
+```
+1、Cisco IPSec，此协议通过密码、RSA SecurID 或 CRYPTOCard 进行用户认证，并通过共享密钥和证书进行机器认证。对于在设备配置期间指定的域，Cisco IPSec 支持“请求 VPN 域”。
+
+2、L2TP/IPSec，此协议通过 MS-CHAPV2 密码、RSA SecurID 或 CRYPTOCard 进行用户认证，并通过共享密钥进行机器认证。
+
+3、PPTP，此协议通过 MS-CHAPV2 密码和 RSA SecurID 或 CRYPTOCard 进行用户认证。
+
+```
+
 
 
 ### see also
+
+- [IOS高级开发～开机启动&无限后台运行&监听进程](http://www.cnblogs.com/abasolution/p/4108593.html)
+
+
+
+- [ios 部署参考](http://help.apple.com/deployment/ios/#/iorce42113ea)
 
 - [tcpdump](https://zhangkn.github.io/2018/03/tcpdump/)
