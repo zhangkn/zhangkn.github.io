@@ -2,7 +2,7 @@
 layout: post
 title: usefulCommand
 date: 2017-12-14
-tag: iOSre
+tag: tool
 ---
 ### 前言
 
@@ -243,6 +243,54 @@ apt-get install socat
 ### git
 
 在遇到git 冲突的时候，常常可以利用git status 来查看解决方案
+
+
+>*     查看所有分支
+
+```
+devzkndeMacBook-Pro:electra devzkn$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/cydia
+  remotes/origin/master
+
+```
+
+>* 取回远程特定的分支
+
+```
+devzkndeMacBook-Pro:electra devzkn$ git fetch origin  cydia
+From github.com:coolstar/electra
+ * branch            cydia      -> FETCH_HEAD
+
+
+<!-- 总结： 取回远程的一个分支 cydia-->
+
+devzkndeMacBook-Pro:electra devzkn$ git checkout -b cydia origin/cydia
+Branch cydia set up to track remote branch cydia from origin.
+Switched to a new branch 'cydia'
+
+devzkndeMacBook-Pro:electra devzkn$ git fetch origin
+
+
+```
+
+
+>* 新建并切换到该分支
+
+```
+
+<!-- 运行 git checkout 并加上 -b 参数： -->
+
+devzkndeMacBook-Pro: devzkn$ git checkout -b develop
+
+ git push --set-upstream origin develop
+
+这相当于执行下面这两条命令：
+$ git branch iss53
+$ git checkout iss53
+
+```
 
 >* 1、 git log 
 ```
