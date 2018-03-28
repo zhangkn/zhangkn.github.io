@@ -153,3 +153,127 @@ typedef CF_ENUM(CFIndex, CFNumberFormatterStyle) {	// number format styles
 
 ```
 
+- [html5 在手机桌面添加图标 有点像web app JavaScript提示用户添加到主屏幕](http://caibaojian.com/add-to-home-screen.html)
+
+
+```
+
+
+
+
+```
+
+- [iOS App创建桌面快捷方式](http://www.cocoachina.com/ios/20150827/13243.html)
+
+```
+
+Safari有一个“添加至屏幕”的功能，其实就是在桌面上添加了一个网页书签，App可以使用这个功能来实现创建桌面快捷方式。
+
+
+<!-- 一、运用基本技术点 -->
+
+JavaScript
+
+Data URI Schema
+
+Socket基本知识
+
+Base64编码
+
+<!-- 二、基本原理 -->
+
+程序内部创建一个简单的Web站点，通过这个站点调用Safari，站点将自定义的Html页面返回给Safari，此时利用Safari的“添加至主屏幕”功能，将自定义的Html制作成桌面书签，当用户点击桌面图标时，则运行自定义的Javascript来进行跳转至App。
+
+
+<!-- 三、什么是 data URI scheme？节省了一个 HTTP 请求 -->
+
+直接把图像的内容崁入网页里面，这个密技的官方名称是 data URI schema 
+
+<!-- Data URI scheme 的语法 -->
+
+data – 取得数据的协定名称
+
+image/png – 数据类型名称
+
+base64 – 数据的编码方法
+
+iVBOR…. – 编码后的数据
+
+: , ; – data URI scheme 指定的分隔符号
+
+
+
+<!-- 四、什么是 Base64 编码？ -->
+
+把一些 8-bit 数据翻译成标准 ASCII 字符
+
+
+<!-- 五、Socket基本知识 -->
+
+使用CocoaHttpServer创建一个本地的站点
+
+
+https://github.com/robbiehanson/CocoaHTTPServer
+
+ _httpServer = [[HTTPServer alloc] init];
+    [_httpServer setType:@"_http._tcp."];
+    NSString *webPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Web"];
+//    DDLogInfo(@"Setting document root: %@", webPath);
+    [_httpServer setDocumentRoot:webPath];
+    [self startServer];
+
+<!-- 创建HttpServer -->
+
+- (void)startServer
+{
+    // Start the server (and check for problems)
+    NSError *error;
+    if([_httpServer start:&error])
+    {
+        DDLogInfo(@"Started HTTP Server on port %hu", [_httpServer listeningPort]);
+        // open the url.
+        NSString *urlStrWithPort = [NSString stringWithFormat:@"http://localhost:%d",[_httpServer listeningPort]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStrWithPort]];
+    }
+    else
+    {
+        DDLogError(@"Error starting HTTP Server: %@", error);
+    }
+}
+
+
+
+
+<!-- 六、实现 -->
+
+
+<!--         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStrWithPort]]; -->
+
+
+https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+
+
+
+
+
+1) 检测Web应用程序当前是否运行在全屏状态，只要检测window.navigator.standalone是否为true就可以了
+
+2) 检测到Web应用程序运行在非全屏状态时就可以提示用户把Web应用程序的图标添加到主屏幕。
+
+3) http://software.hixie.ch/utilities/cgi/data/data
+
+
+
+```
+
+- [Configuring Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
+
+```
+iOS App创建桌面快捷方式  https://github.com/lijianfeigeek/iOS-desktop
+https://github.com/cubiq/add-to-homescreen/zipball/master
+
+mobile-bookmark-bubble: https://code.google.com/archive/p/mobile-bookmark-bubble/
+
+
+```
+

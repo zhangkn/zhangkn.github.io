@@ -241,3 +241,233 @@ https://apps.admob.com/v2/home?_ga=2.208906258.1809489479.1522035233-542669175.1
 
 ```
 
+- [广告:Google 在广告中使用 Cookie 的方式](https://www.google.com/intl/zh-CN/policies/technologies/ads/)
+
+```
+
+<!-- Google 在广告中使用 Cookie 的方式: googleads.g.doubleclick.net -->
+
+1)目的: 避免反复向您展示同样的广告，检测并阻止欺诈性点击，以及展示可能具有更高相关度的广告（例如根据您访问过的网站来展示广告）
+
+2) https://www.google.com/intl/zh-CN/policies/privacy/key-terms/#toc-terms-server-logs 包含您的网络请求、IP地址、浏览器类型、浏览器语言、您所发请求的日期和时间以及可唯一标识您的浏览器的一个或多个Cookie
+---删除部分IP地址（9个月后）和Cookie的信息（18个月后）
+
+3)我们的广告 Cookie:  AdSense、AdWords、Google Analytics（分析）以及一系列 DoubleClick 品牌服务。当您访问/看到使用其中某个产品的网页/广告时（无论是在 Google 服务中还是在其他网站和应用中），系统都可能会向您的浏览器发送各种Cookie。
+
+---这些 Cookie 可能会通过几个不同的网域进行设置，其中包括 google.com、doubleclick.net、googlesyndication.com、googleadservices.com 或我们合作伙伴的网站所在的网域。我们的部分广告产品可让我们的合作伙伴将其他服务与我们的服务（如广告评估和报表服务）结合使用，而这些服务可将其自身的 Cookie 发送至您的浏览器。此类 Cookie 会通过各项相关服务所在的网域进行设置。
+
+
+4) Google 使用的 Cookie 类型---https://www.google.com/intl/zh-CN/policies/technologies/types/
+
+5) 如何使用这些 Cookie: https://www.google.com/intl/zh-CN/policies/technologies/cookies/
+
+
+6) 在网络浏览器中管理 Cookie: https://www.google.com/intl/zh-CN/policies/technologies/managing/
+
+<!-- 广告中使用的其他技术 -->
+
+
+1) 移动应用的广告标识符:为了能在无法使用 Cookie 技术的服务（例如移动应用）中投放广告，我们可能会使用功能与 Cookie 类似的技术。
+
+
+将投放在移动应用中的广告所用的标识符与同一设备上的广告 Cookie 相关联，以协调移动应用和移动浏览器中展示的广告。例如，如果您在应用内看到的广告可在移动浏览器中打开一个网页，Google 就可能会进行上述关联
+
+
+
+
+
+2) 位置信息
+
+
+
+<!-- Google 如何使用 Cookie -->
+
+Cookie 是由用户访问的网站向浏览器发送的一小段文本。它帮助浏览器记录有关访问活动的信息，例如首选语言和其他一些设置。
+
+1 )记录您的安全搜索偏好设置、向您展示与您更相关的广告、统计某个网页的访问者数量、帮助您注册我们的服务、保护您的数据，或记住您的广告设置。
+
+<!-- Google 使用的 Cookie 类型:使用不同类型的Cookie来运作Google网站以及与广告相关的产品 -->
+
+1) 广告: 在非 Google 网站上使用的主要广告 Cookie 之一称为“IDE”，它存储在浏览器中的 doubleclick.net 网域下。另一个主要广告 Cookie 存储在 google.com 中，称为“ANID”。我们亦会使用其他 Cookie，例如“DSID”、“FLC”、“AID”、“TAID”和“exchange_uid”。
+
+>* 在您访问的网站所在的网域中设置名为“__gads”或“__gac”的 Cookie。
+
+>* Google 还会使用转化 Cookie，它的主要用途是协助广告主确定用户对广告的点击最终转化为购买行为的次数。通过这些 Cookie，Google 和广告主能够确定您是否点击了广告并在随后访问了广告主的网站
+
+>* 一种专用的 Cookie，称为“Conversion”。这种 Cookie 通常会设置在 googleadservices.com 网域或 google.com 网域（该页面的底部会列出我们用于设置广告 Cookie 的网域）中。我们的一些其他 Cookie 也可用于评估转化事件，例如 DoubleClick Cookie 和 Google Analytics（分析）Cookie。
+
+
+>* 使用名为“AID”、“DSID”和“TAID”的 Cookie，以便关联您在各种设备上的活动（前提是您之前已在其他设备上登录自己的 Google 帐号）。这样做是为了协调您在各种设备上看到的广告并评估转化事件。这些 Cookie 可能会设置在 google.com/ads、google.com/ads/measurement 或 googleadservices.com 网域中
+
+
+2) 会话状态 : 这些 Cookie 也可以用于匿名衡量 PPC（每次点击费用）和联属网络营销广告的效果
+
+使用名为“recently_watched_video_id_list” 的 Cookie，这样 YouTube 就可以记录通过某个特定浏览器在近期观看的视频。
+
+
+3) Google Analytics（分析） : 该工具会使用一系列 Cookie 收集信息并生成网站使用情况统计信息报表
+
+Google Analytics（分析）使用的主要 Cookie 是“__ga”Cookie。
+
+
+4) 进程: 使用的名为“lbcs”的 Cookie 可让 Google 文档在一个浏览器中打开多个文档。阻止该 Cookie 会导致 Google 文档不能正常使用。
+
+
+5) 使用安全 Cookie :对用户进行身份验证，防止登录凭据遭到冒用并且防止未经授权的第三方使用用户数据。
+
+使用名为“SID”和“HSID”的 Cookie，其中包含了关于用户 Google 帐户 ID 和最近登录时间的数字签名和加密记录。通过结合使用这两个 Cookie，我们可以阻止多种类型的攻击，例如试图窃取您在网页上填写的表单内容的行为。
+
+
+6)偏好设置:  称为“NID”的偏好设置 Cookie。浏览器会将该 Cookie 随同请求一起发送至 Google 的网站。NID Cookie 包含一个独一无二的 ID，Google 会利用该 ID 记住您的偏好设置和其他信息，例如您的首选语言（如简体中文）、您希望每页显示的搜索结果条数（如 10 条或 20 条），以及您是否希望启用 Google 的安全搜索过滤器。
+
+
+
+<!-- 使用各种网域来设置我们的广告产品中使用的 Cookie -->
+
+admob.com
+
+adsensecustomsearchads.com
+
+adwords.com
+
+doubleclick.net
+
+google.com
+
+googleadservices.com
+
+googleapis.com
+
+googlesyndication.com
+
+googletagmanager.com
+
+googletagservices.com
+
+googletraveladservices.com
+
+googleusercontent.com
+
+google-analytics.com
+
+gstatic.com
+
+urchin.com
+
+youtube.com
+
+ytimg.com
+
+
+
+<!-- 在浏览器中管理 Cookie -->
+
+
+https://adssettings.google.com/?hl=cn
+
+
+https://support.google.com/chrome/answer/95464?hl=cn
+
+<!-- Google 如何使用模式识别 -->
+
+计算机经过训练可识别组成面部数码影像的常见形状和色彩模式。这个过程称为人脸检测，这项技术可帮助 Google 保护您在街景视图等服务中的隐私权
+
+
+<!-- Google 使用的位置数据类型 -->
+
+1) 隐式位置信息:   对特定地点手动输入的搜索查询就是一种隐式位置信息
+
+2) 互联网流量信息（例如 IP 地址） : 通常是按照根据国家/地区的流量进行分配的，因此它可以用来确定您的设备所在的国家/地区，以及执行提供搜索时应使用的语言和语言区域等特定操作。此类信息作为互联网流量的常规部分进行发送
+
+3) Google 地图移动版: 精确位置的 GPS 信号、设备传感器、Wi-Fi 接入点和基站 ID 等信息。
+
+
+<!-- Google 产品隐私权政策指南 -->
+
+
+https://www.google.com/intl/zh-CN/policies/technologies/product-privacy/
+
+
+<!-- https://support.google.com/analytics/answer/1011829?hl=zh-Hans -->
+
+引荐来自 googleads.g.doubleclick.net 或 tpc.googlesyndication.com
+
+
+
+```
+
+- [googleads.g.doubleclick.net 就算强制经国外VPS代理解析，返回结果依然是国内IP #266](https://github.com/chengr28/Pcap_DNSProxy/issues/266)
+
+```
+
+<!-- CNAME规则就可以对应多个域名。 -->
+[CNAME Hosts]
+216.58.199.2|216.58.199.6 .*\.doubleclick.net
+216.58.199.2|216.58.199.6 .*\.google.com
+216.58.199.2|216.58.199.6 .*\.googlevideo.com
+
+
+```
+
+
+- [awesome-antifraud](https://github.com/yikebocai/awesome-antifraud/blob/master/README.md)
+
+```
+
+Sift Science: https://siftscience.com/   恶意广告点击的反欺诈工作  机器学习来优化网络欺诈监测和排查模型,不断地补充并修正它的整个欺诈监测模型
+
+<!-- http://xinbo.me/2015/04/tongdun-rd-skills/ -->
+
+http://wowubuntu.com/markdown/
+
+https://maxiang.io/
+
+
+https://www.zybuluo.com/mdeditor
+
+
+```
+
+- [groups.google.com/forum/#!网上论坛](https://groups.google.com/forum/#!forum/iosre)
+
+```
+https://groups.google.com/forum/#!creategroup
+
+群组电子邮件地址: https://groups.google.com/d/forum/iosre
+
+
+>* ios 逆向技术：iosre、aso;
+
+>* 利用class-dump、hopper、lua、theos、MonkeyDev、Snoop-it、Keychain-Dumper、运行时常用的API、Cycript、AFLEXLoader进行软件逆向静态分析、动态调试、代码跟踪。
+
+>* https://zhangkn.github.io/tags/
+
+```
+
+- [怎么做到长期写一个价值博客](http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/)
+
+```
+http://mindhacks.cn/2009/02/09/writing-is-better-thinking/
+http://mindhacks.cn/2009/03/09/first-principles-of-programming/
+
+<!-- first-principles-of-programming: 弄清问题永远是问题解决过程中的第一步和最重要的一步。 -->
+
+代码只是工具，不是手段。
+
+http://en.wikipedia.org/wiki/Garbage_in,_garbage_out
+
+
+```
+
+- [为企业获取 Gmail、文档、云端硬盘和日历服务。](https://gsuite.google.com/index.html?utm_campaign=apps-help-center-promotion&utm_medium=et&utm_source=apps-help-center&utm_content=zh-Hans)
+
+```
+https://gsuite.google.com/signup/basic/welcome
+
+iosre@zhangkn.github.io
+
+https://groups.google.com/
+
+
+```
+
