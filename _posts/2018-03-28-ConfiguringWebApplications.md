@@ -19,6 +19,99 @@ site: https://zhangkn.github.io
 
 >* [例子](https://github.com/zhangkn/zhangkn.github.io/blob/master/_includes/addTohomeScreen.html)
 
+```
+<!-- IOS Safari提供了两个私有接口： apple-touch-icon 和 apple-touch-icon-precomposed。 -->
+
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed-iphone.png" />
+
+1)通过 apple-touch-icon 添加的图标是会带IOS图标统一的高光效果
+
+2) 通过 apple-touch-icon-precomposed 添加的图标则是设计原图，不带高光渐变效果的。
+
+
+```
+
+
+>* apple-mobile-web-app-capable
+
+```
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+通过只读属性window.navigator.standalone来确定网页是否以全屏模式显示
+
+
+```
+
+
+>* apple-mobile-web-app-status-bar-style  
+
+
+```
+<!-- 配合apple-mobile-web-app-capable 使用。 -->
+
+1) 如果content设置为default，则状态栏正常显示。
+
+2) 如果设置为blank，则状态栏会有一个黑色的背景。
+
+3) 如果设置为blank-translucent，则状态栏显示为黑色半透明
+```
+
+
+>* apple-touch-icon： 图标是在 body.onload 时被渲染的
+
+```
+<!-- 没有指明 <sizes> 属性的大小，则默认值为57x57。 -->
+
+<link rel="apple-touch-icon" sizes="72x72" href="touch-icon-ipad.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="touch-icon-iphone-retina.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="touch-icon-ipad-retina.png" />
+
+<!-- 如果整个页面都没有指定任何的 apple-touch-icon 的图标的话，IOS则会自动去网站根目录寻找有 apple-touch-icon 和 apple-touch-icon-precomposed 前缀的图标文件。 -->
+
+<!--图片格式  -->
+
+1) HTTP REQUEST
+
+次新的图片都需要请求服务器，从服务器下载
+
+2)绝对路径、相对于当前页面的相对路径以及相对于网站根目录的路径 纯静态的图片
+
+3) base64格式的图片
+
+
+这是一个包含png文件头的长字符串，它可以是一张从静态图片转换的，也可以是从服务器返回的，还可以是canvas生成的
+
+<img src="data:image/png;base64,(xxxxxx)" </img>
+
+<!-- 更新桌面启动图标 -->
+webapp里所有的js逻辑都只有在页面打开状态下才能运行，所以动态修改桌面启动图标的方法只有在每次点开后才能生效
+
+不适合比如天气、新闻、twitter等即时性很高、后台主动推送的场景
+
+<!-- 选择canvas作为动态图片来源 -->
+
+使用base64的优点是，可以选择由canvas来动态生成，并且不需要有网络请求，直接在本地完成。
+
+var canvas = document.createElement('canvas');
+canvas.width = 144;
+canvas.height = 144;
+var context = canvas.getContext("2d");
+var baseImg = canvas.toDataURL();  
+
+
+<!-- 更新桌面图标的方法都应该绑定在 body.onload  -->
+
+
+
+
+<!-- 通过js动态创建和修改指定桌面图标的 <link> 标签 -->
+
+0) 从safari里将页面添加主屏幕时，IOS会检查页面里的 <link> 标签，读取图片的地址然后生成启动图标
+
+
+```
 
 >* [Viewport Settings for Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html#//apple_ref/doc/uid/TP40006509-SW19)
 
@@ -42,6 +135,121 @@ devzkndeMacBook-Pro:com.wl..git devzkn$ scp usb2222:/private/var/mobile/Library/
 
 ### see also
 
+
+- [ 解决：ios系统通过safari添加到主屏幕后，打开子链接还会跳转到safari](https://blog.csdn.net/lilinoscar/article/details/70270374)
+
+```
+
+
+
+
+```
+
+- [iOS web app 桌面图标动态更新的解决方案。](https://github.com/hellometers/tick)
+
+```
+
+<!-- http://developer.apple.com/library/ios/#documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+
+"Web Clip"
+
+它的作用类似于桌面浏览器的书签，用户通过点击Icon能直接快速打开这个url的网站
+
+
+<!-- IOS Safari提供了两个私有接口： apple-touch-icon 和 apple-touch-icon-precomposed。
+ -->
+
+
+
+1) 桌面图标在页面里的声明仅仅存在 <link> 中，理论上我们只要动态修改 <link> 标签的图片地址就能实现动态的图标。
+
+<!-- JS创建的link -->
+
+function addlink(){    
+        $('head').append('<link rel="apple-touch-icon-precomposed" href="../img/demo.png" />');        
+        $('.lay-page').append('<br>已创建link~ 添加到主屏幕检查');
+
+}
+
+
+<!-- webapp里的图标是在body.onload的时候被渲染的-->
+
+行不通：通过js在一个canvas中绘出新的图案，再将这个canvas转化成base64的图片，动态创建到一个 <link> 标签添加至head 
+
+<!-- BodyLoadSetIcon -->
+
+        var img = new Image();
+        var canvas = document.createElement('canvas');
+        canvas.width = 144;
+        canvas.height = 144;
+        var context = canvas.getContext("2d");
+        context.fillStyle="#ef4372";
+        context.fillRect(0,0,144,144);
+        context.textAlign="center";
+        context.fillStyle = '#ffffff';
+        context.textBaseline = "middle";
+        context.font = "bold 90px HelveticaNeue";
+        context.fillText(num,70, 70);
+        var baseImg = canvas.toDataURL();            
+        $('head').append('<link id="touchIcon" rel="apple-touch-icon-precomposed" href="' + baseImg + '" />');
+        $("body").append('<img src="'+baseImg +'" />');
+
+
+
+
+http://tmt.io/tick/js/tick.js?20131225
+
+https://github.com/hellometers/tick
+
+
+
+
+```
+
+- [手机淘宝发现『添加店铺到桌面』的功能](http://mithvv.logdown.com/posts/275471/ios-safari-to-the-main-play-screen-feature-1)
+
+```
+
+
+<!-- 效果：Safari-添加到主屏幕功能 + App URL scheme 轻松实现。 -->
+
+1） 在店铺页面有一个『添加本店铺到桌面的按钮』，点击后跳到 Safari 打开网页 A----data:text/html; 内嵌网页的方式，可能是为了离线
+
+2) 在网页 A 提示用户点击工具栏分享按钮，再选择『添加到主屏幕』 --- 提示用户添加到桌面（注意指定网页 icon 的图片、标题）  ConfiguringWebApplications
+
+
+3) 手机主界面出现该店铺的『网页快捷方式』--- safari 中打开网页是显示提示，点击主界面图标时如何控制跳转到应用,利用是否全屏显示standalone判断
+window.navigator.standalone 参数，如果是 true （从主界面进入）则跳转到对应的 scheme, 如：taobao://shop.m.taobao.com/shop/shop_index.htm?user_id=37141631
+
+
+4）点击『网页快捷方式』后，打开 Safari，短暂白屏后跳到手机淘宝应用自动打开此店铺 ---在应用内解析 scheme 作处理
+
+
+<!-- 此效果可以说使用 https://github.com/zhangkn/AddIconToScreen、https://github.com/lijianfeigeek/iOS-desktop-->
+
+JavaScript
+
+Data URI Schema   --- 打开对应的店铺
+
+Socket基本知识
+
+Base64编码
+
+
+<!-- 其它的可能性-->
+
+1）查系统 scheme，快速进入设置 WIFI、VPN 界面，快速拨打电话
+
+2）icon 与二维码结合使用：对于频繁需要在手机中让别人扫二维码的需要，可以直接扫主界面 icon（就是一个二维码）。这个能是最快展示二维码的方式，连应用都不用打开；
+
+
+<!-- see also -->
+1) https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html
+
+2) iOS web app 桌面图标动态更新的解决方案。
+
+
+```
 
 - [webkit-webapp](http://www.cnblogs.com/pifoo/archive/2011/05/28/webkit-webapp.html)
 
