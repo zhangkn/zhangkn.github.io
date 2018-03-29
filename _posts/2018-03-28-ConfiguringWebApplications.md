@@ -17,7 +17,28 @@ site: https://zhangkn.github.io
 
 >* [Apple URL Scheme Reference.](https://developer.apple.com/library/content/featuredarticles/iPhoneURLScheme_Reference/Introduction/Introduction.html#//apple_ref/doc/uid/TP40007899)
 
-<!-- >* [例子]() -->
+>* [例子](https://github.com/zhangkn/zhangkn.github.io/blob/master/_includes/addTohomeScreen.html)
+
+
+>* [Viewport Settings for Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html#//apple_ref/doc/uid/TP40006509-SW19)
+
+
+>* allintext:iPhone存储web app icon的路径?
+
+```
+/var/mobile/Library/Prefrences
+
+:/var/preferences root# rm -rf *.networkextension*
+
+find / -name "*" | xargs grep "iosre" > ./cqtest.txt
+
+find . -name "*" | xargs grep "iosre" > ./cqtest.txt
+
+
+devzkndeMacBook-Pro:com.wl..git devzkn$ scp usb2222:/private/var/mobile/Library/Logs/CrashReporter/SpringBoard-2018-03-23-153316.ips ~
+
+
+```
 
 ### see also
 
