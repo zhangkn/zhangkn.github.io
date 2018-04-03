@@ -471,3 +471,23 @@ https://groups.google.com/
 
 ```
 
+
+### 百度广告，即百度联盟广告
+
+>* [reg](http://union.baidu.com/product/prod-cpro.html)
+
+
+### discourse
+
+>* [iosre](view-source:http://iosre.com/)
+
+
+```
+
+<meta name="generator" content="Discourse 1.9.4 - https://github.com/discourse/discourse version e24d25ce01b735fb80acff5f313a2f801dba0c66">
+
+<meta name="generator" content="Discourse 2.0.0.beta5 - https://github.com/discourse/discourse version 68ae009f98afd1284121d8195b2851195b72fa56">
+
+
+```
+

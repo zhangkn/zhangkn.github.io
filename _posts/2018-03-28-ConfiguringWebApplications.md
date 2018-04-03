@@ -10,6 +10,9 @@ site: https://zhangkn.github.io
 ### 前言
 
 
+- [code,addWebClipToHomeScreen](https://github.com/zhangkn/ios-run-application-with-root-privileges)
+
+
 
 ### 正文
 
@@ -113,6 +116,10 @@ var baseImg = canvas.toDataURL();
 
 ```
 
+
+>* [ios系统通过safari添加到主屏幕后，打开子链接还会跳转到safari,的解决方案](https://github.com/zhangkn/zhangkn.github.io/blob/master/_includes/addTohomeScreen.html/#68)
+
+
 >* [Viewport Settings for Web Applications](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html#//apple_ref/doc/uid/TP40006509-SW19)
 
 
@@ -131,19 +138,223 @@ find . -name "*" | xargs grep "iosre" > ./cqtest.txt
 devzkndeMacBook-Pro:com.wl..git devzkn$ scp usb2222:/private/var/mobile/Library/Logs/CrashReporter/SpringBoard-2018-03-23-153316.ips ~
 
 
+<!-- :~ root# find / -amin -1 -->
+/private/var/mobile/Containers/Data/Application/316F71CA-00FE-4990-9F79-D4B490844E8F/Library/Preferences/com.apple.webapp.plist
+<!-- 5) devzkndeMacBook-Pro:~ devzkn$ plutil -p  com.apple.webapp.plist -->
+{
+  "WebDatabaseDirectory" => "/var/mobile/Library/WebClips/34FB814D12744D389BC18AC2FB08222C.webclip/Storage"
+  "WebKitDiskImageCacheSavedCacheDirectory" => ""
+  "WebKitLocalCache" => "/var/mobile/Containers/Data/Application/316F71CA-00FE-4990-9F79-D4B490844E8F/Library/Caches/WebClips/34FB814D12744D389BC18AC2FB08222C"
+  "WebKitLocalStorageDatabasePathPreferenceKey" => "/var/mobile/Library/WebClips/34FB814D12744D389BC18AC2FB08222C.webclip/Storage"
+  "WebKitMediaPlaybackAllowsInline" => 1
+  "WebKitMediaPlaybackRequiresUserGesture" => 0
+  "WebKitOfflineWebApplicationCacheEnabled" => 1
+  "WebKitShrinksStandaloneImagesToFit" => 1
+  "WebKitStandalonePreferenceKey" => 1
+  "WebKitStorageTrackerEnabledPreferenceKey" => 1
+}
+
+
 ```
 
 ### see also
 
+- [UIApplication2.h](https://github.com/Neonkoala/Bootlace/blob/e7ecebfeda633f5618b4a530319f7cecad955acf/Headers/UIKit/UIApplication2.h)
+
+```
+
+-(void)addWebClipToHomeScreen:(id)homeScreen;
+
+allintext:addWebClipToHomeScreen site:https://github.com
+
+```
+
+- [Linklyy](https://github.com/pearlsteinj/Linklyy/blob/72c509ffa30d5511abcfa25fafe56595aa9ddb95/iOS/mobilesafari/mobilesafari/TSTAppDelegate.m)
+
+```
+
+    Class UIApplication = NSClassFromString(@"UIApplication");
+    id app = [UIApplication sharedApplication];
+    Class UIWebClip = NSClassFromString(@"UIWebClip");
+    id clip = [[UIWebClip class] performSelector:@selector(webClipWithIdentifier:)
+                                      withObject:nil];
+    NSLog(@"%@",clip);
+    NSLog(@"%@", [[UIWebClip class] performSelector:@selector(webClipsDirectoryPath)]);
+    if ([clip respondsToSelector:@selector(createOnDisk)]) {
+        [clip performSelector:@selector(createOnDisk) withObject:nil];
+    }
+    if ([clip respondsToSelector:@selector(setIconImage:isPrecomposed:)]) {
+        [clip performSelector:@selector(setIconImage:isPrecomposed:)
+                   withObject:[UIImage imageNamed:@"maps"]
+                   withObject:[NSNumber numberWithBool:YES]];
+    }
+    if ([clip respondsToSelector:@selector(setIdentifier:)]) {
+        CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
+        NSString *uuidstr = (NSString *)CFBridgingRelease(CFUUIDCreateString(kCFAllocatorDefault, uuid));
+        [clip performSelector:@selector(setIdentifier:) withObject:uuidstr];
+    }
+    if ([clip respondsToSelector:@selector(setPageURL:)]) {
+        //[clip performSelector:@selector(setPageURL:) withObject:[NSURL URLWithString:@"sms:9738203842"]];
+    }
+    if ([clip respondsToSelector:@selector(setTitle:)]) {
+        [clip setValue:@"Test" forKeyPath:@"title"];
+    }
+    /*
+     if ([clip respondsToSelector:@selector(updateOnDisk)]) {
+     [clip performSelector:@selector(updateOnDisk) withObject:nil];
+     }
+     */
+    NSLog(@"%@",[clip valueForKeyPath:@"identifier"]);
+    if ([app respondsToSelector:@selector(addWebClipToHomeScreen:)]) {
+        [app performSelector:@selector(addWebClipToHomeScreen:) withObject:[clip valueForKeyPath:@"identifier"]];
+    }
+
+```
+
+- [Create a UIWebClip](https://gist.github.com/JatWaston/312d58995f323d695dfb)
+
+```
+
+        UIWebClip *clip = [UIWebClip webClipWithIdentifier:nil];
+
+        CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
+        NSString *uuidstr = (NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);
+        [clip setIdentifier:uuidstr];
+
+
+
+        UIApplication *app = [UIApplication sharedApplication];
+        [app addWebClipToHomeScreen:[clip identifier]];
+
+
+```
+
+- [Adds a screenshot when you email a url in mobile safari ](https://github.com/iHeli0s/Email-Safari-Screenshot)
+
+- [MobileSafari.h](https://github.com/Bensge/Mobile-Safari--iOS-6.1--Headers/blob/2886ad41d2333221d816cffa183280a15adea735/Safari/MobileSafari.h)
+
+```
+#import "WebClipViewController.h"
+
+#import "WebClipViewControllerRootView.h"
+#import "WebClipViewControllerDelegate.h"
+#import "WebClipTableViewCellLayoutManager.h"
+
+
+#import "WebClipDelegate.h"
+
+
+
+
+#import "WebBookmarksClientDelegateProtocol.h"
+
+@interface UIWebClip : NSObject { }
+
++ (BOOL)webClipFullScreenValueForWebDocumentView:(id)webDocumentView;
+
++ (id)webClips;
+
++ (id)webClipIconsForWebClipLinkTags:(id)arg1 pageURL:(id)arg2;
+
++ (id)webClipIdentifierFromBundleIdentifier:(id)arg1;
+
++ (id)webClipWithIdentifier:(id)arg1;
+
++ (id)webClipWithURL:(id)arg1;
+
+- (void)setStartupImage:(id)arg1;
+
+- (void)setIconImage:(id)arg1 isPrecomposed:(BOOL)arg2;
+
+- (void)setPageURL:(id)arg1;
+
+- (BOOL)updateOnDisk;
+
+
+
+
+
+<!-- https://github.com/grp/tweaks/blob/e70b851136aa038198da9cda784e2a6f6b535624/fullwebclips/Tweak.xm -->
+
+%hook WebClipViewController
+
+// make room for the added row on the iPad
+- (CGSize)contentSizeForViewInPopoverView {
+
+
+<!-- https://github.com/andrewwiik/Tweaks/blob/648d15433d58429858157e6b6f592cb64100208a/batteryicon/Tweak.xm -->
+
+@class SBIconView;
+@interface SBIcon : NSObject
+- (void)reloadIconImage;
+- (id)application;
+@end
+
+
+@interface SBBookmark : NSObject
+
+@interface SBBookmarkIcon : SBLeafIcon
+
+@interface SBIconController : NSObject
+
+@interface SBApplicationController : NSObject
++ (id)sharedInstance;
+- (id)applicationWithBundleIdentifier:(id)arg1;
+@end
+
+UIWebClip* BatteryIcon;
+
+
+%hook SBUIController
+- (void)finishLaunching {
+    %orig;
+        [BatteryIcon setIconImage:[UIImage imageWithContentsOfFile: @"/Library/Application Support/BatteryIcon/batterycharging70.png"] isPrecomposed:FALSE];
+%hook SBIconController
+- (void)iconTapped:(id)icon {
+    if ([[(SBLeafIcon *)[icon valueForKey:@"_icon"] leafIdentifier] isEqualToString:@"com.creatix.batteryicon"]) {
+        if (iOS8) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=General&path=USAGE/BATTERY_USAGE"]];
+        }
+        else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"prefs:root=BATTERY_USAGE"]];
+    }
+        %orig;
+    }
+    else {
+        %orig;
+    }
+}
+%end
+
+
+
+<!-- https://github.com/saru2020/iphone-kirikae/blob/22432d1bfa53a4d26d96e2d0fde9133259e911ec/Extension/SpringBoardHooks.xm -->
+
+@interface UIWebClip
+@property(retain) NSURL *pageURL;
++ (id)webClipWithIdentifier:(id)identifier;
+@end
+
+    UIWebClip *clip = [UIWebClip webClipWithIdentifier:displayId];
+
+
+<!-- https://github.com/rpetrich/BrowserChooser/blob/0b1fccb25d53f0b74299b98dc5a8566e5c4fb47c/Tweak.x -->
+
+%hook SBBookmarkIcon
+
+- (void)launch
+{
+    UIWebClip *webClip = [self webClip];
+
+
+
+
+```
+
 
 - [ 解决：ios系统通过safari添加到主屏幕后，打开子链接还会跳转到safari](https://blog.csdn.net/lilinoscar/article/details/70270374)
 
-```
 
-
-
-
-```
 
 - [iOS web app 桌面图标动态更新的解决方案。](https://github.com/hellometers/tick)
 

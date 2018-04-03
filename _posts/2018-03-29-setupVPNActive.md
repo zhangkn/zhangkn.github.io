@@ -43,4 +43,77 @@ Creates a CFUserNotification object and displays its notification dialog on scre
 ```
 
 
+>* [/System/Library/PreferenceBundles](https://www.theiphonewiki.com/wiki//System/Library/PreferenceBundles)
+
+```
+
+        NSBundle* references = [NSBundle bundleWithPath:@"/System/Library/PreferenceBundles/VPNPreferences.bundle"];
+
+        https://github.com/ichitaso/iOS-iphoneheaders/tree/master/iOS7.1.1/System/Library/PreferenceBundles
+
+
+
+
+
+```
+
+### StoreServices.framework
+
+>* SSClientAccountStore.h
+
+```
+https://github.com/ichitaso/iOS-iphoneheaders/blob/be1e4073114a6572b34b171245a62186a732e561/iOS7.0.3/System/Library/PrivateFrameworks/StoreServices.framework/SSClientAccountStore.h
+
+SSAccountStore
+
+
+```
+
+
+### SpringBoard
+
+>* SBApplicationPlaceholderController
+
+```
+iOS-iphoneheaders/iOS8.3/System/Library/CoreServices/SpringBoard.app/SBApplicationPlaceholderController.h
+
+iOS-iphoneheaders/iOS8.3/System/Library/CoreServices/SpringBoard.app/SBApplicationLibraryObserver.h
+
+```
+
 ### see also
+
+- [AFlexLoader](https://github.com/zhangkn/KNAFlexLoader)
+
+
+```
+/Users/devzkn/code/other/AFlexLoader-master/deploy 
+
+<!-- Depends: mobilesubstrate, preferenceloader (>= 2.2), applist (>= 1.5.11)
+ -->
+
+preferenceloader、applist
+
+```
+
+- [bypass_passcode_and_half_slide_unlock](https://github.com/guoc/protecti/blob/f12a0c6509ccb93d25508a1d6378d929a1334453/hooks/bypass_passcode_and_half_slide_unlock.xm)
+
+
+```
+void handleSystemPasscodeChange(CFNotificationCenterRef center,void *observer,CFStringRef name,const void *object,CFDictionaryRef userInfo) {
+
+    global_slfe = nil;
+
+    global_OnceUnlockSuccessfully = NO;
+
+}
+```
+
+- [Localizable.strings](https://github.com/TxusBlack/cyand00r-8/blob/4d839d32638c46ac95ad25cda4c9db0d796dc7ed/uncompilied/Library/Application%20Support/CCSettings/Localized.bundle/zh-Hans.lproj/Localizable.strings)
+
+```
+
+"AUTO_LOCK_NEVER"="自动锁定: 永不";
+"AUTO_LOCK_MIN"="自动锁定: %d分钟";
+"AUTO_LOCK_MINS"="自动锁定: %d分钟";
+```
