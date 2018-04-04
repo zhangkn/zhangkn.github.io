@@ -356,6 +356,611 @@ https://github.com/GPUImage/FaceDetectorDemo
 
 ### see also
 
+
+- [iOS短视频使用到的AVFoundation组件时遇到的问题，在 金山云多媒体SDK中硬编直接使用VideoToolBox做编码](https://www.jianshu.com/p/9eaf39f45265)
+
+```
+
+<!-- 3. 问题及解决方案 -->
+
+移动直播的延时控制--基于ijkplayer的实践
+
+
+<!-- ijkplayer框架深入剖析 -->
+https://www.jianshu.com/p/daf0a61cc1e0
+
+
+
+
+
+```
+
+
+- [IOS视频直播:高仿 腾讯旗下【NOW】直播 ](https://github.com/ChinaArJun/Tencent-NOW)
+
+
+```
+
+编码: 重难点在于要在分辨率，帧率，码率，GOP等参数设计上找到最佳平衡点。
+ <!-- iOS8之后,Apple开放了VideoToolbox.framework, 可以直接进行硬编解码 -->
+
+ https://github.com/GPUImage/Tencent-NOW
+
+<!-- ijkplayer -->
+
+Android/iOS video player based on FFmpeg n3.4, with MediaCodec, VideoToolbox support.
+
+
+
+
+
+
+```
+
+- [IJKMediaFramework.framework]
+
+```
+
+<!-- 链接: https://pan.baidu.com/s/1Yfs-gs5a3euD0MOhv4nuBA 密码: p8cm -->
+
+<!-- /Users/devzkn/code/github/YZLiveAppDemo/YZLiveApp/Pods/ijkplayer -->
+
+<!-- devzkndeMacBook-Pro:YZLiveApp devzkn$ cat Podfile -->
+# Uncomment this line to define a global platform for your project
+platform :ios, '9.0'
+#use_frameworks!
+
+target 'YZLiveApp' do
+  pod 'AFNetworking', '~> 3.1.0'
+  pod 'SDWebImage', '~> 3.7.4’
+  pod 'MJExtension', '~> 3.0.13'
+#  pod 'ijkplayer', '~> 0.3.2-rc.2'
+#pod 'IJKMediaFramework'
+pod 'ijkplayer', '~> 1.1.0'
+
+end
+
+
+```
+
+- [黑咔相机](https://itunes.apple.com/cn/app/id1146696085)
+
+```
+https://github.com/tensorflow/tensorflow 
+https://github.com/google/protobuf/blob/master/src/google/protobuf/io/coded_stream.cc
+
+```
+
+- [20种ios滤镜都是基于GPUImage的，有3种滤镜是GPUImage库中包含的，还有17种是Instagram中的经典滤镜](https://github.com/forrestwoo/openApp)
+
+```
+
+https://github.com/GPUImage/openApp/tree/master/FWMeituApp/FWMeituApp/Custom%20Filters
+
+
+<!-- FWNashvilleFilter -->
+
+https://github.com/forrestwoo/openApp/blob/6104814d070f6d7fd63bb01a06d20d0046a8a05c/FWLifeApp/FWLifeApp/Custom%20Filters/FWNashvilleFilter.h
+
+
+#import "GPUImageTwoInputFilter.h"
+
+//创建滤镜效果 ，该类主要实现滤镜的效果，包含一个片段着色程序。它是滤镜效果的具体实现
+
+@interface FWFilter1 : GPUImageTwoInputFilter
+
+
+@end
+
+
+//所有滤镜类都继承自GPUImageFilterGroup类.它允许我们所创建的类混合其他滤镜。
+
+//它其实是向FWFilter1类中添加需要的输入纹理图片
+@interface FWNashvilleFilter : GPUImageFilterGroup
+{
+    GPUImagePicture *imageSource ;
+}
+
+@end
+
+
+<!-- https://github.com/forrestwoo/openApp/blob/6104814d070f6d7fd63bb01a06d20d0046a8a05c/FWLifeApp/FWMeituApp/FWMeituApp/Custom%20Filters/FWNashvilleFilter.m -->
+
+
+
+
+<!-- 应用例子：https://github.com/forrestwoo/openApp/blob/6104814d070f6d7fd63bb01a06d20d0046a8a05c/FWMeituApp/FWMeituApp/Utilies/FWApplyFilter.m -->
+
+
++ (UIImage *)applyNashvilleFilter:(UIImage *)image
+{
+    FWNashvilleFilter *filter = [[FWNashvilleFilter alloc] init];//自定义滤镜
+
+    [filter forceProcessingAtSize:image.size];
+
+    GPUImagePicture *pic = [[GPUImagePicture alloc] initWithImage:image];
+
+    [pic addTarget:filter];// 往GPUImagePicture 添加GPUImageFilterGroup的子类
+    
+    [pic processImage];// -[GPUImagePicture processImage]:
+
+    [filter useNextFrameForImageCapture];//-[GPUImageFilter useNextFrameForImageCapture]:
+
+    return [filter imageFromCurrentFramebuffer];
+}
+
+<!--  -->
+
+
+```
+
+- [BeautifyFaceDemo](https://github.com/Guikunzhi/BeautifyFaceDemo/blob/master/README-CN.md)
+
+```
+
+<!-- http://m.blog.csdn.net/article/details?id=50496969 -->
+图像算法---磨皮算法研究汇总
+
+
+<!-- 图像算法---表面模糊算法 -->
+
+https://blog.csdn.net/trent1985/article/details/49864397
+
+
+
+<!-- 大家对于美颜比较常见的需求就是磨皮、美白 -->
+
+<!-- 3.磨皮 -->
+
+磨皮的本质实际上是模糊：就是将像素点的取值与周边的像素点取值相关联
+
+1）：高斯模糊 它的像素点取值则是由周边像素点求加权平均所得，而权重系数则是像素间的距离的高斯函数，大致关系是距离越小、权重系数越大
+
+https://link.jianshu.com/?t=https://zh.wikipedia.org/wiki/%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A
+
+
+2）：双边滤波(Bilateral Filter)  GPUImageBilateralFilter
+
+考虑到了颜色的差异，它的像素点取值也是周边像素点的加权平均，而且权重也是高斯函数。这个权重不仅与像素间距离有关，还与像素值本身的差异有关；
+
+https://link.jianshu.com/?t=https://en.wikipedia.org/wiki/Bilateral_filter
+
+
+3）   Combination  Filter：
+
+通过肤色检测和边缘检测，只对皮肤和非边缘部分进行处理
+
+
+
+
+
+
+
+
+```
+
+
+- [App Installation failed, No code signature found.]
+
+```
+
+devzkndeMacBook-Pro:YZLiveApp devzkn$  plutil -p  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist
+
+
+<!-- devzkndeMacBook-Pro:YZLiveApp devzkn$ sudo chmod +x /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/SDKSettings.plist -->
+
+devzkndeMacBook-Pro:YZLiveApp devzkn$ sudo chmod -R 777 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk 
+
+
+    "CODE_SIGNING_REQUIRED" => "NO"
+
+    修改为yes
+
+
+最后重启xcode，搞定。
+
+```
+
+- [iOS:抖音短视频生成webp动图客户端解决方案](https://www.jianshu.com/p/c75938791cdf)
+
+
+
+- [【如何快速的开发一个完整的iOS直播app】(美颜篇)](https://www.jianshu.com/p/4646894245ba)
+
+```
+
+<!-- https://link.jianshu.com/?t=https://github.com/iThinkerYZ/GPUImgeDemo -->
+
+
+<!-- 利用GPUImage处理直播过程中美颜的流程 -->
+
+采集视频 => 获取每一帧图片 => 滤镜处理 => GPUImageView展示
+
+<!-- 美颜基本概念 -->
+
+
+1) GPU：（Graphic Processor Unit图形处理单元）手机或者电脑用于图像处理和渲染的硬件
+
+
+
+2) GPU工作原理：采集数据-> 存入主内存(RAM) -> CPU(计算处理) -> 存入显存(VRAM) -> GPU(完成图像渲染) -> 帧缓冲区 -> 显示器
+
+
+3) OpenGL ES：（Open Graphics Library For Embedded(嵌入的) Systems 开源嵌入式系统图形处理框架），一套图形与硬件接口，用于把处理好的图片显示到屏幕上。
+
+
+4) GPUImage:是一个基于OpenGL ES 2.0图像和视频处理的开源iOS框架，提供各种各样的图像处理滤镜，并且支持照相机和摄像机的实时滤镜，内置120多种滤镜效果，并且能够自定义图像滤镜。
+
+
+
+5) 滤镜处理的原理:就是把静态图片或者视频的每一帧进行图形变换再显示出来。它的本质就是像素点的坐标和颜色变化
+
+
+
+
+<!-- GPUImage处理画面原理 -->
+
+GPUImage采用链式方式来处理画面,通过addTarget:方法为链条添加每个环节的对象，处理完一个target,就会把上一个环节处理好的图像数据传递下一个target去处理，称为GPUImage处理链。
+
+
+一般的target可分为两类: 中间环节的target(GPUImageFilter)、最终环节的target（GPUImageView、GPUImageMovieWriter）
+
+
+<!-- GPUImage处理主要分为3个环节 -->
+
+
+
+source(视频、图片源) -> filter（滤镜） -> final target (处理后视频、图片)
+
+
+1）GPUImaged的Source:都继承GPUImageOutput
+
+GPUImageVideoCamera：用于实时拍摄视频
+
+GPUImageStillCamera： 用于实时拍摄照片
+
+GPUImagePicture： 用于处理已经拍摄好的图片，比如png,jpg图片
+
+GPUImageMovie： 用于处理已经拍摄好的视频,比如mp4文件
+
+2） GPUImage的filter:GPUimageFilter类
+
+这个类继承自GPUImageOutput,并且遵守GPUImageInput协议，这样既能流进，又能流出
+
+
+3） GPUImage的final target:GPUImageView,GPUImageMovieWriter
+
+
+<!-- 美颜原理 -->
+
+1） 磨皮GPUImageBilateralFilter ： 让像素点模糊，可以使用高斯模糊；双边滤波(Bilateral Filter) ，有针对性的模糊像素点，能保证边缘不被模糊。
+
+2） 美白(GPUImageBrightnessFilter)：本质就是提高亮度。
+
+<!-- GPUImage实战 -->
+
+
+<!-- GPUImage原生美颜 -->
+
+步骤一：使用Cocoapods导入GPUImage
+
+步骤二：创建视频源GPUImageVideoCamera
+
+步骤三：创建最终目的源：GPUImageView
+
+步骤四：创建滤镜组(GPUImageFilterGroup)，需要组合亮度(GPUImageBrightnessFilter)和双边滤波(GPUImageBilateralFilter)这两个滤镜达到美颜效果.
+
+步骤五：设置滤镜组链
+
+步骤六：设置GPUImage处理链，从数据源 => 滤镜 => 最终界面效果
+
+步骤七：开始采集视频
+
+<!-- 注意点： -->
+
+1）SessionPreset最好使用AVCaptureSessionPresetHigh，会自动识别，
+
+2） GPUImageVideoCamera必须要强引用，否则会被销毁，不能持续采集视频.
+
+3） 必须调用startCameraCapture，底层才会把采集到的视频源，渲染到GPUImageView中，就能显示了。
+
+4） GPUImageBilateralFilter的distanceNormalizationFactor值越小，磨皮效果越好,distanceNormalizationFactor取值范围: 大于1。
+
+
+<!-- 利用美颜滤镜实现 -->
+
+
+步骤一：使用Cocoapods导入GPUImage
+
+步骤二：导入GPUImageBeautifyFilter文件夹
+
+步骤三：创建视频源GPUImageVideoCamera
+
+步骤四：创建最终目的源：GPUImageView
+
+步骤五：创建最终美颜滤镜：GPUImageBeautifyFilter
+
+步骤六：设置GPUImage处理链，从数据源 => 滤镜 => 最终界面效果
+
+<!-- 注意： -->
+
+切换美颜效果原理：移除之前所有处理链，重新设置处理链
+
+
+
+
+
+```
+
+- [GPUImage所有滤镜介绍](http://www.360doc.com/content/15/0907/10/19175681_497418716.shtml)
+
+```
+
+GPUImage是Brad Larson在github托管的一个开源项目，项目实现了图片滤镜、摄像头实时滤镜，
+
+该项目的优点不但在于滤镜很多，而且处理效果是基于GPU的，比使用CPU性能更高。
+
+
+<!-- 下载地址是：https://github.com/BradLarson/GPUImage -->
+
+
+<!-- 已有的一些filter介绍： -->
+
+#import "GPUImageBrightnessFilter.h"                //亮度
+
+#import "GPUImageExposureFilter.h"                  //曝光
+
+#import "GPUImageContrastFilter.h"                  //对比度
+
+#import "GPUImageSaturationFilter.h"                //饱和度
+
+#import "GPUImageGammaFilter.h"                     //伽马线
+
+#import "GPUImageColorInvertFilter.h"               //反色
+
+#import "GPUImageSepiaFilter.h"                     //褐色（怀旧）
+
+#import "GPUImageLevelsFilter.h"                    //色阶
+
+#import "GPUImageGrayscaleFilter.h"                 //灰度
+
+#import "GPUImageHistogramFilter.h"                 //色彩直方图，显示在图片上
+
+#import "GPUImageHistogramGenerator.h"              //色彩直方图
+
+#import "GPUImageRGBFilter.h"                       //RGB
+
+#import "GPUImageToneCurveFilter.h"                 //色调曲线
+
+#import "GPUImageMonochromeFilter.h"                //单色
+
+#import "GPUImageOpacityFilter.h"                   //不透明度
+
+#import "GPUImageHighlightShadowFilter.h"           //提亮阴影
+
+#import "GPUImageFalseColorFilter.h"                //色彩替换（替换亮部和暗部色彩）
+
+#import "GPUImageHueFilter.h"                       //色度
+
+#import "GPUImageChromaKeyFilter.h"                 //色度键
+
+#import "GPUImageWhiteBalanceFilter.h"              //白平横
+
+#import "GPUImageAverageColor.h"                    //像素平均色值
+
+#import "GPUImageSolidColorGenerator.h"             //纯色
+
+#import "GPUImageLuminosity.h"                      //亮度平均
+
+#import "GPUImageAverageLuminanceThresholdFilter.h" //像素色值亮度平均，图像黑白（有类似漫画效果）
+
+
+#import "GPUImageLookupFilter.h"                    //lookup 色彩调整
+
+#import "GPUImageAmatorkaFilter.h"                  //Amatorka lookup
+
+#import "GPUImageMissEtikateFilter.h"               //MissEtikate lookup
+
+#import "GPUImageSoftEleganceFilter.h"              //SoftElegance lookup
+
+
+
+<!-- #pragma mark - 图像处理 Handle Image -->
+
+
+#import "GPUImageCrosshairGenerator.h"              //十字
+
+#import "GPUImageLineGenerator.h"                   //线条
+
+
+
+#import "GPUImageTransformFilter.h"                 //形状变化
+
+#import "GPUImageCropFilter.h"                      //剪裁
+
+#import "GPUImageSharpenFilter.h"                   //锐化
+
+#import "GPUImageUnsharpMaskFilter.h"               //反遮罩锐化
+
+
+#import "GPUImageFastBlurFilter.h"                  //模糊
+
+#import "GPUImageGaussianBlurFilter.h"              //高斯模糊
+
+#import "GPUImageGaussianSelectiveBlurFilter.h"     //高斯模糊，选择部分清晰
+
+#import "GPUImageBoxBlurFilter.h"                   //盒状模糊
+
+#import "GPUImageTiltShiftFilter.h"                 //条纹模糊，中间清晰，上下两端模糊
+
+#import "GPUImageMedianFilter.h"                    //中间值，有种稍微模糊边缘的效果
+
+#import "GPUImageBilateralFilter.h"                 //双边模糊
+
+#import "GPUImageErosionFilter.h"                   //侵蚀边缘模糊，变黑白
+
+#import "GPUImageRGBErosionFilter.h"                //RGB侵蚀边缘模糊，有色彩
+
+#import "GPUImageDilationFilter.h"                  //扩展边缘模糊，变黑白
+
+#import "GPUImageRGBDilationFilter.h"               //RGB扩展边缘模糊，有色彩
+
+#import "GPUImageOpeningFilter.h"                   //黑白色调模糊
+
+#import "GPUImageRGBOpeningFilter.h"                //彩色模糊
+
+#import "GPUImageClosingFilter.h"                   //黑白色调模糊，暗色会被提亮
+
+#import "GPUImageRGBClosingFilter.h"                //彩色模糊，暗色会被提亮
+
+#import "GPUImageLanczosResamplingFilter.h"         //Lanczos重取样，模糊效果
+
+#import "GPUImageNonMaximumSuppressionFilter.h"     //非最大抑制，只显示亮度最高的像素，其他为黑
+
+#import "GPUImageThresholdedNonMaximumSuppressionFilter.h" //与上相比，像素丢失更多
+
+
+#import "GPUImageSobelEdgeDetectionFilter.h"        //Sobel边缘检测算法(白边，黑内容，有点漫画的反色效果)
+
+#import "GPUImageCannyEdgeDetectionFilter.h"        //Canny边缘检测算法（比上更强烈的黑白对比度）
+
+#import "GPUImageThresholdEdgeDetectionFilter.h"    //阈值边缘检测（效果与上差别不大）
+
+#import "GPUImagePrewittEdgeDetectionFilter.h"      //普瑞维特(Prewitt)边缘检测(效果与Sobel差不多，貌似更平滑)
+
+#import "GPUImageXYDerivativeFilter.h"              //XYDerivative边缘检测，画面以蓝色为主，绿色为边缘，带彩色
+
+#import "GPUImageHarrisCornerDetectionFilter.h"     //Harris角点检测，会有绿色小十字显示在图片角点处
+
+#import "GPUImageNobleCornerDetectionFilter.h"      //Noble角点检测，检测点更多
+
+#import "GPUImageShiTomasiFeatureDetectionFilter.h" //ShiTomasi角点检测，与上差别不大
+
+#import "GPUImageMotionDetector.h"                  //动作检测
+
+#import "GPUImageHoughTransformLineDetector.h"      //线条检测
+
+#import "GPUImageParallelCoordinateLineTransformFilter.h" //平行线检测
+
+
+#import "GPUImageLocalBinaryPatternFilter.h"        //图像黑白化，并有大量噪点
+
+
+#import "GPUImageLowPassFilter.h"                   //用于图像加亮
+
+#import "GPUImageHighPassFilter.h"                  //图像低于某值时显示为黑
+
+
+
+
+<!-- #pragma mark - 视觉效果 Visual Effect -->
+
+
+#import "GPUImageSketchFilter.h"                    //素描
+
+#import "GPUImageThresholdSketchFilter.h"           //阀值素描，形成有噪点的素描
+
+#import "GPUImageToonFilter.h"                      //卡通效果（黑色粗线描边）
+
+#import "GPUImageSmoothToonFilter.h"                //相比上面的效果更细腻，上面是粗旷的画风
+
+#import "GPUImageKuwaharaFilter.h"                  //桑原(Kuwahara)滤波,水粉画的模糊效果；处理时间比较长，慎用
+
+
+#import "GPUImageMosaicFilter.h"                    //黑白马赛克
+
+#import "GPUImagePixellateFilter.h"                 //像素化
+
+#import "GPUImagePolarPixellateFilter.h"            //同心圆像素化
+
+#import "GPUImageCrosshatchFilter.h"                //交叉线阴影，形成黑白网状画面
+
+#import "GPUImageColorPackingFilter.h"              //色彩丢失，模糊（类似监控摄像效果）
+
+
+#import "GPUImageVignetteFilter.h"                  //晕影，形成黑色圆形边缘，突出中间图像的效果
+
+#import "GPUImageSwirlFilter.h"                     //漩涡，中间形成卷曲的画面
+
+#import "GPUImageBulgeDistortionFilter.h"           //凸起失真，鱼眼效果
+
+#import "GPUImagePinchDistortionFilter.h"           //收缩失真，凹面镜
+
+#import "GPUImageStretchDistortionFilter.h"         //伸展失真，哈哈镜
+
+#import "GPUImageGlassSphereFilter.h"               //水晶球效果
+
+#import "GPUImageSphereRefractionFilter.h"          //球形折射，图形倒立
+    
+#import "GPUImagePosterizeFilter.h"                 //色调分离，形成噪点效果
+
+#import "GPUImageCGAColorspaceFilter.h"             //CGA色彩滤镜，形成黑、浅蓝、紫色块的画面
+
+#import "GPUImagePerlinNoiseFilter.h"               //柏林噪点，花边噪点
+
+#import "GPUImage3x3ConvolutionFilter.h"            //3x3卷积，高亮大色块变黑，加亮边缘、线条等
+
+#import "GPUImageEmbossFilter.h"                    //浮雕效果，带有点3d的感觉
+
+#import "GPUImagePolkaDotFilter.h"                  //像素圆点花样
+
+#import "GPUImageHalftoneFilter.h"                  //点染,图像黑白化，由黑点构成原图的大致图形
+
+
+
+
+<!-- #pragma mark - 混合模式 Blend -->
+
+
+#import "GPUImageMultiplyBlendFilter.h"             //通常用于创建阴影和深度效果
+
+#import "GPUImageNormalBlendFilter.h"               //正常
+
+#import "GPUImageAlphaBlendFilter.h"                //透明混合,通常用于在背景上应用前景的透明度
+
+#import "GPUImageDissolveBlendFilter.h"             //溶解
+
+#import "GPUImageOverlayBlendFilter.h"              //叠加,通常用于创建阴影效果
+
+#import "GPUImageDarkenBlendFilter.h"               //加深混合,通常用于重叠类型
+
+#import "GPUImageLightenBlendFilter.h"              //减淡混合,通常用于重叠类型
+
+#import "GPUImageSourceOverBlendFilter.h"           //源混合
+
+#import "GPUImageColorBurnBlendFilter.h"            //色彩加深混合
+
+#import "GPUImageColorDodgeBlendFilter.h"           //色彩减淡混合
+
+#import "GPUImageScreenBlendFilter.h"               //屏幕包裹,通常用于创建亮点和镜头眩光
+
+#import "GPUImageExclusionBlendFilter.h"            //排除混合
+
+#import "GPUImageDifferenceBlendFilter.h"           //差异混合,通常用于创建更多变动的颜色
+
+#import "GPUImageSubtractBlendFilter.h"             //差值混合,通常用于创建两个图像之间的动画变暗模糊效果
+
+#import "GPUImageHardLightBlendFilter.h"            //强光混合,通常用于创建阴影效果
+
+#import "GPUImageSoftLightBlendFilter.h"            //柔光混合
+
+#import "GPUImageChromaKeyBlendFilter.h"            //色度键混合
+
+#import "GPUImageMaskFilter.h"                      //遮罩混合
+
+#import "GPUImageHazeFilter.h"                      //朦胧加暗
+
+#import "GPUImageLuminanceThresholdFilter.h"        //亮度阈
+
+#import "GPUImageAdaptiveThresholdFilter.h"         //自适应阈值
+
+#import "GPUImageAddBlendFilter.h"                  //通常用于创建两个图像之间的动画变亮模糊效果
+
+#import "GPUImageDivideBlendFilter.h"               //通常用于创建两个图像之间的动画变暗模糊效果
+
+```
+
+
 - [#import <IJKMediaFramework/IJKMediaFramework.h>](https://github.com/Bilibili/ijkplayer.git)
 
 
@@ -400,9 +1005,22 @@ https://download.csdn.net/download/qq_31810357/9911107
 
 <!-- pod 'ijkplayer', '~> 0.3.2-rc.2' -->
 
-pod "IJKMediaFramework"
+<!-- pod "IJKMediaFramework" -->
 
+<!-- pod 'ijkplayer', '~> 1.1.0' -->
 
+For more information, see https://blog.cocoapods.org and the CHANGELOG for this version at https://github.com/CocoaPods/CocoaPods/releases/tag/1.5.0.beta.1
+
+Analyzing dependencies
+Downloading dependencies
+Using AFNetworking (3.1.0)
+Using MJExtension (3.0.13)
+Using SDWebImage (3.7.6)
+Installing ijkplayer (1.1.2)
+Generating Pods project
+Integrating client project
+Sending stats
+Pod installation complete! There are 4 dependencies from the Podfile and 4 total pods installed.
 
 
 ```
