@@ -57,6 +57,82 @@ devzkndeMacBook-Pro:IOKit.framework devzkn$ sudo cp -r /Applications/Xcode.app/C
 ### 正文
 
 
+>*  failed to write (No space left on device)
+
+```
+
+<!-- iPhone:~ root# df -h -->
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/disk0s1s1  3.5G  3.5G     0 100% /
+devfs            55K   55K     0 100% /dev
+/dev/disk0s1s2   12G  3.8G  7.6G  34% /private/var
+/dev/disk0s1s3   10M  2.0M  8.0M  20% /private/var/wireless/baseband_data
+/dev/disk4      236M   69M  167M  30% /Developer
+
+
+<!-- iPhone:/ root# df -i -->
+Filesystem         Inodes  IUsed      IFree IUse% Mounted on
+/dev/disk0s1s1 4294967279 144181 4294823098    1% /
+devfs                 190    190          0  100% /dev
+/dev/disk0s1s2 4294967279  32514 4294934765    1% /private/var
+/dev/disk0s1s3 4294967279      7 4294967272    1% /private/var/wireless/baseband_data
+/dev/disk4     4294967279    335 4294966944    1% /Developer
+
+
+<!-- iPhone:/dev root# df -k -->
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/disk0s1s1   3635624 3633708         0 100% /
+devfs                 55      55         0 100% /dev
+/dev/disk0s1s2  11837060 3945308   7891752  34% /private/var
+/dev/disk0s1s3     10196    2032      8164  20% /private/var/wireless/baseband_data
+/dev/disk4        241048   70520    170528  30% /Developer
+
+
+
+<!-- iPhone:/private/var/mobile/Library/Caches root# du -sh * -->
+
+一个层级一个层级的看哪个目录被占用了。
+
+iPhone:/private/var/mobile/Library/Caches/com.apple.itunescloudd root# du -sh *
+1.4G    fsCachedData
+
+iPhone:/private/var/mobile/Library/Caches/com.apple.itunescloudd/fsCachedData root# 
+
+
+<!-- 统计某文件夹下文件的个数 -->
+iPhone:/private/var/mobile/Library/Caches/com.apple.itunescloudd/fsCachedData root# ls -l |grep "^-"|wc -l
+11622
+
+<!-- Caches里有个fsCachedData之前没发现。。需要NSURLCache.sharedURLCache().removeAllResponses()搞掉 -->
+
+drwxr-xr-x 2 mobile mobile   395216 Mar 24 02:32 fsCachedData/
+
+<!-- iPhone:/private/var/mobile/Library/Caches/com.apple.itunescloudd root# rm -rf * -->
+https://github.com/ichitaso/iOS-iphoneheaders/tree/master/iOS8.1.1/System/Library/PrivateFrameworks/HomeSharing.framework/Support/itunescloudd
+
+
+<!-- 搞半天是 Vpn  太大了， 系统/Applications 目录下的 Vpn 的最大; 删除阿布云app就可以了 -->
+iPhone:/Applications root# du -sh *   #du命令是对文件和目录磁盘使用的空间的查看
+16K  AACredentialRecoveryDialog.app
+33M  Vpn.app
+
+
+23M TouchSprite.app
+
+iPhone:/Applications/TouchSprite.app root# dpkg -r com.touchsprite.ios
+
+删除它
+
+dpkg: warning: files list file for package 'p7zip' missing; assuming package has no files currently installed
+(Reading database ... 4052 files and directories currently installed.)
+Removing com.touchsprite.ios (2.4.3) ...
+Stop TouchSprite services...
+No matching processes were found
+Clean icon cache...
+Please respring your device after this!
+
+```
+
 
 >* 'system' is unavailable: not available on iOS
 

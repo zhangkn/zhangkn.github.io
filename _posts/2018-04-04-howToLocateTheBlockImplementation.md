@@ -1412,6 +1412,9 @@ lrwxr-xr-x  1 devzkn  admin  68 Apr  2 13:47 python-config -> ../../Frameworks/P
 <!-- export PATH="/usr/local/opt/python/libexec/bin:$PYENV_ROOT/bin:$PATH" -->
 
 
+I guess it didn't seem necessary since ls -al $(which python3) confirms /usr/local/bin/python3 -> ../Cellar/python/3.6.4_4/bin/python3 etc. But if one wants Homebrew's 3.x python over system Python then suggesting export PATH="/usr/local/opt/python/libexec/bin:$PATH" makes sense.
+
+
 ```
 
 - [BUILD FAILED (OS X 10.13.1 using python-build 20160602)](https://github.com/pyenv/pyenv/issues/655)
@@ -1712,4 +1715,15 @@ unsigned long int reserved;         // NULL
 
 
 - [powerful-private-methods](http://iosre.com/t/powerful-private-methods-for-debugging-in-cycript-lldb/3414)
+
+- [多年前 写了个 XXtouch 自动注册 ICloud 账号的lua 留念一下](https://www.linpblog.com/2018/03/18/%E5%A4%9A%E5%B9%B4%E5%89%8D-%E5%86%99%E4%BA%86%E4%B8%AA-XXtouch-%E8%87%AA%E5%8A%A8%E6%B3%A8%E5%86%8C-Icloud-%E8%B4%A6%E5%8F%B7%E7%9A%84lua-%E7%95%99%E5%BF%B5%E4%B8%80%E4%B8%8B/)
+
+```
+https://www.zybuluo.com/chendbdb/note/545142
+
+XXTouch iOS 开发手册: https://www.zybuluo.com/xxtouch/note/370734
+
+
+
+```
 

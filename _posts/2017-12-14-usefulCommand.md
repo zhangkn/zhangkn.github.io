@@ -8,6 +8,100 @@ tag: tool
 
 常用的命令和工具
 
+
+### du
+
+du  在core utilities 的deb 包中
+
+
+### df
+
+>* df -m
+
+```
+iPhone:/Applications root# df -m
+Filesystem     1M-blocks  Used Available Use% Mounted on
+/dev/disk0s1s1      3551  3494        21 100% /
+devfs                  1     1         0 100% /dev
+/dev/disk0s1s2     11560  2464      9097  22% /private/var
+/dev/disk0s1s3        10     2         8  20% /private/var/wireless/baseband_data
+/dev/disk4           236    69       167  30% /Developer
+
+<!-- iPhone:/Applications root# du -sh * |sort -hr -->
+
+
+<!-- /Applications  应当属于disk0s1s1 分区 -->
+
+
+<!-- /usr 应当属于disk0s1s1 分区 -->
+cannot copy extracted data for './usr/libexec/rocketd' to '/usr/libexec/rocketd.dpkg-new': failed to write (No space left on device)
+
+
+```
+
+
+### sort
+
+>*  查看目录大小，并按照数值大小排序
+
+
+```
+<!--   倒序 -->
+iPhone:/Applications root# du -sh * |sort -rn 
+
+<!-- 正序    -n, --numeric-sort          compare according to string numerical value -->
+
+iPhone:/Applications root# du -sh * |sort -n
+
+
+<!-- -h, --human-numeric-sort    compare human readable numbers (e.g., 2K 1G) -->
+
+
+```
+
+>* 按照人类理解的方式对文件大小进行排序
+
+```
+iPhone:/Applications root# du -sh * |sort -hr
+33M PPHelperNS.app
+14M Bridge.app
+13M iBooks.app
+12M Maps.app
+7.1M  Music.app
+5.8M  Podcasts.app
+3.9M  Compass.app
+3.8M  News.app
+3.5M  Cydia.app
+3.3M  Setup.app
+2.8M  MobileNotes.app
+2.8M  FindMyFriends.app
+
+<!-- iPhone:/Applications/PPHelperNS.app root# ls -lrt Inf* -->
+
+         iPhone:/Applications/PPHelperNS.app root# dpkg -r com.teiron.pphelperns
+dpkg: warning: files list file for package 'p7zip' missing; assuming package has no files currently installed
+(Reading database ... 3512 files and directories currently installed.)
+Removing com.teiron.pphelperns (3.7.3) ...
+remove
+postun
+Start Uninstall!
+End Uninstall!
+iPhone:/Applications/PPHelperNS.app root# 2018-04-08 13:31:09.418 HLavender[5241:77734] command is uninstall
+
+
+<!-- iPhone:/System/Library root# du -sh * |sort -hr -->
+1.5G  Caches
+497M  PrivateFrameworks
+337M  LinguisticData
+180M  Fonts
+
+iPhone:/System/Library/Caches/com.apple.dyld root# du -sh * |sort -hr
+783M  dyld_shared_cache_arm64
+654M  dyld_shared_cache_armv7s
+
+
+```
+
 ### rvictl
 
 >* sudo tcpdump -i rvi0 -AAl

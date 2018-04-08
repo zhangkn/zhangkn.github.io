@@ -84,6 +84,40 @@ devzkndeMacBook-Pro:GoogleMobileVision-1.1.0 devzkn$
 
 ### see also
 
+- [request-failed-on-channel-0](https://stackoverflow.com/questions/27021641/how-to-fix-request-failed-on-channel-0)
+
+```
+
+
+<!-- 获取尝试换下端口 -->
+
+
+<!-- 以下这个方法行不通，危险-->
+Taokeceshiji1:~ root# cat /etc/fstab
+
+Taokeceshiji1:~ root# cat /etc/fstab
+/dev/disk0s1s1 / hfs ro 0 1
+/dev/disk0s1s2 /private/var hfs rw 0 2
+
+
+
+Taokeceshiji1:~ root# echo "none    /dev/pts    devpts    defaults    0    0
+> " >> /etc/fstab
+Taokeceshiji1:~ root# cat /etc/fstab
+/dev/disk0s1s1 / hfs ro 0 1
+/dev/disk0s1s2 /private/var hfs rw 0 2
+none    /dev/pts    devpts    defaults    0    0
+
+Just add these lines to your /etc/mtab and /etc/fstab, and reboot the system.
+
+
+<!-- -sh: fork: retry: Resource temporarily unavailable -->
+
+文件/etc/fstab包含了静态文件系统信息，定义了存储设备和分区整合到整个系统的方式。mount 命令会读取这个文件，确定设备和分区的挂载选项。
+
+
+```
+
 - [Git LFS 操作指南](https://zzz.buzz/zh/2016/04/19/the-guide-to-git-lfs/)
 
 ```
