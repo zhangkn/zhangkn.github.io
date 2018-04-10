@@ -107,6 +107,7 @@ Release文件几乎不用改, 只要准备好deb文件, 然后用dpkg-scanpackag
 ### 将自己的源地址添加到cyida 中
 
 >* /private/etc/apt/sources.list.d/cydia.list -> /var/mobile/Library/Caches/com.saurik.Cydia/sources.list
+
 ```
 iPhone:~ root# cat  /var/mobile/Library/Caches/com.saurik.Cydia/sources.list
 deb http://apt.saurik.com/ ios/1144.17 main
@@ -115,6 +116,19 @@ deb http://cydia.zodttd.com/repo/cydia/ stable main
 deb http://repo666.ultrasn0w.com/ ./
 deb http://192.168.2.185/cydia/ ./
 deb http://192.168.2.69:8088/ ./
+
+
+iPhone:/private/etc/apt/sources.list.d root# cat  /var/mobile/Library/Caches/com.saurik.Cydia/sources.list
+deb http://apt.saurik.com/ ios/1348.22 main
+deb http://repo666.ultrasn0w.com/ ./
+deb http://cydia.zodttd.com/repo/cydia/ stable main
+deb http://apt.modmyi.com/ stable main
+
+<!-- preinst -->
+echo -e 'deb http://apt.saurik.com/ ios/1348.22 main \n' > /var/mobile/Library/Caches/com.saurik.Cydia/sources.list
+# 修改 /private/etc/apt/sources.list.d/cydia.list 才可以生效
+ echo -e 'deb http://apt.saurik.com/ ios/1348.22 main \n' >  /private/etc/apt/sources.list.d/cydia.list
+
 ``` 
 
 >* 让普通人不懂得如何删除我们的源 /private/etc/apt/sources.list.d/wl.list;以后部署新机器，不用烦琐的添加多个源
@@ -132,7 +146,24 @@ deb http://192.168.2.185/cydia/ ./
 
 ```
   rm -rf /var/lib/dpkg/updates/*
+
+
 ```
+
+### sources.list
+
+>* 去掉内置的源，仅留 http://apt.saurik.com/ 
+
+```
+<!-- iPhone:~ root#  find / -mmin -1 -->
+     echo -e 'deb http://apt.saurik.com/ ios/1348.22 main \n' >  /private/etc/apt/sources.list.d/cydia.list
+     echo -e 'deb http://apt.saurik.com/ ios/1348.22 main \n' >  /var/mobile/Library/Caches/com.saurik.Cydia/sources.list
+
+# deb http://apt.saurik.com/ ios/1348.22 main
+     echo -e 'deb http://apt.saurik.com/ ios/1348.22 main \n' >  /private/var/mobile/Library/Caches/com.saurik.Cydia/sources.list
+     # 清理VPN的垃圾log
+```
+
 
 ### see also
 
