@@ -454,7 +454,7 @@ defineClass('MoreViewController', {
 
 # 先备份 cp -r /Library/MobileSubstrate/DynamicLibraries ~/
      # rm -rf /Library/MobileSubstrate/DynamicLibraries
-    # aso11 代码： dylib   干脆给他建立个软连接算了        /bin/ln -s   /usr/lib/TweakInject /Library/MobileSubstrate/DynamicLibraries 
+    # ios11 代码： dylib   干脆给他建立个软连接算了        /bin/ln -s   /usr/lib/TweakInject /Library/MobileSubstrate/DynamicLibraries 
     # cp -r  ~/DynamicLibraries /Library/MobileSubstrate/DynamicLibraries
 
 

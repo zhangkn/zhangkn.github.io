@@ -339,6 +339,13 @@ apt-get install socat
 在遇到git 冲突的时候，常常可以利用git status 来查看解决方案
 
 
+>* 还原本地的修改
+
+```
+git reset --hard
+git clean -fdx
+```
+
 >*     查看所有分支
 
 ```
@@ -456,12 +463,26 @@ devzkndeMacBook-Pro:com.wl. devzkn$ git branch
 >* git branch -d  vpn
 
 ```
+
+<!--0、 git branch --all -->
+
+<!-- 1、删除命令可以切换到其他分支，如develop -->
 Deleted branch vpn (was 708197c).
 <!-- 参数-D则可强制删除尚未合并的分支。 -->
-<!-- 使用推送分支命令时要使用一个特殊的引用表达式（冒号前为空）,进行远程分支的删除 -->
+
+<!--2、【可选】  -->
+
+git pull origin test
+
+直接合并Merge branch 'test' of 远程仓库 into 本地 develop
+
+<!-- 3、使用推送分支命令时要使用一个特殊的引用表达式（冒号前为空）,进行远程分支的删除 -->
  git push origin :vpn
  To gitlab..cn:/.git
  - [deleted]         vpn
+
+
+ git push origin :test
 
 ```
 

@@ -9,12 +9,46 @@ stackoverflow user: 8633507
  [I](https://about.me/kunnan) am a iOS Reverse Engineer, My interests range from technology to Information security. 
  <br>I enjoy sharing my security knowledge and learning from [iosre：http://bbs.iosre.com/latest.rss](http://iosre.com). Always happy to help people learn and teach about security.
 <p>
-<a target="_blank" href="https://join.slack.com/t/iosreverseengineering/shared_invite/enQtMjk3MjQ2Mjg2MTYyLThiNGU3ZmVlNTkzYzViNjY0YjJkZTI5MzdiZjhhZWJmZjk2YTY3N2Q3ZDBkMmJmOTMyMTJhNWIyZGE0NjFkZDI">iosreverseengineering.slack.com</a>
 
-<p>
-推荐一个我维护的小专栏
-<a target="_blank" href="https://xiaozhuanlan.com/iosre"> iosre </a>
-里面有一些关于 iOSre的文章。
+
+<br>
+
+<h1>
+<a target="_blank" href="https://zhangkn.github.io/2018/04/DevelopmentSkillsIntroduced"> 实时最新的简历</a>
+</h1>
+
+
+<h3> 逆向技能</h3>
+
+- [iOS 逆向开发,熟悉iphone/tweak、iphone/tool、cydia的repo 制作；利用lldb、hopper、theos、MonkeyDev、运行时常用的API 进行开发。结合lldb、Cycript、hopper、KNHook、以及AFLEXLoader进行分析快速找到入口。]
+<br><br>
+- [iphone/tool 项目例子：MobileWiFi.framework的使用https://github.com/sbtweaks/wifiutil]
+<br><br>
+-[iphone/tweak类型举例： tweak集成CocoaAsyncSocket：https://github.com/zhangkn/KNCocoaAsyncSocketDemo]
+<br><br>
+-[分析工具: KNHook https://github.com/zhangkn/hookClass]
+<br><br>
+- [常见的自动化的功能的实现:自动设置永不锁屏、自动处理进程通信的问题、网络异常的时候自动关闭VPN（防止VPN有效性过期）,并且自动断开Wi-Fi，再次重新连接（防止IP有效期超时）]
+<br><br>
+- [lua、js]
+
+<h3> 正向技能</h3>
+
+- [熟悉C/C++/Objective C/Java，熟练使用Xcode开发工具；]
+<br><br>
+- [深入理解MRC和ARC内存管理机制；]
+<br><br>
+- [熟悉iOS中多线程和GCD的使用；]
+<br><br>
+- [熟练使用AFNetworking, MBProgressHUD, MJRefresh, Masonry, SDWebImage等第三方库；熟悉CocoaPods管理工具；熟练使用git和svn等版本管理工具。]
+<br><br>
+- [具有良好的编码习惯, 掌握常用的数据结构和算法；]
+<br><br>
+- [对后台开发技术也有一定的了解；]
+<br><br>
+- [个人技术主页](https://zhangkn.github.io/tags/)
+
+
 <br>
 <h3> aboutMe External Links </h3>
 <p>
@@ -32,6 +66,10 @@ stackoverflow user: 8633507
 <br>
 >* Email: devzkndeMacBook-Pro:work devzkn$ echo 7a68616e675f6b6e4069636c6f75642e636f6d0a |xxd -r -p
 <br>
+
+<a target="_blank" href="https://join.slack.com/t/iosreverseengineering/shared_invite/enQtMjk3MjQ2Mjg2MTYyLThiNGU3ZmVlNTkzYzViNjY0YjJkZTI5MzdiZjhhZWJmZjk2YTY3N2Q3ZDBkMmJmOTMyMTJhNWIyZGE0NjFkZDI">iosreverseengineering.slack.com</a>
+
+
 <h3> 上帝喜欢笨人 
 - 做事情，不在于开了多少个头，而在于结了多少次尾；就像计算机一样记得及时关闭一些进程，否则会死机的</h3>
 ```

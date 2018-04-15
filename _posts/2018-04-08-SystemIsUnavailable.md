@@ -73,6 +73,71 @@ int run(const char *cmd) {
 
 ### see also
 
+
+- [CodeConfuseTool](https://www.proginn.com/wo/140195)
+
+```
+<!-- https://www.proginn.com/wo/140195 -->
+
+<!-- https://github.com/iOSobfuscation/CodeConfuseTool -->
+
+
+<!-- 工作经历模板 -->
+
+主要负责AppStore应用协助审核，马甲包制作； App代码加密和混淆工具开发； AppStore排行榜提升，ASO关键词优化； 游戏支付和统计SDK开发和对接
+
+<!-- https://www.proginn.com/u/152477 -->
+https://www.proginn.com/wo
+
+<!-- 个人开发技能介绍 :https://m.zhaopin.com/Resume/ResumePreview/?resumeNum=JM295406342R90250000000&language=1  -->
+
+#逆向技能
+
+- [iOS 逆向开发,熟悉iphone/tweak、iphone/tool、cydia的repo 制作；利用lldb、hopper、theos、MonkeyDev、运行时常用的API 进行开发。结合lldb、Cycript、hopper、KNHook、以及AFLEXLoader进行分析快速找到入口。]
+
+- [iphone/tool 项目例子：MobileWiFi.framework的使用https://github.com/sbtweaks/wifiutil]
+
+-[iphone/tweak类型举例： tweak集成CocoaAsyncSocket：https://github.com/zhangkn/KNCocoaAsyncSocketDemo]
+
+-[分析工具: KNHook https://github.com/zhangkn/hookClass]
+
+- [常见的自动化的功能的实现:自动设置永不锁屏、自动处理进程通信的问题、网络异常的时候自动关闭VPN（防止VPN有效性过期）,并且自动断开Wi-Fi，再次重新连接（防止IP有效期超时）]
+
+- [lua、js]
+
+# 正向技能
+
+- [熟悉C/C++/Objective C/Java，熟练使用Xcode开发工具；]
+
+- [深入理解MRC和ARC内存管理机制；]
+
+- [熟悉iOS中多线程和GCD的使用；]
+
+- [熟练使用AFNetworking, MBProgressHUD, MJRefresh, Masonry, SDWebImage等第三方库；熟悉CocoaPods管理工具；熟练使用git和svn等版本管理工具。]
+
+- [具有良好的编码习惯, 掌握常用的数据结构和算法；]
+
+对后台开发技术也有一定的了解；
+
+个人技术主页：https://zhangkn.github.io/tags/
+
+
+
+
+```
+
+- [iOS上的CSS样式协议 VKCssProtocol](http://awhisper.github.io/2016/11/01/cssprotocol/)
+
+
+```
+
+http://awhisper.github.io/categories/%E5%B7%A5%E5%85%B7%E4%BB%A3%E7%A0%81/
+
+http://blog.cnbang.net/internet/3554/
+
+
+```
+
 - [廣告計費的主要三種方式](https://transbiz.com.tw/ppc%E9%97%9C%E9%8D%B5%E5%AD%97%E5%BB%A3%E5%91%8A-cpc-cpm-cpa-%E5%BB%A3%E5%91%8A%E6%8A%95%E6%94%BE/)
 
 

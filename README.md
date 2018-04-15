@@ -64,10 +64,6 @@ html标签验证  网站首页html代码的<head>标签与</head>标签之间
  Place the following code before your site's closing </body> tag:
  <script id="dsq-count-scr" src="//iosre.disqus.com/count.js" async></script>
 
-# xiaozhuanlan
-
-- [iosre](https://xiaozhuanlan.com/iosre)
-
 # footer.html
 
 - 修改底部的样式

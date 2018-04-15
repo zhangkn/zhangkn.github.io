@@ -2,7 +2,7 @@
 layout: post
 title: GoogleHacking
 date: 2018-02-25
-tag: tool
+tag: Search
 site: https://zhangkn.github.io
 ---
 
