@@ -2,7 +2,7 @@
 layout: post
 title: DevelopmentSkillsIntroduced
 date: 2018-04-11
-tag: resume
+tag: work
 site: https://zhangkn.github.io
 ---
 

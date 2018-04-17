@@ -2,7 +2,7 @@
 layout: post
 title: codeSnippets
 date: 2018-01-21
-tag: OC
+tag: ios
 site: https://zhangkn.github.io
 ---
 
