@@ -28,6 +28,41 @@ Jekyll 需要依赖：Ruby、bundler
  title :该文章的标题  如果不设置这个值，默认使用嵌入文件名的标题
 
 
+
+>* [重要文件]
+
+```
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ git checkout --  css/main.css
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ git checkout --  _layouts/post.html
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ git checkout --   _includes/footer.html
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ git diff  _config.yml
+
+1） 目前此博客版本，缺少catalog，我打算采用新的版本，可能暂时不更新。
+
+
+```
+
+>* [创建博客文章的辅助脚本：](https://github.com/zhangkn/KNBin/blob/master/post)
+
+>* [devzkndeMacBook-Pro:~ devzkn$ cat .bash_profile]
+
+```
+使用别名快速的开启本地调试模式
+alias sio='bundle exec jekyll server -s ~/githubPages/zhangkn.github.io'
+
+
+Configuration file: /Users/devzkn/githubPages/zhangkn.github.io/_config.yml
+            Source: /Users/devzkn/githubPages/zhangkn.github.io
+       Destination: /Users/devzkn/githubPages/zhangkn.github.io/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+                    done in 32.002 seconds.
+ Auto-regeneration: enabled for '/Users/devzkn/githubPages/zhangkn.github.io'
+    Server address: http://127.0.0.1:4000
+  Server running... press ctrl-c to stop.
+      Regenerating: 1 file(s) changed at 2018-04-19 14:49:31 
+```
+
 # 添加动态功能必须使用外部服务
 - 访问量统计分析
 - comment
@@ -485,5 +520,787 @@ https://groups.google.com/
 <meta name="generator" content="Discourse 2.0.0.beta5 - https://github.com/discourse/discourse version 68ae009f98afd1284121d8195b2851195b72fa56">
 
 
+```
+
+### jekyll
+
+>* [permalinks](https://www.jekyll.com.cn/docs/permalinks/)
+
+```
+permalink: /blog/:year/:month/:day/:title  /blog/2009/04/29/slap-chop/index.html
+
+permalink: /:year/:month/:title/           https://zhangkn.github.io/2018/04/launchApplicationWithIdentifier/
+
+```
+
+>* [pages](https://www.jekyll.com.cn/docs/pages/)
+
+```
+
+<!-- 站点上任何 HTML 文件，包括主页，都可以使用布局和 include 中的内容一般共用的内容，如页面的 header 和 footer. 将合适的部分抽出放到布局中。 -->
+
+<!DOCTYPE html>
+<html xmlns:wb="https://open.weibo.com/wb"><!-- 微博分享 在HTML标签中增加XML命名空间 -->
+
+
+  {% include head.html %}
+
+  <body>
+<!-- 命名文件夹：在站点的根目录下为每一个页面创建一个文件夹，并把 index.html 文件放在每 个文件夹里。 -->
+
+ /Users/devzkn/githubPages/zhangkn.github.io/_site/2018/04/AutoUnlock/index.html
+
+
+<!-- 一个站点下通常会有：主页 (homepage), 关于 (about), 和一个联系 (contact) 页。根目录下的文件结构和对应生成的 URL 会是下面的样子： -->
+<!--  方式一：命名 HTML 文件 -->
+
+.
+|-- _config.yml
+|-- _includes/
+|-- _layouts/
+|-- _posts/
+|-- _site/
+|-- about.html    # => http://example.com/about.html --- 本站采用about.md  /Users/devzkn/githubPages/zhangkn.github.io/_site/about/index.html 
+|-- index.html    # => http://example.com/           ----目前本站有
+└── contact.html  # => http://example.com/contact.html ---- 暂时没有，因为联系方式在底部
+
+<!-- 方式二：命名一个文件夹并包含一个 index.html 文件 ：  本站http://zhangkn.github.io/采用这种方式-->
+
+你只需要为每个顶级页面创建一个文件夹，并包含一个 inex.html 文件。 这样，每个 URL 就将以文件夹的名字作为结尾，网站服务器会将对应的 index.html 展示给用户。下面是一个示例来展示这种结构的样子：
+
+.
+├── _config.yml
+├── _includes/
+├── _layouts/
+├── _posts/
+├── _site/
+├── about/
+|   └── index.html  # => http://example.com/about/
+├── contact/
+|   └── index.html  # => http://example.com/contact/
+└── index.html      # => http://example.com/
+
+
+```
+
+
+>* [posts](https://www.jekyll.com.cn/docs/posts/)
+
+```
+简单的管理你电脑中的一个文件夹下的文本文件就 可以写文章并方便的在线上发布。与繁琐的配置和维护数据库和基于网站的内容管理系统（CMS）相比， 这是一个非常受欢迎的改变。
+
+<!-- 文章文件夹 -->
+所有的文章都在_posts文件夹中。 这些文件可以用Markdown 编写， 也可以用Textile 格式编写。只要文件中有 YAML头信息，它们就会从源格式转化成 HTML 页面，从而成为 你的静态网站的一部分。
+
+
+
+```
+
+
+>* [frontmatter: 头信息](https://www.jekyll.com.cn/docs/frontmatter/)
+
+```
+<!-- 任何只要包含 YAML 头信息的文件在 Jekyll 中都能被当做一个特殊的文件来处理。头信息必须在文件的开始部分，并且需要按照 YAML 的格式写在两行三虚线之间。下面是一个 -->
+
+---
+layout: post
+title: NSFileHandle
+date: 2018-04-17
+tag: ios #可以通过 YAML list来指定，或者用空格隔开
+site: https://zhangkn.github.io
+---
+
+两行的三虚线之间，你可以设置一些预定义的变量
+
+创建一个你自己定义的变量。这样在接下来的文件和任意模板中或者在包含这些页面或博客的模板中都可以通过使用 Liquid 标签来访问这些变量
+
+
+<!-- 预定义的全局变量 -->
+
+1) layout
+
+如果设置的话，会指定使用该模板文件。指定模板文件时候不需要扩展名。模板文件需要放在 _layouts 目录下。
+
+
+2) permalink---相当于重写
+
+如果你需要让你的博客中的URL地址不同于默认值 /year/month/day/title.html 这样，那么当你设置这个变量后，就会使用最终的URL地址。
+
+
+
+3） published----设置是否公开
+
+当站点生成的时候，如果你不需要展示一个具体的博文，可以设置这个变量为 false。
+
+4） category
+
+categories
+
+除过将博客文章放在某个文件夹下面外，你还可以根据文章的类别来给他们设置一个或者多个分类属性。这样当你的博客生成的时候这些文章就可以根据这些分类来阅读。在一个文章中多个类别可以通过 YAML list来指定，或者用空格隔开。
+
+5） tags---- 本站就是采用这种方式
+
+类似分类，一篇文章也可以给它增加一个或者多个标签。同样多个标签之间可以通过 YAML 列表或者空格隔开。
+
+
+<!-- 自定义变量 -->
+
+    <title>{{ page.title }}</title>
+
+<!-- 在文章中预定义的变量 -->
+
+date
+
+这里的日期会覆盖文章名字中的日期。这样就可以用来确定文章分类的正确。
+
+```
+
+>* [structure](https://www.jekyll.com.cn/docs/structure/)
+
+```
+
+Jekyll 的核心其实是一个文本转换引擎。它的概念其实就是： 你用你最喜欢的标记语言来写文章，可以是 Markdown，也可以是 Textile,或者就是简单的 HTML, 然后 Jekyll 就会帮你套入一个或一系列的布局中。在整个过程中你可以设置URL路径, 你的文本在布局中的显示样式等等
+
+<!-- 一个基本的 Jekyll 网站的目录结构一般是像这样的： -->
+
+.
+├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _data
+|   └── members.yml
+├── _site
+└── index.html
+
+目前我比较关心是Jekyll否可以在_posts 目录进行创建子目录
+
+
+<!-- 来看看这些都有什么用： -->
+
+_config.yml
+
+保存配置数据。很多配置选项都会直接从命令行中进行设置，但是如果你把那些配置写在这儿，你就不用非要去记住那些命令了。
+
+_drafts  --- 目前尚未使用
+
+drafts 是未发布的文章。这些文件的格式中都没有 title.MARKUP 数据。学习如何使用 drafts.
+
+_includes --- 
+
+你可以加载这些包含部分到你的布局或者文章中以方便重用。可以用这个标签  {% include file.ext %} 来把文件 _includes/file.ext 包含进来。
+
+            {% include footer.html %}
+
+
+_layouts
+
+layouts 是包裹在文章外部的模板。布局可以在 YAML 头信息中根据不同文章进行选择。 。标签 {{ content }} 可以将content插入页面中。
+
+<section class="post">
+    {{ content }}
+  </section>
+
+
+
+_posts
+
+这里放的就是你的文章了。文件格式很重要，必须要符合: YEAR-MONTH-DAY-title.MARKUP。 The permalinks 可以在文章中自己定制，但是数据和标记语言都是根据文件名来确定的。----- 是否可以创建子目录？？？
+
+<!-- 博客文章放在_posts目录中，可以使用子目录。 -->
+http://holbrook.github.io/2013/05/27/jekyll_mysite.html
+
+http://holbrook.github.io/2017/11/10/ebook_with_sphinx.html
+
+
+
+
+_data
+
+Well-formatted site data should be placed here. The jekyll engine will autoload all yaml files (ends with .yml or .yaml) in this directory. If there's a file members.yml under the directory, then you can access contents of the file through site.data.members.
+
+_site
+
+一旦 Jekyll 完成转换，就会将生成的页面放在这里（默认）。最好将这个目录放进你的 .gitignore 文件中。----这点很重要
+
+devzkndeMacBook-Pro:zhangkn.github.io devzkn$ cat .gitignore
+_site
+.sass-cache
+.jekyll-metadata
+
+
+
+index.html and other HTML, Markdown, Textile files
+
+如果这些文件中包含 YAML 头信息 部分，Jekyll 就会自动将它们进行转换。当然，其他的如 .html， .markdown，  .md，或者 .textile 等在你的站点根目录下或者不是以上提到的目录中的文件也会被转换。
+
+
+Other Files/Folders
+
+其他一些未被提及的目录和文件如  css 还有 images 文件夹， favicon.ico 等文件都将被完全拷贝到生成的 site 中。 
+
+ps: http://tom.preston-werner.com/2008/11/03/how-to-meet-your-next-cofounder.html
+
+
+```
+
+>* [分页功能Pagination](https://www.jekyll.com.cn/docs/pagination/)
+
+
+```
+# Pagination 分页功能
+plugins: [jekyll-paginate,jekyll-sitemap,jekyll-feed]
+paginate: 20
+paginate_path: "page/:num/"
+
+
+<!-- paginate: 5  每页需要几行, 即每个页面展示的文字数量，目前我定位20 篇-->
+
+<!-- paginate_path: "blog/page:num"    需要带有分页页面的配置-->
+
+blog/index.html将会读取这个设置，把他传给每个分页页面，然后从第 2 页开始输出到 blog/page:num ， :num 是页码。
+
+如果有 12 篇文章并且做如下配置 paginate: 5 ， Jekyll会将前 5 篇文章写入 blog/index.html ，把接下来的 5 篇文章写入 blog/page2/index.html，
+
+最后 2 篇写入 blog/page3/index.html。
+
+<!-- 具体的效果请看这个 -->
+第一页：https://zhangkn.github.io/#blog  
+
+第二页： https://zhangkn.github.io/page/2/#blog
+
+
+
+<!-- 与 paginator 相同的属性 -->
+
+page 当前页码
+
+per_page 每页文章数量
+
+posts 当前页的文章列表
+
+total_posts 总文章数
+
+total_pages 总页数
+
+previous_page 上一页页码 或 nil
+
+previous_page_path 上一页路径 或 nil
+
+next_page 下一页页码 或 nil
+
+next_page_path  下一页路径 或 nil
+
+
+
+<!-- 生成带分页功能的文章 -->
+
+
+<!-- 分页链接 -->
+<hr class="post-list__divider " />
+
+<nav class="pagination" role="navigation">
+
+  <!-- 百度搜索 
+    <script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=5841224908133801750' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();</script>-->
+
+  
+    {% if paginator.previous_page %}
+        <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="{{ paginator.previous_page_path }}#blog">&larr; 最近</a>
+    {% endif %}
+    <span class="pagination__page-number">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="{{ paginator.next_page_path }}#blog">更早 &rarr;</a>
+    {% endif %}
+
+    
+
+</nav>
+
+
+<!-- 遍历分页后的文章 -->
+
+
+<ol class="post-list">
+    {% for post in paginator.posts %}
+    <li>
+      <h2 class="post-list__post-title post-title"><a href="{{ post.url }}" title="访问 {{ post.title }}">{{ post.title }}</a></h2>
+      <p class="excerpt">{{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</p>
+      <div class="post-list__meta">        
+        <time datetime="{{post.date | date: date_to_xmlschema}}" class="post-list__meta--date date">
+          <img src="/images/calendar.png" width="20px" /> 
+          {{ post.date | date: "%F"}}</time> 
+        <div class = "tag-img-icon">
+          <img src="/images/tag-icon.svg" width="20px" /> 
+        </div>
+        <a href="/tags">
+          <div class = "post-list-icon-mate">
+            <span class="post-list__meta--tags-right">{{ post.tags }}</span>
+          </div>
+          <div class = "post-list-small-mate">
+          <a class="btn-border-small" href={{ post.url }}>阅读全文 » </a>
+          </div>
+      </div>
+      <hr class="post-list__divider" />
+    </li>
+    {% endfor %}
+  </ol>
+
+<!-- 遍历分页后的文章 官方的代码-->
+
+<!-- 遍历分页后的文章 -->
+{% for post in paginator.posts %}
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="author">
+    <span class="date">{{ post.date }}</span>
+  </p>
+  <div class="content">
+    {{ post.content }}
+  </div>
+{% endfor %}
+
+```
+
+
+>* [plugins](https://www.jekyll.com.cn/docs/plugins/)
+
+
+```
+https://www.jekyll.com.cn/docs/plugins/
+
+GitHub Pages是由Jekyll提供技术支持的，考 虑到安全因素，所有的 Pages 通过 --safe 选项禁用了插件功能，因此如果你的网 站部署在 Github Pages ，那么你的插件不会工作。
+
+
+不过仍然有办法发布到 GitHub Pages，你只需在本地做一些转换，并把生成好的文件上传到 Github 替代 Jekyll 就可以了。
+
+
+<!-- 在网站根下目录建立 _plugins 文件夹，插件放在这里即可。 Jekyll 运行之前，会加载此目录下所有以 *.rb 结尾的文件。 -->
+
+目前没采用
+
+<!-- 在 _config.yml 文件中，添加一个以 gems 作为 key 的数组，数组中存放插件的 gem 名称。例如： -->
+
+ gems: [jekyll-test-plugin, jekyll-jsonify, jekyll-assets]
+ # This will require each of these gems automatically.
+
+
+
+<!-- _plugins and gems 可以同时使用。 -->
+
+```
+
+>* [github-pages](https://www.jekyll.com.cn/docs/github-pages/)
+
+```
+https://www.jekyll.com.cn/docs/github-pages/
+
+
+Github Pages 是面向用户、组织和项目开放的公共静态页面搭建托管服 务，站点可以被免费托管在 Github 上，你可以选择使用 Github Pages 默 认提供的域名 github.io 或者自定义域名来发布站点。Github Pages 支持 自动利用 Jekyll 生成站点，也同样支持纯 HTML 文档，将你的 Jekyll 站 点托管在 Github Pages 上是一个不错的选择。
+
+Github Pages 依靠 Github 上项目的某些特定分支来工作。Github Pages 分为两种基本类型：用户/组织的站点和项目的站点。搭建这两种类型站 点的方法除了一小些细节之外基本一致。
+
+
+<!-- 一、用户和组织的站点 -->
+
+<!-- 建立主页:GitHub用户通过创建特殊名称的Git版本库或在Git库中建立特别的分支实现对主页的维护: https://zhangkn.github.io/2018/03/GitHub/ -->
+
+仓库中master分支里的文件将会被用来生成 Github Pages 站点，所以请 确保你的文件储存在该分支上。
+
+
+
+
+
+<!-- 二、项目的站点-->
+
+项目的站点文件存放在项目本身仓库的 gh-pages 分支中。该分支下的文件将会被 Jekyll 处理，生成的站点会被 部署到你的用户站点的子目录上，例如 username.github.io/project
+
+
+
+项目主页:项目主页也通过二级域名进行访问 http://gotgithub.github.io/项目名称—https://zhangkn.github.io/AlipayWalletTweakF
+
+在Git库中建立特别的gh-pages分支实现对主页的维护。
+<!-- 使用命令行创建干净的gh-pages分支：http://www.worldhello.net/gotgithub/03-project-hosting/050-homepage.html -->
+
+```
+
+# see also
+
+>* [建立主页:GitHub用户通过创建特殊名称的Git版本库或在Git库中建立特别的分支实现对主页的维护](https://zhangkn.github.io/2018/03/GitHub/)
+
+>* [《机器学习》](http://holbrook.github.io/2017/03/04/machine-learning_index.html)
+
+>* [https://huangxuan.me/](https://huangxuan.me/)
+
+```
+
+个人比较喜欢它的tag 以及，catalog
+
+
+https://github.com/Huxpro/huxpro.github.io
+
+http://qiubaiying.top/2017/02/06/%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/
+
+<!-- 整个网站结构 -->
+
+├── _config.yml
+├── _drafts
+|   ├── begin-with-the-crazy-ideas.textile
+|   └── on-simplicity-in-technology.markdown
+├── _includes
+|   ├── footer.html
+|   └── header.html
+├── _layouts
+|   ├── default.html
+|   └── post.html
+├── _posts
+|   ├── 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   └── 2009-04-26-barcamp-boston-4-roundup.textile
+├── _data
+|   └── members.yml
+├── _site
+├── img
+└── index.html
+
+
+_config.yml 全局配置文件
+_posts  放置博客文章的文件夹
+img 存放图片的文件夹
+
+
+<!-- 基础设置 -->
+
+然后编辑_config.yml的内容
+
+# Site settings
+title: You Blog               #你博客的标题
+SEOTitle: 你的博客 | You Blog      #显示在浏览器上搜索的时候显示的标题
+header-img: img/post-bg-rwd.jpg   #显示在首页的背景图片
+email: You@gmail.com  
+description: "You Blog"        #网站介绍
+keyword: "BY, BY Blog, 柏荧的博客, qiubaiying, 邱柏荧, iOS, Apple, iPhone" #关键词
+url: "https://qiubaiying.github.io"          # 这个就是填写你的博客地址
+baseurl: ""      # 这个我们不用填写
+
+
+# Sidebar settings
+sidebar: true                           # 是否开启侧边栏.
+sidebar-about-description: "说点装逼的话。。。"
+sidebar-avatar:/img/avatar-by.JPG      # 你的个人头像 这里你可以改成我在img文件夹中的两张备用照片 img/avatar-m 或 avatar-g
+
+
+<!-- 社交账号:社交账号的用户名 -->
+
+# SNS settings
+RSS: false
+weibo_username:     username
+zhihu_username:     username
+github_username:    username
+facebook_username:  username
+jianshu_username: jianshu_id
+
+
+jianshu_id 在你打开你的简书主页后的地址如：http://www.jianshu.com/u/e71990ada2fd中，后面这一串数字：e71990ada2fd
+
+<!-- 评论系统 -->
+
+博客中使用的是 Disqus 评论系统，在 官网 注册帐号后，按下面的步骤简单的配置即可：
+
+
+
+https://disqus.com/home/settings/profile/
+
+这个 Username 就是我们 _config.yml 中 disqus_username
+
+
+
+# Disqus settings（https://disqus.com/）
+disqus_username: qiubaiying
+
+
+<!-- Gitalk  -->
+http://qiubaiying.top/2017/12/19/%E4%B8%BA%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0-Gitalk-%E8%AF%84%E8%AE%BA%E6%8F%92%E4%BB%B6/
+
+集成了 Baidu Analytics 和 Google Analytics，到各个网站注册拿到track_id替换
+
+
+
+
+<!-- 网站统计 -->
+
+
+# Analytics settings
+# Baidu Analytics
+ba_track_id: 83e259f69b37d02a4633a2b7d960139c
+
+# Google Analytics
+ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto
+
+
+<!-- 好友 -->
+
+
+<!-- 写文章 -->
+
+<!-- 格式 -->
+
+
+YAML 就是我们配置 _config文件用的语言。http://www.ruanyifeng.com/blog/2016/07/yaml.html?f=tt
+
+MarkDown 是一种轻量级的「标记语言 :http://sspai.com/25137/ 
+
+
+<!-- 首页标签 -->
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+
+
+<!-- 自定义域名 -->
+
+购买一个自己的域名。
+
+在阿里云购买的域名: https://wanwang.aliyun.com/domain/?spm=5176.8006371.1007.dnetcndomain.q1ys4x
+
+
+GitHub Pages 无法处理中文域名
+
+
+
+<!-- 解析域名 -->
+
+注册好域名后，需要将域名解析到你的博客上
+
+管理控制台 → 域名与网站（万网） → 域名
+选择你注册好的域名，点击解析
+
+1) 分别添加两个A 记录类型,
+
+一个主机记录为 www,代表可以解析 www.qiubaiying.top的域名
+
+
+另一个为 @, 代表 qiubaiying.top
+
+
+
+记录值就是我们博客的IP地址，是 GitHub Pagas 在美国的服务器的地址 151.101.100.133
+
+
+devzkndeMacBook-Pro:github devzkn$ ping zhangkn.github.io
+PING sni.github.map.fastly.net (151.101.229.147): 56 data bytes
+
+
+然后 GitHub Pages 再通过 CNAME记录 跳转到你的主页上
+
+
+2)修改CNAME
+
+<!-- 利用GithHub Desktop管理GitHub仓库 -->
+
+
+
+<!-- 修改个人介绍需要修改根目录下的 about.html 文件 -->
+
+
+
+<!-- 在本地调试博客 -->
+sio
+
+<!-- 修改主页的座右铭 -->
+
+index.html 文件
+
+<!-- 如何在博客文章中上插入图片 -->
+
+MarkDown 中添加图片的形式是 :![](图片的URL)
+
+1) 所以，要在 MacDown 中插入图片，这张图片就需要上传到图床（网上），然后在引 用这张图片的URL。
+
+  这样速度会快一些
+
+2） 将图片上传到图床： iPic
+
+直接拖动图片到 P 图标上，或者选中图片按快捷键 ⌘+U，
+
+<!-- 推荐几个好用软件 -->
+
+https://en.toolinbox.net/iPic/
+
+https://macdown.uranusjr.com/
+
+https://github.com/MacDownApp/macdown/releases/download/v0.7.1/MacDown.app.zip
+
+
+图片压缩工具：https://imageoptim.com/
+
+
+
+
+```
+
+# MacDown
+
+![MacDown logo](http://macdown.uranusjr.com/static/images/logo-160.png)
+
+Hello there! I’m **MacDown**, the open source Markdown editor for OS X.
+
+Let me introduce myself.
+
+## Markdown and I
+
+**Markdown** is a plain text formatting syntax created by John Gruber, aiming to provide a easy-to-read and feasible markup. The original Markdown syntax specification can be found [here](http://daringfireball.net/projects/markdown/syntax).
+
+You can configure various application (that's me!) behaviors in the [**General** preference pane](#general-pane).
+
+
+### Line Breaks
+To force a line break, put two spaces and a newline (return) at the end of the line.
+
+* This two-line bullet 
+won't break
+
+* This two-line bullet  
+will break
+
+Here is the code:
+
+```
+* This two-line bullet 
+won't break
+
+* This two-line bullet  
+will break
+```
+
+### Strong and Emphasize
+
+**Strong**: `**Strong**` or `__Strong__` (Command-B)  
+*Emphasize*: `*Emphasize*` or `_Emphasize_`[^emphasize] (Command-I)
+
+### Headers (like this one!)
+
+  Header 1
+  ========
+
+  Header 2
+  --------
+
+or
+
+  # Header 1
+  ## Header 2
+  ### Header 3
+  #### Header 4
+  ##### Header 5
+  ###### Header 6
+
+
+
+### Links and Email
+#### Inline
+Just put angle brackets around an email and it becomes clickable: <uranusjr@gmail.com>  
+`<uranusjr@gmail.com>`  
+
+Same thing with urls: <http://macdown.uranusjr.com>  
+` <http://macdown.uranusjr.com>`  
+
+Perhaps you want to some link text like this: [Macdown Website](http://macdown.uranusjr.com "Title")  
+`[Macdown Website](http://macdown.uranusjr.com "Title")` (The title is optional)  
+
+
+### Lists
+
+* Lists must be preceded by a blank line (or block element)
+* Unordered lists start each item with a `*`
+- `-` works too
+  * Indent a level to make a nested list
+    1. Ordered lists are supported.
+    2. Start each item (number-period-space) like `1. `
+    42. It doesn't matter what number you use, I will render them sequentially
+    1. So you might want to start each line with `1.` and let me sort it out
+
+
+### Block Quote
+
+> Angle brackets `>` are used for block quotes.  
+Technically not every line needs to start with a `>` as long as
+there are no empty lines between paragraphs.  
+> Looks kinda ugly though.
+> > Block quotes can be nested.  
+> > > Multiple Levels
+>
+> Most markdown syntaxes work inside block quotes.
+>
+> * Lists
+> * [Links][arbitrary_id]
+> * Etc.
+
+### Inline Code
+`Inline code` is indicated by surrounding it with backticks:  
+`` `Inline code` ``
+
+
+#### Table
+
+This is a table:
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+You can align cell contents with syntax like this:
+
+| Left Aligned  | Center Aligned  | Right Aligned |
+|:------------- |:---------------:| -------------:|
+| col 3 is      | some wordy text |         $1600 |
+| col 2 is      | centered        |           $12 |
+| zebra stripes | are neat        |            $1 |
+
+The left- and right-most pipes (`|`) are only aesthetic, and can be omitted. The spaces don’t matter, either. Alignment depends solely on `:` marks.
+
+
+### TeX-like Math Syntax
+I can also render TeX-like math syntaxes, if you allow me to.[^math] I can do inline math like this: \\( 1 + 1 \\) or this (in MathML): <math><mn>1</mn><mo>+</mo><mn>1</mn></math>, and block math:
+
+\\[
+    A^T_S = B
+\\]
+
+or (in MathML)
+
+<math display="block">
+    <msubsup><mi>A</mi> <mi>S</mi> <mi>T</mi></msubsup>
+    <mo>=</mo>
+    <mi>B</mi>
+</math>
+
+
+### Task List Syntax
+1. [x] I can render checkbox list syntax
+  * [x] I support nesting
+  * [x] I support ordered *and* unordered lists
+2. [ ] I don't support clicking checkboxes directly in the html window
+
+
+### Jekyll front-matter
+If you like, I can display Jekyll front-matter in a nice table. Just make sure you put the front-matter at the very beginning of the file, and fence it with `---`. For example:
+
+```
+---
+title: "Macdown is my friend"
+date: 2014-06-06 20:00:00
+---
 ```
 

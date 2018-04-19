@@ -111,3 +111,26 @@ site: https://zhangkn.github.io
 
 ### see also
 
+
+>* [快速定位闪退日志]
+
+
+```
+*** Terminating app due to uncaught exception
+
+```
+
+>* [欢迎加入AdSense 官方互助论坛](https://productforums.google.com/forum/#!forum/adsense-zh-cn)
+
+```
+https://support.google.com/adsense/troubleshooter/1094206?visit_id=0-636596159954242857-29091506&hl=zh-Hans&rd=3
+
+<!-- troubleshooter -->
+https://support.google.com/adsense/answer/1348257?visit_id=0-636596159954242857-29091506&ctx=as2&rd=1
+
+如果 4 周后您仍未收到 PIN 码，则需要申请替代 PIN 码。要了解何时可以申请替代 PIN 码，请查看您的 AdSense 首页上的 PIN 码验证卡片。
+
+
+
+```
+
