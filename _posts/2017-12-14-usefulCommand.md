@@ -208,6 +208,13 @@ devzkndeMacBook-Pro:.ssh devzkn$ sudo systemsetup -getremotelogin
 Remote Login: On
 ```
 
+>* [拷贝并且进行重命名]
+
+
+```
+ cp -a qiubaiying.github.io ~/githubPages/kunnan.github.io.git/
+```
+
 ### 利用 ssh 的用户配置文件 config 管理 ssh 会话（How do I connect to ssh with a different public key）
 
 ```

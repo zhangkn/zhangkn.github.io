@@ -13,6 +13,7 @@ catalog: true
 
 ### 正文
 
+>* [新的博客](https://kunnan.github.io/)
 
 ### see also
 
