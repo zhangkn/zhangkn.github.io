@@ -1,6 +1,6 @@
 ---
 layout: post
-title: C1Driver’sLicense
+title: C1DriverLicense
 date: 2018-03-29
 tag: other
 site: https://zhangkn.github.io
