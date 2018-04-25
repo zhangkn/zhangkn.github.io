@@ -80,8 +80,8 @@ Thread 16 Crashed:
 
 <!-- 符号化之后的结果 -->
 Thread 16 Crashed:
-0   .dylib              	0x0000000109b639b8 +[ASWindowKNTool setupSwitchIpABUYUN1:] (ASWindowKNTool.m:289)
-1   .dylib              	0x0000000109b639a0 +[ASWindowKNTool setupSwitchIpABUYUN1:] (ASWindowKNTool.m:287)
+0   .dylib              	0x0000000109b639b8 +[ASWindowKNTool setupSwitchIpABU1YUN1:] (ASWindowKNTool.m:289)
+1   .dylib              	0x0000000109b639a0 +[ASWindowKNTool setupSwitchIpABU1YUN1:] (ASWindowKNTool.m:287)
 2   .dylib              	0x0000000109b63330 +[ASWindowKNTool setupSwitchIp:] (ASWindowKNTool.m:88)
 3   .dylib              	0x0000000109b631f0 +[ASWindowKNTool setupCloseOpenWifi] (ASWindowKNTool.m:62)
 4   .dylib              	0x0000000109b8084c -[ ] (.m:501)

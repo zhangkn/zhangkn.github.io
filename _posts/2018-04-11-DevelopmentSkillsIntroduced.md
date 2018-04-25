@@ -235,7 +235,9 @@ jQuery、JSP、css、html、数据库(sql基本操作)、j2ee(Spring + Struts +H
 
 5）技术上的心得：使用GCD和宏实现单例；使用随机数利用CC_MD5方法生成唯一字符串，存储于钥匙串中（ generate the UDID like Apple does）。
 
-6）截图反馈功能的实现，https://github.com/zhangkn/IOSStudy；图片的上传地址进行更换就可以应用到其他项目中（主要采用自定义View实现）。
+6）截图反馈功能的实现，https://github.com/zhangkn/IOSStudy  
+
+图片的上传地址进行更换就可以应用到其他项目中（主要采用自定义View实现）。
 
 ```
 

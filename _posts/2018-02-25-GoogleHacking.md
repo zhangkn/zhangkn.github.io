@@ -8,8 +8,7 @@ site: https://zhangkn.github.io
 
 ### 前言
 
-Google不仅能帮我们找到所需要的文章，电影，本子[8]和各种gv，还能让我们在渗透检测过程中省时省力
-
+使用Google 快速精准的找到所需要的文章、电影，以及在渗透检测过程中省时省力。
 
 ### 正文
 
@@ -87,7 +86,6 @@ allinurl:vi 02 site:https:zhangkn.github.io
 
 ```
 搜索关于指定公司的股票市场信息
-
 ```
 
 >* insubject:reverseEngineering intext:ios
