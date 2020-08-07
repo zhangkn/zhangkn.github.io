@@ -1,6 +1,5 @@
-# kn site
+#【[ 新博客地址]】(kunnan.blog.csdn.net)
 
-[kn](https://zhangkn.github.io) 
 
 # Github Pages 整体思路
 本地编写符合Jekyll规范的网站源码，然后上传到github，由github生成并托管整个网站；享受git的版本管理功能；用自己喜欢的编辑器写文章
