@@ -14,7 +14,7 @@ stackoverflow user: 8633507
 <br>
 
 <h1>
-<a target="_blank" href="https://zhangkn.github.io/2018/04/DevelopmentSkillsIntroduced"> 实时最新的简历</a>
+<a target="_blank" href="https://kunnan.blog.csdn.net">新的博客地址</a>
 </h1>
 
 
