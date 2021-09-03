@@ -1,3 +1,6 @@
+不要学你工作中用不上的东西，不经过实战检验的东西会一直停留在demo阶段；如果想学，你就一定要想方设法找点场景落地
+<img src="https://img-blog.csdnimg.cn/df4d2424809a4f7089acca9e94c9de2b.jpg">
+
 # [新博客地址](https://kunnan.blog.csdn.net)
 
 
