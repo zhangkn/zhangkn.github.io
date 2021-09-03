@@ -4,7 +4,10 @@ title: 关于我
 stackoverflow user: 8633507
 ---
 
-# whoami
+# 公众号：iOS逆向
+
+<img src="https://img-blog.csdnimg.cn/df4d2424809a4f7089acca9e94c9de2b.jpg">
+
 
  [I](https://about.me/kunnan) am a iOS Reverse Engineer, My interests range from technology to Information security. 
  <br>I enjoy sharing my security knowledge and learning from [iosre：http://bbs.iosre.com/latest.rss](http://iosre.com). Always happy to help people learn and teach about security.
